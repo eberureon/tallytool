@@ -3,5 +3,6 @@
 .idea
 .sass-cache
 .yarnclean
+.DS_Store
 
 /style/css

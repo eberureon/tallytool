@@ -1,6 +1,85 @@
-$font: 'Roboto Slab', serif;
+@import 'fontawesome-custom';
 
-body {
+$font: 'Roboto Slab', serif;
+$gallery: #EEE;
+$black: #000;
+$white: #fff;
+
+body, html {
+  margin: 0;
+}
+
+nav {
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  text-align: left;
+}
+
+section {
+  padding: 100px;
+}  
+
+.header {
+  background: url(../../img/background.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  color: $black;
   font-family: $font;
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 100;
+  display: block;
+}
+
+.headText {
+  color: $white;
+  margin-left: 10vh;
+  position: absolute;
+  top: 50%;
+}
+
+.headTitle {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.headDesc {
+  font-size: 30px;
+}
+
+// TODO: use media query to adjust margin to viewport
+.langDropown {
+  border: 1px solid $gallery;
+  border-radius: 3px;
+  float: right;
+	height: 40px;
+	margin: -118vh 10px 0;
+	overflow: hidden;
+	padding: 0;
+  transition: all .3s ease;
+  text-align: center;
+
+  &:hover {
+    height: 122px;
+  }
+
+  a { 
+    text-decoration: none;
+  }
+
+  li {
+    color: $white;
+    display: block;
+    line-height: 40px;
+    padding: 0px 15px;
+  }
 }
