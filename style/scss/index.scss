@@ -23,7 +23,7 @@ nav {
   color: $black;
   font-family: $font;
   font-size: $fontSizeDefault;
-  font-weight: 100;
+  font-weight: 300;
   display: block;
 }
 
@@ -46,11 +46,11 @@ nav {
 
 .headTitle {
   font-size: 60px;
-  font-weight: 300;
 }
 
 .headDesc {
   font-size: 30px;
+  font-weight: 100;
 }
 
 // TODO: use media query to adjust margin to viewport
@@ -70,12 +70,13 @@ nav {
     height: 122px;
   }
 
-  a { 
+  a {
     text-decoration: none;
   }
 
   li {
     color: $white;
+    font-weight: 100;
     line-height: 40px;
     padding: 0px 15px;
   }
@@ -85,6 +86,7 @@ nav {
   list-style-type: none;
   
   a {
+    color: $black;
     text-decoration: none;
   }
 
