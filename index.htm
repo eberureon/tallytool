@@ -11,21 +11,36 @@
   <script defer src='assets/fontawesome/fontawesome-all.js'></script>
 </head>
 <body>
-  <section id='header' class='header'>
-    <nav>
-        <ul class='langDropown'>
-          <li><i class="fas fa-language"></i>Sprache w&auml;hlen</li>
-          <a href='en/index.htm'><li>English</li></a>  <!-- Change href to ='/en' when on Server -->
-          <a href='index.htm'><li>Deutsch</li></a> <!-- Change href to ='/' when on Server -->
-        </ul>
-    </nav>
-    <div class='container'>
-      <div class='headText'>
-        <div class='headTitle'>Leon Ebel</div>
-        <div class='headDesc'>Full-Stack Web Entwickler</div>
+    <section id='header' class='container header'>
+          <ul class='langDropown'>
+            <li>
+              <i class="fas fa-language"></i>Sprache w&auml;hlen
+            </li>
+            <a href='en/index.htm'> <!-- Change href to ='/en' when on Server -->
+              <li>English</li>
+            </a>
+            <a href='index.htm'> <!-- Change href to ='/' when on Server -->
+              <li>Deutsch</li>
+            </a>
+          </ul>
+      <div class='container'>
+        <div class='headText'>
+          <div class='headTitle'>Leon Ebel</div>
+          <div class='headDesc'>Full-Stack Web Entwickler</div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  <nav class="container">
+    <ul class="navbar">
+      <a href="#header">
+        <li>Home</li>
+      </a>
+      <a href="aboutMe">
+        <li>&Uuml;ber mich</li>
+      </a>
+    </ul>
+  </nav>
 
     <section id='aboutMe' class="aboutMe">
       <div class='container'>

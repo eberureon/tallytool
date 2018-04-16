@@ -1,6 +1,7 @@
 @import 'fontawesome-custom';
 
 $font: 'Roboto Slab', serif;
+$fontSizeDefault: 16px;
 $gallery: #EEE;
 $black: #000;
 $white: #fff;
@@ -11,16 +12,20 @@ body, html {
 
 nav {
   bottom: 0;
-  height: 50px;
+  height: 0;
   width: 100%;
   left: 0;
   position: absolute;
   text-align: left;
 }
 
-.aboutMe {
-  padding: 100px;
-}  
+.container {
+  color: $black;
+  font-family: $font;
+  font-size: $fontSizeDefault;
+  font-weight: 100;
+  display: block;
+}
 
 .header {
   background: url(../../img/background.jpg) no-repeat center center fixed; 
@@ -30,14 +35,6 @@ nav {
   -o-background-size: cover;
   height: 100vh;
   position: relative;
-}
-
-.container {
-  color: $black;
-  font-family: $font;
-  font-size: 16px;
-  font-weight: 100;
-  display: block;
 }
 
 .headText {
@@ -61,10 +58,11 @@ nav {
   border: 1px solid $gallery;
   border-radius: 3px;
   float: right;
-	height: 40px;
-	margin: -85vh 10px 0;
-	overflow: hidden;
-	padding: 0;
+  height: 40px;
+  list-style-type: none;
+  margin: 10px;
+  overflow: hidden;
+  padding: 0;
   transition: all .3s ease;
   text-align: center;
 
@@ -78,8 +76,24 @@ nav {
 
   li {
     color: $white;
-    display: block;
     line-height: 40px;
     padding: 0px 15px;
   }
 }
+
+.navbar {
+  list-style-type: none;
+  
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    margin: 0 10px;
+    float: left;
+  }
+}
+
+.aboutMe {
+  padding: 100px;
+}  
