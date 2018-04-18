@@ -1,30 +1,20 @@
-@import 'fontawesome-custom';
+@import 'libs/fontawesome-custom';
 
 $font: 'Roboto Slab', serif;
 $fontSizeDefault: 16px;
-$gallery: #EEE;
-$black: #000;
-$white: #fff;
+$codGray: #191919;
+$alabaster: #fbfbfb;
+$capeCod: #3E3F40;
 
 body, html {
   margin: 0;
 }
 
-nav {
-  bottom: 0;
-  height: 0;
-  width: 100%;
-  left: 0;
-  position: absolute;
-  text-align: left;
-}
-
 .container {
-  color: $black;
+  color: $codGray;
   font-family: $font;
   font-size: $fontSizeDefault;
   font-weight: 300;
-  display: block;
 }
 
 .header {
@@ -38,7 +28,7 @@ nav {
 }
 
 .headText {
-  color: $white;
+  color: $alabaster;
   margin-left: 10vh;
   position: absolute;
   top: 50%;
@@ -53,13 +43,37 @@ nav {
   font-weight: 100;
 }
 
+nav {
+  background-color: $capeCod;
+  border-bottom: 2px solid $alabaster;
+  height: 55px;
+  width: 100%;
+  position: absolute;
+  
+  a {
+    color: $alabaster;
+    list-style-type: none;
+  }
+
+  li {
+    margin: 0 10px;
+    float: left;
+  }
+}
+
+.sticky {
+  animation: slideDown .5s;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
 // TODO: use media query to adjust margin to viewport
 .langDropown {
-  border: 1px solid $gallery;
+  border: 1px solid $alabaster;
   border-radius: 3px;
   float: right;
   height: 40px;
-  list-style-type: none;
   margin: 10px;
   overflow: hidden;
   padding: 0;
@@ -72,31 +86,22 @@ nav {
 
   a {
     text-decoration: none;
+    list-style-type: none;
   }
 
   li {
-    color: $white;
+    color: $alabaster;
     font-weight: 100;
     line-height: 40px;
     padding: 0px 15px;
   }
 }
 
-.navbar {
-  list-style-type: none;
-  
-  a {
-    color: $black;
-    text-decoration: none;
-  }
-
-  li {
-    margin: 0 10px;
-    float: left;
-  }
-}
-
-.aboutMe {
+.aboutMe, .vita, .skills, .contact {
   height: 100vh;
   padding: 100px;
-}  
+}
+
+@keyframes slideDown {
+ 0% { transform: translateY(-50px) }
+}
