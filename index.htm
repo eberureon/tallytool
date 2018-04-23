@@ -7,10 +7,10 @@
   <meta name='keywords' content='Leon Ebel, developer, development, entwickler, web developer, web development, Portfolio, portfolio'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel='stylesheet' type='text/css' href='style/css/index.css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:100,300' rel='stylesheet'> 
+  <script src='assets/jquery/jquery-3.3.1.min.js'></script>
 </head>
 <body>
-  <section id='header' class='container header'>
+  <section id='home' class='container home'>
     <ul class='langDropown'>
       <li>
         <i class='fas fa-language'></i>Sprache w&auml;hlen
@@ -22,66 +22,52 @@
         <li>Deutsch</li>
       </a>
     </ul>
-    
+
     <div class='container'>
-      <div class='headText'>
-        <div class='headTitle'>Leon Ebel</div>
-        <div class='headDesc'>Full-Stack Web Entwickler</div>
+      <div class='homeText'>
+        <h1 class='homeTitle'>Leon Ebel</h1>
+        <div class='homeDesc'>Full-Stack Web Entwickler</div>
       </div>
     </div>
   </section>
 
   <nav id='navbar' class='container'>
     <ul>
-      <a href='#header'>
-        <li>Home</li>
-      </a>
-      <a href='#aboutMe'>
-        <li>&Uuml;ber mich</li>
-      </a>
-      <a href='#vita'>
-        <li>Lebenslauf</li>
-      </a>
-      <a href='#skills'>
-        <li>Erfahrungen</li>
-      </a>
-      <a href='#contact'>
-        <li>Kontakt</li>
-      </a>
+      <li><a class='active' href='#home'>Home</a></li>
+      <li><a href='#aboutMe'>&Uuml;ber mich</a></li>
+      <li> <a href='#vita'>Lebenslauf</a></li>
+      <li><a href='#skills'>Erfahrungen</a></li>
+      <li><a href='#contact'>Kontakt</a></li>
     </ul>
   </nav>
 
-  <section id='aboutMe' class='aboutMe' style="background-color: orangered;">
+  <section id='aboutMe' class='aboutMe'>
     <div class='container'>
-      <div>&Uuml;ber mich<br/><br/>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
-    </div>
+      <h2 class='title'>&Uuml;ber mich</h2>
   </section>
 
-  <section id='vita' class='vita' style="background-color: palevioletred;">
+  <section id='vita' class='vita'>
     <div class='container'>
       <div>
-        Lebenslauf<br/><br/>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <h2 class='title'>Lebenslauf</h2>
       </div>
     </div>
   </section>
 
-  <section id='skills' class='skills' style="background-color: peru;">
+  <section id='skills' class='skills'>
     <div class='container'>
-      Erfahrungen
+        <h2 class='title'>Erfahrungen</h2>
     </div>
   </section>
 
-  <section id='contact' class='contact' style="background-color: olivedrab;">
+  <section id='contact' class='contact'>
     <div class='container'>
-      Kontakt Formular
+        <h2 class='title'>Kontakt Formular</h2>
     </div>
   </section>
 
   <!-- Scripts -->
   <script defer src='assets/fontawesome/fontawesome-all.js'></script>
-  <script src="js/main.js"></script>
+  <script src=js/main.js></script>
 </body>
 </html>
