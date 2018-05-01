@@ -50,15 +50,15 @@ body, html {
 
 nav {
   background-color: rgba(60, 60, 60, 0.4);
-  border-bottom: 2px solid #ff7860; // navbar colors ? $alabaster
+  border-bottom: 2px solid $alabaster;
   height: 55px;
   width: 100%;
   position: absolute;
   
   .active, a:hover {
-    background: #ff7860; // navbar colors ? $alabaster
+    background: $alabaster;
     border-radius: 2px;
-    color: $alabaster; // navbar colors ? $capeCod
+    color: $capeCod;
   }
 
   li {
@@ -112,14 +112,14 @@ nav {
 
 .vita, .skills, .contact {
   background-color: $background-color;
-  box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px $background-color, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 50px;
 }
 
 .aboutMe {
   background-color: $background-color;
-  box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px $background-color, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 100px
 }
