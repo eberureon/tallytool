@@ -106,20 +106,20 @@ nav {
     color: $alabaster;
     font-weight: 100;
     line-height: 40px;
-    padding: 0px 15px;
+    padding: 0 15px;
   }
 }
 
 .vita, .skills, .contact {
   background-color: $background-color;
-  box-shadow: inset 0px 1px 0px 0px $background-color, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 0 $background-color, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 50px;
 }
 
 .aboutMe {
   background-color: $background-color;
-  box-shadow: inset 0px 1px 0px 0px $background-color, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 0 0 $background-color, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 100px
 }
@@ -135,4 +135,8 @@ nav {
 
 @keyframes slideDown {
  0% { transform: translateY(-50px) }
+}
+
+@media query() {
+
 }
