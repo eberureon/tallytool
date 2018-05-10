@@ -1,8 +1,10 @@
 // Sticky Navigation
 window.onscroll = function() { stickyNav() };
 
-const navbar = document.getElementById('navbar');
-const sticky = navbar.offsetTop + 150;
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobileNavList');
+const navbar = document.querySelector('.navbar');
+const sticky = navbar.offsetTop + 50;
 
 function stickyNav() {
   if (window.scrollY >= sticky) {
@@ -49,3 +51,13 @@ function onScroll(event){
       }
   });
 }
+
+// Burger Menu
+hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('is-active');
+    // if (document.querySelector('.mobileNavList.hidden')) {
+    //   mobileNav.classList.toggle('hidden');
+    // } else {
+    //   mobileNav.classList.toggle('hidden');
+    // }
+});
