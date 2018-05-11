@@ -18,12 +18,13 @@ body, html {
 .wrapper {
   color: $codGray;
   font-family: $font;
-  font-size: $default_fontSize;
+  font-size: $defaultFontSize;
   font-weight: 300;
 }
 
 .home {
-  background: url(../../img/background.jpg) no-repeat center center fixed; 
+  background: url(../../img/background.jpg) no-repeat center center scroll;
+  background-color: $backgroundColor;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -59,7 +60,7 @@ body, html {
   position: absolute;
   width: 100%;
 
-  .active, a:hover {
+  .active, a:hover, a:focus {
     background: $alabaster;
     border-radius: 2px;
     color: $capeCod;
@@ -123,7 +124,7 @@ body, html {
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .aboutMe {
