@@ -4,11 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,700');
 
 $font: 'Roboto Slab', serif;
-$fontSizeDefault: 16px;
+$defaultFontSize: 16px;
 $codGray: #191919;
 $alabaster: #FBFBFB;
 $capeCod: #8A8A8A;
-$background-color: rgba(0, 0, 0, 0.05);
+$backgroundColor: rgba(0, 0, 0, 0.05);
 
 body, html {
   padding: 0;
@@ -18,7 +18,7 @@ body, html {
 .wrapper {
   color: $codGray;
   font-family: $font;
-  font-size: $fontSizeDefault;
+  font-size: $default_fontSize;
   font-weight: 300;
 }
 
@@ -120,15 +120,15 @@ body, html {
 }
 
 .vita, .skills, .contact {
-  background-color: $background-color;
-  box-shadow: inset 0 1px 0 0 $background-color, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: $backgroundColor;
+  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 50px;
 }
 
 .aboutMe {
-  background-color: $background-color;
-  box-shadow: inset 0 1px 0 0 $background-color, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: $backgroundColor;
+  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 80px
 }

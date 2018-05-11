@@ -2,7 +2,7 @@
 window.onscroll = function() { stickyNav() };
 
 const hamburger = document.querySelector('.hamburger');
-const mobileNav = document.querySelector('.mobileNavList');
+// const mobileNav = document.querySelector('.mobileNavList');
 const navbar = document.querySelector('.navbar');
 const sticky = navbar.offsetTop + 50;
 
@@ -24,9 +24,9 @@ $(document).ready(function () {
       $(document).off('scroll');
       
       $('a').each(function () {
-          $(this).removeClass('active');
+        $(this).removeClass('active');
       })
-      $(this).addClass('active');
+        $(this).addClass('active');
     
       var target = this.hash,
           menu = target;
@@ -43,21 +43,21 @@ $(document).ready(function () {
 function onScroll(event){
   var scrollPos = $(document).scrollTop();
   $('#navbar a').each(function () {
-      var currLink = $(this);
-      var refElement = $(currLink.attr('href'));
-      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-          $('#navbar ul a').removeClass('active');
-          currLink.addClass('active');
-      }
+    var currLink = $(this);
+    var refElement = $(currLink.attr('href'));
+    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+      $('#navbar ul a').removeClass('active');
+      currLink.addClass('active');
+    }
   });
 }
 
 // Burger Menu
 hamburger.addEventListener('click', function() {
-    hamburger.classList.toggle('is-active');
-    // if (document.querySelector('.mobileNavList.hidden')) {
-    //   mobileNav.classList.toggle('hidden');
-    // } else {
-    //   mobileNav.classList.toggle('hidden');
-    // }
+  hamburger.classList.toggle('is-active');
+  // if (document.querySelector('.mobileNavList.hidden')) {
+  //   mobileNav.classList.toggle('hidden');
+  // } else {
+  //   mobileNav.classList.toggle('hidden');
+  // }
 });
