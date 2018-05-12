@@ -10,7 +10,7 @@ $alabaster: #FBFBFB;
 $capeCod: #8A8A8A;
 $backgroundColor: rgba(0, 0, 0, 0.05);
 
-body, html {
+html, body{
   padding: 0;
   margin: 0;
 }
@@ -131,7 +131,7 @@ body, html {
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
-  padding-top: 80px
+  padding-top: 80px;
 }
 
 .title {
