@@ -1,7 +1,8 @@
 // Sticky Navigation
 window.onscroll = function() { stickyNav() };
 
-const hamburger = document.querySelector('.hamburger');
+const $href = $('a[href^="#"]');
+const hamburger = document.querySelector(".hamburger");
 const navbar = document.querySelector('.navbar');
 const sticky = navbar.offsetTop + 150;
 
@@ -13,33 +14,27 @@ function stickyNav() {
   }
 }
 
-/* TODO: animation auf Mobile veruscht nach unten... scrolling seltsam /
-*  Beim srollen nach oben wird der aktuelle Tab nochmal verschoben nach unten und in den Viewport
-*  gebracht. Tritt erst auf wenn man los laesst. */
-
 // Highlighted Navigation
 $(document).ready(function () {
   $(document).on('scroll', onScroll);
   
   //smoothscroll
-  $('a[href^="#"]').on('click', function (e) {
-      e.preventDefault();
-      $(document).off('scroll');
-      
-      $('a').each(function () {
-        $(this).removeClass('active');
-      })
-        $(this).addClass('active');
+  $href.on('click', function (e) {
+    e.preventDefault();
+    $(document).off('scroll');
+
+    $('a').each(function () {
+      $(this).removeClass('active');
+    })
+      $(this).addClass('active');
     
-      var target = this.hash,
-        menu = target;
+    let target  = this.hash;
         $target = $(target);
-      $('html, body').stop().animate({
-          'scrollTop': $target.offset().top+2
-      }, 700, 'swing', function () {
-          window.location.hash = target;
-          $(document).on('scroll', onScroll);
-      });
+    $('html, body').stop().animate({
+      'scrollTop': $target.offset().top+2
+    }, 700, function () {
+      $(document).on('scroll', onScroll);
+    });
   });
 });
 
@@ -61,7 +56,7 @@ hamburger.addEventListener('click', function() {
 });
 
 // Close Burger Menu when Link clicked
-$('a[href^="#"]').on('click', function () {
+$href.on('click', function () {
   $('.hamburger').removeClass('is-active');
   $('.navbar ul').removeClass('show');
 });
