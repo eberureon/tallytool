@@ -46,17 +46,22 @@
 </head>
 <body>
   <section id='home' class='wrapper home'>
-    <ul class='langDropown'>
-      <li><i class='fas fa-language'></i>
-        Sprache w&auml;hlen
-      </li>
-      <a href='en/index.htm'> <!-- Change href to ='/en' when on Server -->
-        <li>English</li>
-      </a>
-      <a href='index.htm'> <!-- Change href to ='/' when on Server -->
-        <li>Deutsch</li>
-      </a>
-    </ul>
+    <div class='langDropdown'>
+      <label for='langDropdownBtn'>
+        <input class='langDropdownBtn' id='langDropdownBtn' type='checkbox'>
+        <ul class='langDropdownList'>
+          <li><i class='fas fa-language'></i>
+            Sprache w&auml;hlen
+          </li>
+          <a href='en/index.htm'> <!-- Change href to ='/en' when on Server -->
+            <li>English</li>
+          </a>
+          <a href='index.htm'> <!-- Change href to ='/' when on Server -->
+            <li>Deutsch</li>
+          </a>
+        </ul>
+      </label>
+    </div>
 
     <div class='wrapper'>
       <div class='homeText'>

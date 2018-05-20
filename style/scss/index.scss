@@ -92,20 +92,29 @@ html, body{
   z-index: 1;
 }
 
-.langDropown {
+.langDropdown {
   border: 1px solid $alabaster;
   border-radius: 3px;
   float: right;
-  height: 40px;
   margin: 10px;
-  overflow: hidden;
-  padding: 0;
-  transition: all .3s ease;
   text-align: center;
 
-  &:hover {
-    height: 122px;
+  label {
+    margin: 0;
   }
+}
+
+.langDropdownList {
+  cursor: pointer;
+  height: 40px;
+  overflow: hidden;
+  transition: all .3s ease;
+  margin: 0;
+  padding: 0;
+
+  // &:hover {
+  //   height: 122px;
+  // }
 
   a {
     text-decoration: none;
@@ -120,11 +129,18 @@ html, body{
   }
 }
 
-.vita, .skills, .contact {
-  background-color: $backgroundColor;
-  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-  height: 100vh;
-  padding-top: 60px;
+.langDropdownBtn {
+  float: left;
+  opacity: 0;
+  margin-left: -14px;
+
+  &:checked ~ .langDropdownList {
+    height: 122px;
+  }
+
+  &:not(:checked) ~ .langDropdownList {
+    height: 40px;
+  }
 }
 
 .aboutMe {
@@ -132,6 +148,13 @@ html, body{
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
   padding-top: 80px;
+}
+
+.vita, .skills, .contact {
+  background-color: $backgroundColor;
+  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  padding-top: 60px;
 }
 
 .title {

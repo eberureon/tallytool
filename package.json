@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Leon Ebel Portfolio",
-  "main": "index.html",
+  "main": "index.htm",
   "repository": "https://ebelleon@bitbucket.org/ebelleon/portfolio.git",
   "author": "<ebel.leon@hotmail.com>",
   "license": "MIT",
