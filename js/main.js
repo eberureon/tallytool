@@ -4,6 +4,7 @@ window.onscroll = function() { stickyNav() };
 const $href = $('a[href^="#"]');
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
+const mobileNavList = document.querySelector('.mobileNavList');
 const sticky = navbar.offsetTop + 150;
 
 function stickyNav() {
