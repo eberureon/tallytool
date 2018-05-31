@@ -57,7 +57,6 @@ html, body{
   border-bottom: 2px solid $alabaster;
   display: inline-block;
   padding: 0; // prevent Bootstrap
-  // position: absolute;
   width: 100%;
 
   .active, a:hover, a:focus {
@@ -151,13 +150,6 @@ html, body{
   }
 }
 
-.aboutMe, .vita, .skills, .contact {
-  background-color: $backgroundColor;
-  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-  height: 100vh;
-  padding-top: 60px;
-}
-
 .title {
   color: $codGray;
   font-size: 35px;
@@ -165,6 +157,31 @@ html, body{
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+.aboutMe, .vita, .skills, .contact {
+  background-color: $backgroundColor;
+  box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.information {
+  margin: 10vw 20vw 0;
+}
+
+.profilePicture {
+  border: 2px solid;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-radius: 100px;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+}
+
+.aboutMetext {
+  padding-left: 185px;  
 }
 
 .hamburger {
