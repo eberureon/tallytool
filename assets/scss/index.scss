@@ -1,7 +1,6 @@
-@import 'libs/fontawesome-custom';
-@import 'libs/bootstrap-custom';
+@import 'partials/fontawesome-custom';
 @import 'libs/burger_menu/hamburgers';
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,700');
+@import 'partials/fonts';
 
 $font: 'Roboto Slab', serif;
 $defaultFontSize: 16px;
@@ -23,7 +22,7 @@ html, body{
 }
 
 .home {
-  background: url(../../img/background.jpg) no-repeat center center scroll;
+  background: url(../assets/img/background.jpg) no-repeat center center transparent;
   background-color: $backgroundColor;
   background-size: cover;
   -webkit-background-size: cover;
@@ -56,10 +55,9 @@ html, body{
   background-color: rgba(60, 60, 60, 0.4);
   border-bottom: 2px solid $alabaster;
   display: inline-block;
-  padding: 0; // prevent Bootstrap
   width: 100%;
 
-  .active, a:hover, a:focus {
+  .active, a:hover {
     background: $alabaster;
     border-radius: 2px;
     color: $capeCod;

@@ -8,6 +8,7 @@
   "license": "MIT",
   "devDependencies": {},
   "scripts": {
-    "watch:scss": "sass --watch style/scss:style/css"
+    "watch:scss": "sass --watch assets/scss/index.scss:css/index.css",
+    "build:scss": "sass assets/scss/index.scss:css/index.min.css --style compressed"
   }
 }
