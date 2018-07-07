@@ -62,7 +62,7 @@ html, body{
   }
 
   ul {
-    margin: 16 0;
+    margin: 16px 0;
     list-style-type: none;
   }
 
@@ -155,11 +155,11 @@ html, body{
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   height: 100vh;
-  padding-top: 50px;
+  padding-top: 7vh;
 }
 
 .information {
-  margin: 10vw 20vw 0;
+  margin: 10vh 5vh 0;
 
   .profilePicture {
     border: 2px solid;
@@ -172,7 +172,7 @@ html, body{
   }
 
   .aboutMeText {
-    padding-left: 185px;
+    padding: 4vh 0 0 17vw;
   }
 }
 
@@ -183,7 +183,7 @@ html, body{
   width: 50vh;
 
   .employerText {
-    margin-top: 50px;
+    margin-top: 7vh;
 
     p {
       margin: 0 0 3px;
@@ -200,7 +200,7 @@ html, body{
   border-left-style: dashed;
   border-right-style: dashed;
   border-radius: 100%;
-  margin-left: -150px;
+  margin-left: -22vh;
   position: absolute;
   height: 125px;
   width: 125px;
@@ -208,7 +208,7 @@ html, body{
 
 .skills {
   display: inline-block;
-  padding-left: 60%;
+  padding-left: 113vh;
   width: 50vh;
 
   ul {
@@ -228,6 +228,19 @@ html, body{
 
 @keyframes slideDown {
  0% { transform: translateY(-150px) }
+}
+
+@media screen and (max-width: 1024px) {
+  .information {
+    .profilePicture {
+      height: 120px;
+      width: 120px;
+    }
+
+    .aboutMeText {
+      padding: 0 0 0 17vw;
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -265,6 +278,24 @@ html, body{
       &:last-child {
         padding-bottom: 0;
       }
+    }
+  }
+
+  .employer {
+    .employerText {
+      margin-left: 5vh;
+    }
+  }
+
+  .information {
+    margin: 0;
+
+    .profilePicture {
+      margin-left: 36vw;
+    }
+
+    .aboutMeText {
+      padding: 22vh 0 0 2vh;
     }
   }
 }
