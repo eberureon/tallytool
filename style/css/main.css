@@ -1,0 +1,67 @@
+html, body {
+  background-color: #990000;
+  font-family: Tahoma, Geneva, sans-serif;
+  margin: 0;
+  padding: 0; }
+
+button, select, input {
+  font-family: inherit;
+  font-size: inherit; }
+
+.container {
+  color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.header {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 5vh; }
+
+.logo {
+  margin: -60px 0 0 50px;
+  width: 120px; }
+
+.table {
+  color: #fff;
+  margin-top: 30px;
+  width: 100%; }
+
+.table, th, td {
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  padding: 5px; }
+
+.workHours {
+  margin: 70px 0; }
+
+.button, .input, .dropdown {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #353233;
+  padding: 6px 10px; }
+
+.dropdown:not(:disabled):not(.disabled) {
+  cursor: pointer; }
+
+.dateInput {
+  padding: 4.5px 10px; }
+  .dateInput:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+
+.factorInput {
+  padding: 7px 10px; }
+
+.button {
+  background-color: #fff;
+  line-height: 1.5;
+  vertical-align: initial; }
+  .button:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+  .button:hover {
+    background-color: #848182;
+    color: #fff; }

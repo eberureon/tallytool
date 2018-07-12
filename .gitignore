@@ -1,0 +1,5 @@
+# dot files
+.idea
+.vscode
+
+node_modules

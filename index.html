@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name='author' content='Leon Ebel'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Abrechnungstool für Trainer - TSV Milbertshofen</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="style/css/main.css">
+</head>
+<body>
+    <header class="container">
+        <h1 class="header">Abrechnungstool Mil</h1>
+        <img class="logo" src="img/logo-mil.png" alt="Logo">
+    </header>
+
+    <div class="container">
+        <table class="table" id="table">
+            <tr>
+                <th>Datum</th>
+                <th>Tag</th>
+                <th>Event</th>
+                <th>Faktor</th>
+                <th>Stundensatz</th>
+                <th>Summe</th>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="container workHours">
+        <input type="date" class="input dateInput" id="date"/>
+        <select class="dropdown" id="day">
+            <option value="" disabled>Tag:</option>
+            <option value="Mo">Mo</option>
+            <option value="Di">Di</option>
+            <option value="Mi">Mi</option>
+            <option value="Do">Do</option>
+            <option value="Fr">Fr</option>
+            <option value="Sa">Sa</option>
+            <option value="So">So</option>
+        </select>
+        <select class="dropdown" id="event">
+            <option value="" disabled>Event:</option>
+            <option value="Training">Training</option> <!-- (Lohn: 5€) -->
+            <option value="Spiel">Spiel</option> <!-- (Lohn: 5€) -->
+            <option value="Qauli">Quali</option> <!-- 3 Spiele 20€ / 4 Spiele 25€-->
+        </select>
+        <input class="input factorInput" id="factor" type="number" value="1" min="1" max="5">
+
+        <br><br>
+        <button class="button" name="submit" type="submit" onclick="addRow()">Eintragen</button>
+        <button class="button" name="download" type="button">Herunterladen</button> 
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>if (window.module) module = window.module;</script>
+</body>
+</html>
