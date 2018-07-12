@@ -18,8 +18,7 @@ button, select, input {
 
 .container {
   color: $white;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -57,25 +56,13 @@ button, select, input {
   border: 1px solid transparent;
   border-radius: 5px;
   color: $mineShaft;
-  padding: 6px 10px;
-}
-
-.dropdown {
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
-  }
-}
-
-.dateInput {
-  padding: 4.5px 10px;
-
-  &:not(:disabled):not(.disabled) {
-    cursor: pointer;
-  }
+  cursor: pointer;
+  height: 36px;
+  padding: 0 10px;
 }
 
 .factorInput {
-  padding: 7px 10px;
+  cursor: text;
 }
 
 .button {

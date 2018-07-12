@@ -1,32 +1,36 @@
+let table = document.getElementById("table");
+
+let row = document.createElement("tr");
+
+let td1 = document.createElement("td"); // Datum
+let td2 = document.createElement("td"); // Tag
+let td3 = document.createElement("td"); // Event
+let td4 = document.createElement("td"); // Faktor
+let td5 = document.createElement("td"); // Stundensatz
+let td6 = document.createElement("td"); // Summe
+
 // add row to table
 function addRow() {
-  let table = document.getElementById("table");
+  let date_today = new Date(document.getElementById("date").value);
+  day = date_today.getDate();
+  month = date_today.getMonth() + 1;
+  year = date_today.getFullYear();
 
-  let row = document.createElement("tr");
-  
-  let td1 = document.createElement("td"); // Datum
-  let td2 = document.createElement("td"); // Tag
-  let td3 = document.createElement("td"); // Event
-  let td4 = document.createElement("td"); // Faktor
-  let td5 = document.createElement("td"); // Stundensatz
-  let td6 = document.createElement("td"); // Summe
+  let date_formatted = [day, month, year].join('.');
 
-  let date = new Date($('#date').val());
-  day = date.getDate();
-  month = date.getMonth() + 1;
-  year = date.getFullYear();
-
-  td1.innerHTML = [day, month, year].join('.');
-  td2.innerHTML = document.getElementById("day").value;
-  td3.innerHTML = document.getElementById("event").value;
-  td4.innerHTML = document.getElementById("factor").value;
-
+  let date_given = document.getElementById("date").value;
+  let day_given = document.getElementById("day").value;
   let event = document.getElementById("event").value;
   let factor = document.getElementById("factor").value;
 
+  td1.innerHTML = date_formatted;
+  td2.innerHTML = day;
+  td3.innerHTML = event;
+  td4.innerHTML = factor;
+
   event === "Training" || event === "Spiel" ? 
-      (td5.innerHTML = parseInt(document.getElementById("factor").value) * 5 + " &euro;",
-       td6.innerHTML = parseInt(document.getElementById("factor").value) * 5 + " &euro;")
+      (td5.innerHTML = parseInt(factor) * 5 + " &euro;",
+       td6.innerHTML = parseInt(factor) * 5 + " &euro;")
     : factor === "3" ? 
       (td5.innerHTML = 20 + " &euro;",
        td6.innerHTML = 20 + " &euro;")
@@ -36,12 +40,10 @@ function addRow() {
     : (td5.innerHTML = 5 + " &euro;",
        td6.innerHTML = 5 + " &euro;");
 
-if(event === "Training" || event === "Spiel") {
-  td5.innerHTML = parseInt(document.getElementById("factor").value) * 5 + " &euro;";
-  td6.innerHTML = parseInt(document.getElementById("factor").value) * 5 + " &euro;";
-} else {
-
-}
+  localStorage.setItem("date", date_given);
+  localStorage.setItem("day", day_given);
+  localStorage.setItem("event", event);
+  localStorage.setItem("factor", factor);
 
   row.appendChild(td1);
   row.appendChild(td2);
@@ -54,5 +56,22 @@ if(event === "Training" || event === "Spiel") {
 }
 
 // Show current date in input field
-// TODO: doesnt work right 
 document.querySelector("#date").valueAsDate = new Date();
+
+function getItem() {
+  td1.innerText = localStorage.getItem("date");
+  td2.innerText = localStorage.getItem("day");
+  td3.innerText = localStorage.getItem("event");
+  td4.innerText = localStorage.getItem("factor");
+
+  row.appendChild(td1);
+  row.appendChild(td2);
+  row.appendChild(td3);
+  row.appendChild(td4);
+  row.appendChild(td5);
+  row.appendChild(td6);
+
+  table.children[0].appendChild(row);
+}
+
+getItem();
