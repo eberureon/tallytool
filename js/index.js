@@ -35,11 +35,6 @@ function addRow() {
   : (td5.innerHTML = parseInt(factor) * 5 + " &euro;",
      td6.innerHTML = parseInt(factor) * 5 + " &euro;");
 
-  localStorage.setItem("date", date_formatted);
-  localStorage.setItem("day", day_given);
-  localStorage.setItem("event", event);
-  localStorage.setItem("factor", factor);
-
   row.appendChild(td1);
   row.appendChild(td2);
   row.appendChild(td3);
@@ -48,31 +43,63 @@ function addRow() {
   row.appendChild(td6);
 
   table.children[0].appendChild(row);
+  
+  // set Items in localStorage
+  let oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
+
+  let newItems = {
+    'date': date_formatted,
+    'day': day_given,
+    'event': event,
+    'factor': factor,
+    'salary': event === "Qauli" && factor === "3" ?
+      td5.innerHTML = 20 + " &euro;"
+    : event === "Qauli" && factor === "4" ?
+      td5.innerHTML = 25 + " &euro;"
+    : td5.innerHTML = parseInt(factor) * 5 + " &euro;",
+    'sum': event === "Qauli" && factor === "3" ?
+      td5.innerHTML = 20 + " &euro;"
+    : event === "Qauli" && factor === "4" ?
+      td5.innerHTML = 25 + " &euro;"
+    : td5.innerHTML = parseInt(factor) * 5 + " &euro;"
+  };
+
+  oldItems.push(newItems);
+
+  localStorage.setItem('itemsArray', JSON.stringify(oldItems));
 }
 
 function getData() {
-  let row = document.createElement("tr");
+  let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
-  let td1 = document.createElement("td"); // Datum
-  let td2 = document.createElement("td"); // Tag
-  let td3 = document.createElement("td"); // Event
-  let td4 = document.createElement("td"); // Faktor
-  let td5 = document.createElement("td"); // Stundensatz
-  let td6 = document.createElement("td"); // Summe
+  for(i = 0; i < items.length; i++) {
+    let table = document.getElementById("table");
+    let row = document.createElement("tr");
 
-  td1.innerText = localStorage.getItem("date");
-  td2.innerText = localStorage.getItem("day");
-  td3.innerText = localStorage.getItem("event");
-  td4.innerText = localStorage.getItem("factor");
+    let td1 = document.createElement("td"); // Datum
+    let td2 = document.createElement("td"); // Tag
+    let td3 = document.createElement("td"); // Event
+    let td4 = document.createElement("td"); // Faktor
+    let td5 = document.createElement("td"); // Stundensatz
+    let td6 = document.createElement("td"); // Summe
 
-  row.appendChild(td1);
-  row.appendChild(td2);
-  row.appendChild(td3);
-  row.appendChild(td4);
-  // row.appendChild(td5);
-  // row.appendChild(td6);
+    console.log(items[i].salary);
+    td1.innerHTML = items[i].date;
+    td2.innerHTML = items[i].day;
+    td3.innerHTML = items[i].event;
+    td4.innerHTML = items[i].factor;
+    td5.innerHTML = items[i].salary;
+    td6.innerHTML = items[i].sum;
 
-  table.children[0].appendChild(row);
+    row.appendChild(td1);
+    row.appendChild(td2);
+    row.appendChild(td3);
+    row.appendChild(td4);
+    row.appendChild(td5);
+    row.appendChild(td6);
+
+    table.children[0].appendChild(row);
+  }
 }
 
 getData();
