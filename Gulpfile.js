@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 
-const scssFiles = 'style/scss/**/*.scss';
-const cssDest   = 'style/css';
+const scssFiles = 'libs/scss/**/*.scss';
+const cssDest   = 'libs/css';
 
 gulp.task('sass', function() {
   gulp.src(scssFiles)

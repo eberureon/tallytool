@@ -8,7 +8,7 @@ function createWindow () {
     win = new BrowserWindow({
         width: 900, 
         height: 700, 
-        icon: __dirname + '/favicon.ico',
+        icon: __dirname + '/img/logo-mil-1024x1024.png',
         resizable: false
     });
 
@@ -19,9 +19,6 @@ function createWindow () {
     }));
 
     win.on('closed', () => {
-        // Dereferenzieren des Fensterobjekts, normalerweise würden Sie Fenster
-        // in einem Array speichern, falls Ihre App mehrere Fenster unterstützt. 
-        // Das ist der Zeitpunkt, an dem Sie das zugehörige Element löschen sollten.
         win = null
     });
 

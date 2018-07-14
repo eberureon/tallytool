@@ -1,7 +1,7 @@
 {
   "name": "abrechnungstool",
   "version": "1.0.0",
-  "description": "",
+  "description": "Abrechnungstool Handball Milbertshofen",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -9,9 +9,9 @@
   "author": "Leon Ebel",
   "license": "ISC",
   "devDependencies": {
-    "@fengyuanchen/datepicker": "^0.6.5",
-    "electron": "^2.0.0",
-    "gulp": "^3.9.1",
+    "electron": "^2.0.5",
+    "gulp": "^4.0.0",
     "gulp-sass": "^4.0.1"
-  }
+  },
+  "dependencies": {}
 }

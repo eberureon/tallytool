@@ -43,11 +43,11 @@ function addRow() {
   row.appendChild(td6);
 
   table.children[0].appendChild(row);
-  
-  // set Items in localStorage
-  let oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
-  let newItems = {
+  // set Items in localStorage
+  let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
+
+  let new_items = {
     'date': date_formatted,
     'day': day_given,
     'event': event,
@@ -64,9 +64,9 @@ function addRow() {
     : td5.innerHTML = parseInt(factor) * 5 + " &euro;"
   };
 
-  oldItems.push(newItems);
+  old_items.push(new_items);
 
-  localStorage.setItem('itemsArray', JSON.stringify(oldItems));
+  localStorage.setItem('itemsArray', JSON.stringify(old_items));
 }
 
 function getData() {
@@ -110,7 +110,7 @@ document.querySelector("#date").valueAsDate = new Date();
 function saveExcel() {
   let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
 
-  let wbout = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
+  let wb_binary = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
 
   function s2ab(s) {
     let buf = new ArrayBuffer(s.length);
@@ -120,7 +120,6 @@ function saveExcel() {
     }
     return buf;
   }
-  
-  saveAs(new Blob([s2ab(wbout)], {type: "application/octet-stream"}), "Abrechnung Mil.xlsx");
-}
 
+  saveAs(new Blob([s2ab(wb_binary)], {type: "application/octet-stream"}), "Abrechnung Mil.xlsx");
+}
