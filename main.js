@@ -8,7 +8,7 @@ function createWindow () {
     win = new BrowserWindow({
         width: 900, 
         height: 700, 
-        icon: __dirname + '/img/logo-mil-1024x1024.png',
+        icon: path.join(__dirname + '/favicon.ico'),
         resizable: false
     });
 
