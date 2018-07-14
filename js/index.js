@@ -83,7 +83,6 @@ function getData() {
     let td5 = document.createElement("td"); // Stundensatz
     let td6 = document.createElement("td"); // Summe
 
-    console.log(items[i].salary);
     td1.innerHTML = items[i].date;
     td2.innerHTML = items[i].day;
     td3.innerHTML = items[i].event;
@@ -106,3 +105,22 @@ getData();
 
 // Show current date in input field
 document.querySelector("#date").valueAsDate = new Date();
+
+// Convert table to excel file
+function saveExcel() {
+  let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
+
+  let wbout = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
+
+  function s2ab(s) {
+    let buf = new ArrayBuffer(s.length);
+    let view = new Uint8Array(buf);
+    for(let i =0; i<s.length; i++) {
+      view[i] = s.charCodeAt(i) & 0xFF
+    }
+    return buf;
+  }
+  
+  saveAs(new Blob([s2ab(wbout)], {type: "application/octet-stream"}), "Abrechnung Mil.xlsx");
+}
+

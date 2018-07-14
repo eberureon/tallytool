@@ -42,22 +42,22 @@
         </select>
         <select class="dropdown" id="event">
             <option value="" disabled>Event:</option>
-            <option value="Training">Training</option> <!-- (Lohn: 5€) -->
-            <option value="Spiel">Spiel</option> <!-- (Lohn: 5€) -->
-            <option value="Qauli">Quali</option> <!-- 3 Spiele 20€ / 4 Spiele 25€-->
+            <option value="Training">Training</option> <!-- 5€ -->
+            <option value="Spiel">Spiel</option> <!-- 5€ -->
+            <option value="Qauli">Quali</option> <!-- 3 Spiele 20€ / 4 Spiele 25€ -->
         </select>
         <input class="input factorInput" id="factor" type="number" value="1" min="1" max="5">
 
         <br><br>
-        <button class="button" name="submit" type="submit" onclick="addRow()">Eintragen</button>
-        <button class="button" name="download" type="button">Herunterladen</button> 
+        <button class="button" id="submit" type="submit" onclick="addRow()">Eintragen</button>
+        <button class="button" id="download" type="button" onclick="saveExcel()">Herunterladen</button> 
     </div>
 
     <!-- SCRIPTS -->
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <!-- <script src="assets/jquery/jquery-3.3.1.min.js"></script> -->
-    <script src="assets/sheetJS/xlsx.min.js"></script>
-    <script src="assets/fileSaver/FileSaver.js"></script>
+    <script src="assets/sheetJS/xlsx.full.min.js"></script>
+    <script src="assets/fileSaver/FileSaver.min.js"></script>
     <script src="js/index.js"></script>
     <script>if (window.module) module = window.module;</script>
 </body>
