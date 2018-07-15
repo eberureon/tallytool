@@ -57,12 +57,12 @@ button, select, input {
 }
 
 .table > tbody > tr {
-  &:nth-child(1), &:nth-child(2), &:nth-child(3) > td {
+  &:nth-child(1) > td, &:nth-child(2) > th, &:nth-child(3) > th {
     background-color: $spindle;
     color: $black;
   }
 
-  &:nth-child(2), &:nth-child(3) > td {
+  &:nth-child(2) > th, &:nth-child(3) > th {
     cursor: text;
   }
 }

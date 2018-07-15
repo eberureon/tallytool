@@ -21,21 +21,21 @@ function addRow() {
   let date_formatted = [day, month, year].join('.');
   let day_given = document.getElementById("day").value;
   let event = document.getElementById("event").value;
-  let factor = document.getElementById("factor").value;
+  let factor = parseInt(document.getElementById("factor").value);
 
   td1.innerHTML = date_formatted;
   td2.innerHTML = day_given;
   td3.innerHTML = event;
   td4.innerHTML = factor;
 
-  event === "Qauli" && factor === "3" ?
+  event === "Qauli" && factor === 3 ?
     (td5.innerHTML = 20,
-     td6.innerHTML = 2)
-  : event === "Qauli" && factor === "4" ?
+     td6.innerHTML = 20)
+  : event === "Qauli" && factor === 4 ?
     (td5.innerHTML = 25,
      td6.innerHTML = 25)
-  : (td5.innerHTML = parseInt(factor) * 5,
-     td6.innerHTML = parseInt(factor) * 5);
+  : (td5.innerHTML = factor * 5,
+     td6.innerHTML = factor * 5);
 
   row.appendChild(td1);
   row.appendChild(td2);
@@ -54,16 +54,8 @@ function addRow() {
     'day': day_given,
     'event': event,
     'factor': factor,
-    'salary': event === "Qauli" && factor === "3" ?
-      td5.innerHTML = 20
-    : event === "Qauli" && factor === "4" ?
-      td5.innerHTML = 25
-    : td5.innerHTML = parseInt(factor) * 5,
-    'sum': event === "Qauli" && factor === "3" ?
-      td5.innerHTML = 20
-    : event === "Qauli" && factor === "4" ?
-      td5.innerHTML = 25
-    : td5.innerHTML = parseInt(factor) * 5
+    'salary': event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5,
+    'sum': event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5
   };
 
   old_items.push(new_items);
