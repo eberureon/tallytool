@@ -1,3 +1,5 @@
+getData();
+
 // add row to table
 function addRow() {
   let table = document.getElementById("table");
@@ -27,13 +29,13 @@ function addRow() {
   td4.innerHTML = factor;
 
   event === "Qauli" && factor === "3" ?
-    (td5.innerHTML = 20 + " &euro;",
-     td6.innerHTML = 20 + " &euro;")
+    (td5.innerHTML = 20,
+     td6.innerHTML = 2)
   : event === "Qauli" && factor === "4" ?
-    (td5.innerHTML = 25 + " &euro;",
-     td6.innerHTML = 25 + " &euro;")
-  : (td5.innerHTML = parseInt(factor) * 5 + " &euro;",
-     td6.innerHTML = parseInt(factor) * 5 + " &euro;");
+    (td5.innerHTML = 25,
+     td6.innerHTML = 25)
+  : (td5.innerHTML = parseInt(factor) * 5,
+     td6.innerHTML = parseInt(factor) * 5);
 
   row.appendChild(td1);
   row.appendChild(td2);
@@ -53,15 +55,15 @@ function addRow() {
     'event': event,
     'factor': factor,
     'salary': event === "Qauli" && factor === "3" ?
-      td5.innerHTML = 20 + " &euro;"
+      td5.innerHTML = 20
     : event === "Qauli" && factor === "4" ?
-      td5.innerHTML = 25 + " &euro;"
-    : td5.innerHTML = parseInt(factor) * 5 + " &euro;",
+      td5.innerHTML = 25
+    : td5.innerHTML = parseInt(factor) * 5,
     'sum': event === "Qauli" && factor === "3" ?
-      td5.innerHTML = 20 + " &euro;"
+      td5.innerHTML = 20
     : event === "Qauli" && factor === "4" ?
-      td5.innerHTML = 25 + " &euro;"
-    : td5.innerHTML = parseInt(factor) * 5 + " &euro;"
+      td5.innerHTML = 25
+    : td5.innerHTML = parseInt(factor) * 5
   };
 
   old_items.push(new_items);
@@ -101,15 +103,12 @@ function getData() {
   }
 }
 
-getData();
-
 // Show current date in input field
 document.querySelector("#date").valueAsDate = new Date();
 
 // Convert table to excel file
 function saveExcel() {
   let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
-
   let wb_binary = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
 
   function s2ab(s) {
@@ -121,5 +120,5 @@ function saveExcel() {
     return buf;
   }
 
-  saveAs(new Blob([s2ab(wb_binary)], {type: "application/octet-stream"}), "Abrechnung Mil.xlsx");
+  saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long"}) + ".xlsx");
 }
