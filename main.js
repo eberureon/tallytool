@@ -6,8 +6,8 @@ let win;
 
 function createWindow () {
     win = new BrowserWindow({
-        width: 900, 
-        height: 700, 
+        width: 1024,
+        height: 768,
         icon: path.join(__dirname + '/favicon.ico'),
         resizable: false
     });
