@@ -19,7 +19,7 @@ button, select, input {
 }
 
 [contentEditable=true]:empty:not(:focus):before{
-  content:attr(placeholder)
+  content:attr(div-placeholder)
 }
 
 .container {
@@ -62,7 +62,7 @@ button, select, input {
     color: $black;
   }
 
-  &:nth-child(2), &:nth-child(3) > td{
+  &:nth-child(2), &:nth-child(3) > td {
     cursor: text;
   }
 }
