@@ -3,7 +3,7 @@ $white: #fff;
 $black: #000;
 $mineShaft: #353233;
 $gray: #848182;
-$spindle: bdd7ee;
+$spindle: #bdd7ee;
 $font: Tahoma, Geneva, sans-serif;
 
 html, body {
@@ -19,7 +19,7 @@ button, select, input {
 }
 
 [contentEditable=true]:empty:not(:focus):before{
-  content:attr(data-text)
+  content:attr(placeholder)
 }
 
 .container {
