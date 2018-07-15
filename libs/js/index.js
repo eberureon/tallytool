@@ -14,14 +14,14 @@ function addRow() {
   let td6 = document.createElement("td"); // Summe
 
   let date_today = new Date(document.getElementById("date").value);
-  day = date_today.getDate();
+  day   = date_today.getDate();
   month = date_today.getMonth() + 1;
-  year = date_today.getFullYear();
+  year  = date_today.getFullYear();
 
   let date_formatted = [day, month, year].join('.');
-  let day_given = document.getElementById("day").value;
-  let event = document.getElementById("event").value;
-  let factor = parseInt(document.getElementById("factor").value);
+  let day_given      = document.getElementById("day").value;
+  let event          = document.getElementById("event").value;
+  let factor         = parseInt(document.getElementById("factor").value);
 
   td1.innerHTML = date_formatted;
   td2.innerHTML = day_given;
@@ -50,12 +50,12 @@ function addRow() {
   let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
   let new_items = {
-    'date': date_formatted,
-    'day': day_given,
-    'event': event,
+    'date'  : date_formatted,
+    'day'   : day_given,
+    'event' : event,
     'factor': factor,
     'salary': event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5,
-    'sum': event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5
+    'sum'   : event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5
   };
 
   old_items.push(new_items);
@@ -104,9 +104,9 @@ function saveExcel() {
   let wb_binary = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
 
   function s2ab(s) {
-    let buf = new ArrayBuffer(s.length);
+    let buf  = new ArrayBuffer(s.length);
     let view = new Uint8Array(buf);
-    for(let i =0; i<s.length; i++) {
+    for(let i = 0; i<s.length; i++) {
       view[i] = s.charCodeAt(i) & 0xFF
     }
     return buf;
