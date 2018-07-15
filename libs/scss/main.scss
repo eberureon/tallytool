@@ -2,7 +2,7 @@ $bg-color: #990000;
 $white: #fff;
 $black: #000;
 $mineShaft: #353233;
-$gray: #848182;
+$gray: #7B7B7B;
 $spindle: #bdd7ee;
 $font: Tahoma, Geneva, sans-serif;
 
@@ -16,6 +16,16 @@ html, body {
 button, select, input {
   font-family: inherit;
   font-size: inherit;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 15px !important;
+  text-align: center;
+  font-size: 14px;
 }
 
 [contentEditable=true]:empty:not(:focus):before{
