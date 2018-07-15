@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+const rename = require('gulp-rename');
+const minify = require('gulp-clean-css');
 const sass = require('gulp-sass');
 
 const scssFiles = 'libs/scss/**/*.scss';
@@ -7,6 +9,8 @@ const cssDest   = 'libs/css';
 gulp.task('sass', function() {
   gulp.src(scssFiles)
     .pipe(sass().on('error', sass.logError))
+    .pipe(minify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(cssDest))
 });
 

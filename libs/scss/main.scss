@@ -1,7 +1,9 @@
 $bg-color: #990000;
 $white: #fff;
+$black: #000;
 $mineShaft: #353233;
 $gray: #848182;
+$spindle: bdd7ee;
 $font: Tahoma, Geneva, sans-serif;
 
 html, body {
@@ -14,6 +16,10 @@ html, body {
 button, select, input {
   font-family: inherit;
   font-size: inherit;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(data-text)
 }
 
 .container {
@@ -36,19 +42,32 @@ button, select, input {
   width: 120px;
 }
 
+.table, th, td {
+  border: 1px solid $white;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 5px;
+}
+
 .table {
   color: $white;
+  cursor: default;
   margin-top: 30px;
   width: 100%;
 }
 
-.table, th, td {
-  border: 1px solid $white;
-  border-collapse: collapse;
-  padding: 5px;
+.table > tbody > tr {
+  &:nth-child(1), &:nth-child(2), &:nth-child(3) > td {
+    background-color: $spindle;
+    color: $black;
+  }
+
+  &:nth-child(2), &:nth-child(3) > td{
+    cursor: text;
+  }
 }
 
-.workHours {
+.entryButtons {
   margin: 70px 0;
 }
 
