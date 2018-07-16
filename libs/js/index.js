@@ -29,7 +29,6 @@ function getFromLS() {
 
 // add row to table
 function submit() {
-  
   let date_today = new Date(document.getElementById("date").value);
   day   = date_today.getDate();
   month = date_today.getMonth() + 1;
@@ -39,20 +38,13 @@ function submit() {
   let day_given      = document.getElementById("day").value;
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
-
-
-  let salary = event === "Quali" && factor === 3 ?
-    20
-  : event === "Quali" && factor === 4 ?
-    25
-  : factor * 5;
+  let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
 
   addRow(date_formatted, day_given, event, factor, salary, salary); //TODO add proper sum 
   saveToLS(date_formatted, day_given, event, factor, salary, salary);
 }
 
 function addRow(date, day, event, factor, salary, sum) {
-
   let row = document.createElement("tr");
 
   let tableData = [];
@@ -60,19 +52,18 @@ function addRow(date, day, event, factor, salary, sum) {
     tableData[i] = document.createElement("td");
   }
 
-    tableData[0].innerHTML = date;
-    tableData[1].innerHTML = day;
-    tableData[2].innerHTML = event;
-    tableData[3].innerHTML = factor;
-    tableData[4].innerHTML = salary;
-    tableData[5].innerHTML = sum;
+  tableData[0].innerHTML = date;
+  tableData[1].innerHTML = day;
+  tableData[2].innerHTML = event;
+  tableData[3].innerHTML = factor;
+  tableData[4].innerHTML = salary;
+  tableData[5].innerHTML = sum;
 
-    for(let i = 0; i < tableData.length; i++) {
-      row.appendChild(tableData[i]);
-    }
+  for(let i = 0; i < tableData.length; i++) {
+    row.appendChild(tableData[i]);
+  }
 
-    table.children[0].appendChild(row);
-
+  table.children[0].appendChild(row);
 }
 
 // Show current date in input field
