@@ -1,18 +1,35 @@
-getData();
+let table = document.getElementById("table");
+getFromLS();
+
+// set Items in localStorage
+function saveToLS(date, day, event, factor, salary, sum) {
+  let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
+
+  let new_items = {
+    'date'  : date,
+    'day'   : day,
+    'event' : event,
+    'factor': factor,
+    'salary': salary,
+    'sum'   : sum
+  };
+
+  old_items.push(new_items);
+
+  localStorage.setItem('itemsArray', JSON.stringify(old_items));
+}
+
+function getFromLS() {
+  let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
+
+  for(i = 0; i < items.length; i++) {
+    addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum);
+  }
+}
 
 // add row to table
-function addRow() {
-  let table = document.getElementById("table");
-
-  let row = document.createElement("tr");
-
-  let td1 = document.createElement("td"); // Datum
-  let td2 = document.createElement("td"); // Tag
-  let td3 = document.createElement("td"); // Event
-  let td4 = document.createElement("td"); // Faktor
-  let td5 = document.createElement("td"); // Stundensatz
-  let td6 = document.createElement("td"); // Summe
-
+function submit() {
+  
   let date_today = new Date(document.getElementById("date").value);
   day   = date_today.getDate();
   month = date_today.getMonth() + 1;
@@ -23,76 +40,39 @@ function addRow() {
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
 
-  td1.innerHTML = date_formatted;
-  td2.innerHTML = day_given;
-  td3.innerHTML = event;
-  td4.innerHTML = factor;
 
-  event === "Qauli" && factor === 3 ?
-    (td5.innerHTML = 20,
-     td6.innerHTML = 20)
-  : event === "Qauli" && factor === 4 ?
-    (td5.innerHTML = 25,
-     td6.innerHTML = 25)
-  : (td5.innerHTML = factor * 5,
-     td6.innerHTML = factor * 5);
+  let salary = event === "Quali" && factor === 3 ?
+    20
+  : event === "Quali" && factor === 4 ?
+    25
+  : factor * 5;
 
-  row.appendChild(td1);
-  row.appendChild(td2);
-  row.appendChild(td3);
-  row.appendChild(td4);
-  row.appendChild(td5);
-  row.appendChild(td6);
-
-  table.children[0].appendChild(row);
-
-  // set Items in localStorage
-  let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
-
-  let new_items = {
-    'date'  : date_formatted,
-    'day'   : day_given,
-    'event' : event,
-    'factor': factor,
-    'salary': event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5,
-    'sum'   : event === "Qauli" && factor === 3 ? 20 : event === "Qauli" && factor === 4 ? 25 : factor * 5
-  };
-
-  old_items.push(new_items);
-
-  localStorage.setItem('itemsArray', JSON.stringify(old_items));
+  addRow(date_formatted, day_given, event, factor, salary, salary); //TODO add proper sum 
+  saveToLS(date_formatted, day_given, event, factor, salary, salary);
 }
 
-function getData() {
-  let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
+function addRow(date, day, event, factor, salary, sum) {
 
-  for(i = 0; i < items.length; i++) {
-    let table = document.getElementById("table");
-    let row = document.createElement("tr");
+  let row = document.createElement("tr");
 
-    let td1 = document.createElement("td"); // Datum
-    let td2 = document.createElement("td"); // Tag
-    let td3 = document.createElement("td"); // Event
-    let td4 = document.createElement("td"); // Faktor
-    let td5 = document.createElement("td"); // Stundensatz
-    let td6 = document.createElement("td"); // Summe
+  let tableData = [];
+  for(let i = 0; i < 6; i++) {
+    tableData[i] = document.createElement("td");
+  }
 
-    td1.innerHTML = items[i].date;
-    td2.innerHTML = items[i].day;
-    td3.innerHTML = items[i].event;
-    td4.innerHTML = items[i].factor;
-    td5.innerHTML = items[i].salary;
-    td6.innerHTML = items[i].sum;
+    tableData[0].innerHTML = date;
+    tableData[1].innerHTML = day;
+    tableData[2].innerHTML = event;
+    tableData[3].innerHTML = factor;
+    tableData[4].innerHTML = salary;
+    tableData[5].innerHTML = sum;
 
-    row.appendChild(td1);
-    row.appendChild(td2);
-    row.appendChild(td3);
-    row.appendChild(td4);
-    row.appendChild(td5);
-    row.appendChild(td6);
+    for(let i = 0; i < tableData.length; i++) {
+      row.appendChild(tableData[i]);
+    }
 
     table.children[0].appendChild(row);
-  }
+
 }
 
 // Show current date in input field
