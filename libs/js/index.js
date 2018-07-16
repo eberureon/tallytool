@@ -22,7 +22,7 @@ function saveToLS(date, day, event, factor, salary, sum) {
 function getFromLS() {
   let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
-  for(i = 0; i < items.length; i++) {
+  for(let i = 0; i < items.length; i++) {
     addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum);
   }
 }
@@ -30,9 +30,9 @@ function getFromLS() {
 // add row to table
 function submit() {
   let date_today = new Date(document.getElementById("date").value);
-  day   = date_today.getDate();
-  month = date_today.getMonth() + 1;
-  year  = date_today.getFullYear();
+  let day   = date_today.getDate();
+  let month = date_today.getMonth() + 1;
+  let year  = date_today.getFullYear();
 
   let date_formatted = [day, month, year].join('.');
   let day_given      = document.getElementById("day").value;
