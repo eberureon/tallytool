@@ -1,4 +1,5 @@
 let table = document.getElementById("table");
+let sum = 0;
 getFromLS();
 
 // set Items in localStorage
@@ -27,6 +28,11 @@ function getFromLS() {
   }
 }
 
+function deleteFromLS() {
+  localStorage.removeItem('itemsArray');
+  location.reload();
+}
+
 // add row to table
 function submit() {
   let date_today = new Date(document.getElementById("date").value);
@@ -40,8 +46,10 @@ function submit() {
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
 
-  addRow(date_formatted, day_given, event, factor, salary, salary); //TODO add proper sum 
-  saveToLS(date_formatted, day_given, event, factor, salary, salary);
+  sum += salary;
+
+  addRow(date_formatted, day_given, event, factor, salary, sum);
+  saveToLS(date_formatted, day_given, event, factor, salary, sum);
 }
 
 function addRow(date, day, event, factor, salary, sum) {
