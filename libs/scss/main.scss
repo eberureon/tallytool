@@ -13,23 +13,12 @@ html, body {
   padding: 0;
 }
 
-button, select, input {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 15px !important;
-  text-align: center;
-  font-size: 14px;
-}
-
 [contentEditable=true]:empty:not(:focus):before{
   content:attr(div-placeholder)
+}
+
+.wrapper {
+  min-height: calc(100vh - 100px);
 }
 
 .container {
@@ -81,6 +70,11 @@ footer {
   margin: 30px 0;
 }
 
+button, select, input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .button, .input, .dropdown {
   border: 1px solid transparent;
   border-radius: 5px;
@@ -107,4 +101,10 @@ footer {
     background-color: $gray;
     color: $white; 
   }
+}
+
+footer {
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
 }
