@@ -35,12 +35,17 @@ function deleteFromLS() {
 
 // add row to table
 function submit() {
-  let date_today = new Date(document.getElementById("date").value);
-  let day   = date_today.getDate();
-  let month = date_today.getMonth() + 1;
-  let year  = date_today.getFullYear();
 
-  let date_formatted = [day, month, year].join('.');
+  function formatDate() {
+    let date_today = new Date(document.getElementById("date").value);
+    let day   = date_today.getDate();
+    let month = date_today.getMonth() + 1;
+    let year  = date_today.getFullYear();
+
+    return [day, month, year].join('.');
+  }
+
+  let date_formatted = formatDate();
   let day_given      = document.getElementById("day").value;
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
