@@ -17,29 +17,27 @@
     <script>if (window.module) module = window.module;</script>
 </head>
 <body>
-    <div class="wrapper">
-        <header class="container">
-            <h1 class="header">Abrechnungstool Mil</h1>
-            <img class="logo" src="img/logo-mil-original.png" alt="Logo">
-        </header>
+    <header>
+        <h1 class="header">Abrechnungstool Mil</h1>
+        <img class="logo" src="img/logo-mil-original.png" alt="Logo">
+    </header>
 
-        <div class="container">
-            <table class="table" id="table">
-                <tr><td colspan="6">Übungsleitervergütung Handball</td></tr>
-                <tr><th colspan="6"><div contenteditable="true" div-placeholder="Hier Jugend eintragen"></div></th></tr>
-                <tr><th colspan="6"><div contenteditable="true" div-placeholder="Hier Monat eintragen"></div></th></tr>
-                <tr>
-                    <th>Datum</th>
-                    <th>Tag</th>
-                    <th>Event</th>
-                    <th>Faktor</th>
-                    <th>Stundensatz (&euro;)</th>
-                    <th>Summe (&euro;)</th>
-                </tr>
-            </table>
-        </div>
+    <div class="content">
+        <table class="table" id="table">
+            <tr><td colspan="6">Übungsleitervergütung Handball</td></tr>
+            <tr><th colspan="6"><div contenteditable="true" div-placeholder="Hier Jugend eintragen"></div></th></tr>
+            <tr><th colspan="6"><div contenteditable="true" div-placeholder="Hier Monat eintragen"></div></th></tr>
+            <tr>
+                <th>Datum</th>
+                <th>Tag</th>
+                <th>Event</th>
+                <th>Faktor</th>
+                <th>Stundensatz (&euro;)</th>
+                <th>Summe (&euro;)</th>
+            </tr>
+        </table>
 
-        <div class="container entryButtons">
+        <div class="entryButtons">
             <input type="date" class="input dateInput" id="date"/>
             <select class="dropdown" id="day">
                 <option value="" disabled>Tag:</option>
@@ -66,6 +64,6 @@
         </div>
     </div>
 
-    <footer class="container">&copy; Copyright 2018 Leon Ebel <!-- All Rights Reserved --></footer>
+    <footer>&copy; Copyright 2018 Leon Ebel <!-- All Rights Reserved --></footer>
 </body>
 </html>
