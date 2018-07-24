@@ -11,7 +11,7 @@ function saveToLS(date, day, event, factor, salary, sum) {
     'event' : event,
     'factor': factor,
     'salary': salary,
-    'sum'   : sum
+    'sum'   : parseInt(sum)
   };
 
   old_items.push(new_items);

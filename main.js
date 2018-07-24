@@ -6,8 +6,8 @@ let win;
 
 function createWindow () {
     win = new BrowserWindow({
-        width: 1024,
-        height: 768,
+        width: 850,
+        height: 800,
         icon: path.join(__dirname + '/favicon.ico'),
         resizable: false
     });
@@ -25,7 +25,7 @@ function createWindow () {
     // win.webContents.openDevTools()
 }
 
-app.on('ready', createWindow);
+app.on('ready', createWindow);5
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
