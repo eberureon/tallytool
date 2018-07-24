@@ -1,5 +1,4 @@
 let table = document.getElementById("table");
-let sum = 0;
 getFromLS();
 
 // set Items in localStorage
@@ -29,7 +28,7 @@ function getFromLS() {
 }
 
 function deleteFromLS() {
-  localStorage.removeItem('itemsArray');
+  localStorage.clear();
   location.reload();
 }
 
@@ -50,8 +49,9 @@ function submit() {
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
+  let sum            = parseInt(localStorage.getItem('sum')) || [];
 
-  sum += salary;
+  localStorage.setItem('sum', sum += salary);
 
   addRow(date_formatted, day_given, event, factor, salary, sum);
   saveToLS(date_formatted, day_given, event, factor, salary, sum);
