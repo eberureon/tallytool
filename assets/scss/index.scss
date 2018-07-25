@@ -162,7 +162,7 @@ html, body{
   margin: 6rem 3rem 0;
 
   .profilePicture {
-    border: 2px solid;
+    border: 2px solid $codGray;
     border-left-style: dashed;
     border-right-style: dashed;
     border-radius: 100%;
@@ -195,7 +195,7 @@ html, body{
 }
 
 .JSPicture {
-  border: 2px solid;
+  border: 2px solid $codGray;
   border-left-style: dashed;
   border-right-style: dashed;
   border-radius: 100%;
