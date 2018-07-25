@@ -42,30 +42,24 @@
   <meta name='msapplication-wide310x150logo' content='assets/img/favicon/mstile-310x150.png' />
 
   <!-- STYLES -->
-  <link rel='stylesheet' type='text/css' href='css/index.css'>
+  <link rel='stylesheet' type='text/css' href='style/css/index.css'>
 
-    <!-- SCRIPTS -->
-    <script async src='libs/fontawesome/fontawesome-all.js'></script>
-    <script async src='assets/js/main.js'></script>
-    <script defer src='libs/jquery/jquery-3.3.1.min.js'></script>
+  <!-- SCRIPTS -->
+  <script defer src='libs/jquery/jquery-3.3.1.min.js'></script>
+  <script async src='assets/js/main.js'></script>
+  <script async src='libs/fontawesome/fontawesome-all.js'></script>
 </head>
 <body>
-  <section id='home' class='wrapper home'>
+<div class='wrapper'>
+  <section id='home' class='home'>
     <div class='langDropdown'>
-      <label for='langDropdownBtn'>
+      <label for='langDropdownBtn'></label>
         <input class='langDropdownBtn' id='langDropdownBtn' type='checkbox'>
         <ul class='langDropdownList'>
-          <li><i class='fas fa-language'></i>
-            Sprache w&auml;hlen
-          </li>
-          <a href='en/index.htm'> <!-- Change href to ='/en' when on Server -->
-            <li>English</li>
-          </a>
-          <a href='index.htm'> <!-- Change href to ='/' when on Server -->
-            <li>Deutsch</li>
-          </a>
+          <li><i class='fas fa-language'></i>Sprache w&auml;hlen</li>
+          <a href='en/index.htm'><li>English</li></a> <!-- Change href to ='/en' when on Server -->
+          <a href='index.htm'><li>Deutsch</li></a> <!-- Change href to ='/' when on Server -->
         </ul>
-      </label>
     </div>
 
     <div class='homeText'>
@@ -74,12 +68,13 @@
     </div>
   </section>
 
-  <nav class='navbar wrapper'>
+  <nav class='navbar'>
     <button class='hamburger hamburger--boring' type='button'>
       <span class='hamburger-box'>
         <span class='hamburger-inner'></span>
       </span>
     </button>
+
     <ul class='mobileNavList'>
       <li><a href='#home' class='active'>Home</a></li>
       <li><a href='#aboutMe'>&Uuml;ber mich</a></li>
@@ -89,51 +84,47 @@
   </nav>
 
   <section id='aboutMe' class='aboutMe'>
-    <div class='wrapper'>
       <h1 class='title'>&Uuml;ber mich</h1>
+
       <div class='information'>
         <img class='profilePicture' src='assets/img/pic.jpg' alt='My profile picture'>
         <p class='aboutMeText'>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </p>
       </div>
-    </div>
   </section>
 
   <section id='experience' class='experience'>
-    <div class='wrapper'>
-        <h1 class='title'>Erfahrung</h1>
+    <h1 class='title'>Erfahrung</h1>
 
-          <div class='employer'>
-            <h2 class='experienceTitle'>Arbeitgeber&#58;</h2>
-            <a href='https://www.jochen-schweizer.de' target='_blank'>
-              <img class='JSPicture' src='assets/img/js_logo.jpg' alt='Jochen Schweizer'>
-            </a>
-            <div class='employerText'>
-              <p>2016</p>
-              <p>Software Entwickler</p>
-              <p>Jochen Schweizer</p>
-            </div>
-          </div>
-
-          <div class='skills'>
-              <h2 class='experienceTitle'>Kompetenzen&#58;</h2>
-              <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>LESS</li>
-                <li>SASS</li>
-                <li>JavaScript</li>
-                <li>Node.js</li>
-              </ul>
-            </div>
+    <div class='employer'>
+      <h2 class='experienceTitle'>Arbeitgeber&#58;</h2>
+      <a href='https://www.jochen-schweizer.de' target='_blank'>
+        <img class='JSPicture' src='assets/img/js_logo.jpg' alt='Jochen Schweizer'>
+      </a>
+      <div class='employerText'>
+        <p>2016</p>
+        <p>Software Entwickler</p>
+        <p>Jochen Schweizer</p>
+      </div>
     </div>
+
+    <div class='skills'>
+        <h2 class='experienceTitle'>Kompetenzen&#58;</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>LESS</li>
+          <li>SASS</li>
+          <li>JavaScript</li>
+          <li>Node.js</li>
+        </ul>
+      </div>
   </section>
 
   <section id='contact' class='contact'>
-    <div class='wrapper'>
-        <h1 class='title'>Kontakt Formular</h1>
-    </div>
+      <h1 class='title'>Kontakt Formular</h1>
   </section>
+</div>
 </body>
 </html>
