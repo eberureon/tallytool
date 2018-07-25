@@ -227,41 +227,6 @@ html, body{
  0% { transform: translateY(-150px) }
 }
 
-@media screen and (max-width: 1024px) {
-  .information {
-    .profilePicture {
-      height: 120px;
-      width: 120px;
-    }
-
-    .aboutMeText {
-      padding: 0 0 0 10rem;
-    }
-  }
-
-  .employer {
-    padding-left: 0;
-
-    .employerText {
-      margin-left: 15rem;
-    }
-  }
-
-  .JSPicture {
-    margin: 1rem 0 0 5rem;
-    height: 100px;
-    width: 100px;
-  }
-
-  .experienceTitle {
-    margin-left: 2rem;
-  }
-
-  .skills {
-    padding: 20rem 0 0;
-  }
-}
-
 @media screen and (max-width: 767px) {
   .hamburger {
     display: inline-block;
@@ -314,5 +279,52 @@ html, body{
 
   .experienceTitle {
     text-align: center;
+    margin-left: 0 !important;
+  }
+
+  //.JSPicture {
+  //  margin: 1rem 0 0 10rem !important;
+  //}
+  //
+  //.employer {
+  //  .employerText {
+  //    margin-left: 18rem !important;
+  //  }
+  //}
+}
+
+@media screen and (max-width: 1024px) {
+  .information {
+    .profilePicture {
+      height: 120px;
+      width: 120px;
+    }
+
+    .aboutMeText {
+      padding: 0 0 0 10rem;
+    }
+  }
+
+  .employer {
+    display: flow-root;
+    padding-left: 0;
+
+    .employerText {
+      margin-left: 13rem;
+    }
+  }
+
+  .JSPicture {
+    margin: 1rem 0 0 5rem;
+    height: 100px;
+    width: 100px;
+  }
+
+  .experienceTitle {
+    margin-left: 2rem;
+  }
+
+  .skills {
+    padding: 20rem 0 0;
   }
 }
