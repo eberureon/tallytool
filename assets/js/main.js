@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     $('a').each(function () {
       $(this).removeClass('active');
-    })
+    });
       $(this).addClass('active');
     
     let target  = this.hash;
@@ -38,7 +38,7 @@ $(document).ready(function () {
   });
 });
 
-function onScroll(event){
+function onScroll(){
   var scrollPos = $(document).scrollTop();
   $('.navbar a').each(function () {
     var currLink = $(this);
