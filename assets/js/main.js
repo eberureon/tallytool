@@ -60,3 +60,5 @@ $href.on('click', function () {
   $('.hamburger').removeClass('is-active');
   $('.navbar ul').removeClass('show');
 });
+
+$('.currentYear').html(new Date().getFullYear());
