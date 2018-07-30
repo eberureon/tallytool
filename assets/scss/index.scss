@@ -229,7 +229,11 @@ footer {
 }
 
 .copyright {
+  display: inline-block;
+}
 
+.social-media {
+  display: inline-block;
 }
 
 @keyframes slideDown {
