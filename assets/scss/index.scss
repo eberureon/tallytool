@@ -9,6 +9,8 @@ $alabaster: #FBFBFB;
 $capeCod: #8A8A8A;
 $backgroundColor: rgba(0, 0, 0, 0.05);
 
+// TODO: change css to be compatible with media screen -> min-width
+
 html, body{
   padding: 0;
   margin: 0;
@@ -228,12 +230,15 @@ footer {
   padding: 1rem 0;
 }
 
-.copyright {
+.copyright,  .social-media, .imprint {
   display: inline-block;
-}
+  width: 25%;
 
-.social-media {
-  display: inline-block;
+  a {
+    color: $codGray;
+    text-decoration: none;
+    padding: 0 5px;
+  }
 }
 
 @keyframes slideDown {
