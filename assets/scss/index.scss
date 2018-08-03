@@ -9,8 +9,6 @@ $alabaster: #FBFBFB;
 $capeCod: #8A8A8A;
 $backgroundColor: rgba(0, 0, 0, 0.05);
 
-// TODO: change css to be compatible with media screen -> min-width
-
 html, body{
   padding: 0;
   margin: 0;
@@ -23,7 +21,7 @@ html, body{
   font-weight: 300;
 }
 
-.home {
+.homeContent {
   background: url(../../assets/img/background.jpg) no-repeat center center transparent;
   background-size: cover;
   -webkit-background-size: cover;
@@ -153,32 +151,31 @@ html, body{
   text-transform: uppercase;
 }
 
-.aboutMe, .vita, .experience, .contact {
+.content {
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   padding: 3rem;
 }
 
-.information {
-  //margin: 6rem 20rem 0;
-  margin: 0;
+  .aboutMePicture {
+    text-align: center;
+    padding: 2rem;
 
-  .profilePicture {
-    border: 2px solid $codGray;
-    border-left-style: dashed;
-    border-right-style: dashed;
-    border-radius: 100%;
-    //margin: 3rem 20vw;
-    margin-left: 3rem;
-    position: absolute;
-    height: 120px;
-    width: 120px;
+    .profilePicture {
+      border: 2px solid $codGray;
+      border-left-style: dashed;
+      border-right-style: dashed;
+      border-radius: 100%;
+      height: 120px;
+      width: 120px;
+    }
   }
 
-  .aboutMeText {
-    padding: 9rem 0 0 1rem;
+  .aboutMeInformation {
+    .aboutMeText {
+      margin: 1rem;
+    }
   }
-}
 
 .employer {
   display: flow-root;
@@ -284,13 +281,21 @@ footer {
 }
 
 @media screen and (min-width: 766px) {
-  .information {
+  .aboutMePicture {
+    text-align: left;
+    padding-left: 0;
+    position: absolute;
 
     .profilePicture {
-      margin-left: 0;
+      height: 150px;
+      width: 150px;
     }
+  }
+
+  .aboutMeInformation {
     .aboutMeText {
-      padding: 0 0 0 10rem;
+      padding: 2rem 0 0 11rem;
+      text-align: justify;
     }
   }
 
@@ -307,7 +312,8 @@ footer {
   }
 
   .skills {
-    padding: 0 60vw;
+    padding-top: 0;
+    padding-left: 60vw;
   }
 
   .copyright, .social-media, .imprint {
@@ -317,14 +323,16 @@ footer {
 }
 
 @media screen and (min-width: 1023px) {
-  .information {
+  .aboutMePicture {
     .profilePicture {
       height: 164px;
       width: 164px;
     }
+  }
 
+  .aboutMeInformation {
     .aboutMeText {
-      padding: 1rem 0 0 12rem;
+      padding: 2.5rem 0 0 14rem;
     }
   }
 }
