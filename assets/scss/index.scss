@@ -146,7 +146,6 @@ html, body{
   color: $codGray;
   font-size: 35px;
   font-weight: 700;
-  //margin: 0;
   text-align: center;
   text-transform: uppercase;
 }
@@ -155,7 +154,7 @@ html, body{
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 3rem;
+  padding: 3rem 3rem 5rem;
 }
 
 .aboutMePicture {
@@ -230,6 +229,7 @@ footer {
 
 .copyright,  .social-media, .imprint {
   padding-bottom: 1rem;
+
   a {
     color: $codGray;
     text-decoration: none;
@@ -280,7 +280,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 766px) {
   .aboutMePicture {
     float: left;
     padding-left: 0;
