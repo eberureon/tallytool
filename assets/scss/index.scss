@@ -146,7 +146,7 @@ html, body{
   color: $codGray;
   font-size: 35px;
   font-weight: 700;
-  margin: 0;
+  //margin: 0;
   text-align: center;
   text-transform: uppercase;
 }
@@ -154,28 +154,27 @@ html, body{
 .content {
   background-color: $backgroundColor;
   box-shadow: inset 0 1px 0 0 $backgroundColor, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   padding: 3rem;
 }
 
-  .aboutMePicture {
-    text-align: center;
-    padding: 2rem;
+.aboutMePicture {
+  text-align: center;
+  padding: 2rem 2rem 5rem;
+}
 
-    .profilePicture {
-      border: 2px solid $codGray;
-      border-left-style: dashed;
-      border-right-style: dashed;
-      border-radius: 100%;
-      height: 120px;
-      width: 120px;
-    }
-  }
+.profilePicture {
+  border: 2px solid $codGray;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-radius: 100%;
+  height: 120px;
+  width: 120px;
+}
 
-  .aboutMeInformation {
-    .aboutMeText {
-      margin: 1rem;
-    }
-  }
+.aboutMeInformation {
+  text-align: justify;
+}
 
 .employer {
   display: flow-root;
@@ -226,10 +225,11 @@ html, body{
 
 footer {
   text-align: center;
-  padding: 1rem 0;
+  padding-top: 1rem;
 }
 
 .copyright,  .social-media, .imprint {
+  padding-bottom: 1rem;
   a {
     color: $codGray;
     text-decoration: none;
@@ -282,21 +282,18 @@ footer {
 
 @media screen and (min-width: 768px) {
   .aboutMePicture {
-    text-align: left;
+    float: left;
     padding-left: 0;
-    position: absolute;
+    vertical-align: top;
+  }
 
-    .profilePicture {
-      height: 150px;
-      width: 150px;
-    }
+  .profilePicture {
+    height: 150px;
+    width: 150px;
   }
 
   .aboutMeInformation {
-    .aboutMeText {
-      padding: 2rem 0 0 11rem;
-      text-align: justify;
-    }
+    padding: 2rem;
   }
 
   .employer {
@@ -322,17 +319,13 @@ footer {
   }
 }
 
-@media screen and (min-width: 1025px) {
-  .aboutMePicture {
-    .profilePicture {
-      height: 164px;
-      width: 164px;
-    }
+@media screen and (min-width: 1200px) {
+  .profilePicture {
+    height: 164px;
+    width: 164px;
   }
 
   .aboutMeInformation {
-    .aboutMeText {
-      padding: 2.5rem 0 0 14rem;
-    }
+    padding: 4rem;
   }
 }
