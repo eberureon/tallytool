@@ -254,6 +254,9 @@ html, body{
   background-color: transparent;
   border: 1px solid $capeCod;
   color: $capeCod;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   &:hover {
     background-color: $capeCod;
@@ -272,7 +275,7 @@ footer {
   a {
     color: $codGray;
     text-decoration: none;
-    padding: 0 5px;
+    padding: 0 10px;
   }
 }
 
@@ -367,6 +370,10 @@ footer {
   .copyright, .socialMedia, .imprint {
     display: inline-block;
     width: 25%;
+
+    a {
+      padding: 0 5px;
+    }
   }
 }
 
