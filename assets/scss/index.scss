@@ -1,15 +1,8 @@
 @import 'partials/fontawesome-custom';
 @import 'libs/burger_menu/hamburgers';
 @import 'partials/fonts';
-
-$font: 'Roboto Slab', serif;
-$defaultFontSize: 16px;
-$codGray: #191919;
-$alabaster: #FBFBFB;
-$capeCod: #8A8A8A;
-$transparent: rgba(0,0,0,.05);
-$blueJeans: rgba(82,168,236,.6); // valid Textfield shadow
-$paleVioletRed: rgba(219,112,147,0.8); // invalid Textfield shadow
+@import 'partials/default';
+@import 'partials/colors';
 
 %inputField {
   border-color: transparent;
@@ -44,7 +37,7 @@ html, body{
 .wrapper {
   color: $codGray;
   font-family: $font;
-  font-size: $defaultFontSize;
+  font-size: 16px;
   font-weight: 300;
 }
 
@@ -70,7 +63,7 @@ html, body{
 }
 
 .homeDesc {
-  font-size: 28px;
+  font-size: $title;
   font-weight: 100;
   margin: 0;
 }
@@ -250,7 +243,7 @@ html, body{
 }
 
 .experienceTitle {
-  font-size: 27px;
+  font-size: $title;
   font-weight: 300;
   text-align: center;
   text-transform: uppercase;
