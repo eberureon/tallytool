@@ -61,4 +61,7 @@ $href.on('click', function () {
   $('.navbar ul').removeClass('show');
 });
 
+// Get current Year in Imprint
 $('.currentYear').html(new Date().getFullYear());
+
+// E-Mail validation
