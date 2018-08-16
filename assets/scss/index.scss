@@ -22,7 +22,7 @@
   }
 
   &:focus:invalid {
-    border-color: #E21A11;
+    border-color: $trackAndField;
     -webkit-box-shadow: 0 0 6px $paleVioletRed;
     -moz-box-shadow: 0 0 6px $paleVioletRed;
     box-shadow: 0 0 6px $paleVioletRed;
@@ -36,9 +36,7 @@ html, body{
 
 .wrapper {
   color: $codGray;
-  font-family: $font;
-  font-size: 16px;
-  font-weight: 300;
+  font: 400 16px $font;
 }
 
 .homeContent {
@@ -254,6 +252,17 @@ html, body{
   @extend %inputField;
 }
 
+.valMessage {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: $trackAndField;
+  font-family: inherit;
+  margin-left: 15px;
+  text-align: left;
+  text-decoration: underline;
+}
+
 .contactMessage {
   @extend %inputField;
   height: 250px;
@@ -264,14 +273,14 @@ html, body{
   background-color: transparent;
   border: 1px solid $codGray;
   color: $codGray;
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  &:hover {
+  &:hover:enabled {
     background-color: $flagstone;
     border-color: transparent;
     color: $alabaster;
+    cursor: pointer;
   }
 }
 
@@ -374,6 +383,10 @@ footer {
     width: 75%;
   }
 
+  .valMessage {
+    width: 75%;
+  }
+
   .contactSubmit {
     width: 50%;
   }
@@ -399,6 +412,10 @@ footer {
   }
 
   .contactMessage, .contactInput {
+    width: 50%;
+  }
+
+  .valMessage {
     width: 50%;
   }
 
