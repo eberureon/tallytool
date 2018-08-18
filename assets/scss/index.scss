@@ -36,7 +36,7 @@ html, body{
 
 .wrapper {
   color: $codGray;
-  font: 400 16px $font;
+  font: 400 17px $font;
 }
 
 .homeContent {
@@ -123,6 +123,7 @@ html, body{
   background-color: $flagstone;
   border-bottom: 2px solid $alabaster;
   display: inline-block;
+  font-size: 16px;
   width: 100%;
 
   .active, a:hover {

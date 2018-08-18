@@ -65,49 +65,49 @@ $href.on('click', function () {
 $('.currentYear').html(new Date().getFullYear());
 
 /* MAIL VALIDATION START */
-function checkForCloseMatch(longString, shortString) {
+function checkForCloseMatch(entry, domain) {
     // too many false positives with very short strings
-    if (shortString.length < 3) return '';
+    if (domain.length < 3) return '';
 
-    // test if the shortString is in the string (so everything is fine)
-    if (longString.includes(shortString)) return '';
+    // test if the domain is in the string (so everything is fine)
+    if (entry.includes(domain)) return '';
 
-    // split the shortString string into two at each postion e.g. g|mail gm|ail gma|il gmai|l
+    // split the domain string into two at each postion e.g. g|mail gm|ail gma|il gmai|l
     // and test that each half exists with one gap
-    for (let i = 1; i < shortString.length; i++) {
-        const firstPart = shortString.substring(0, i);
-        const secondPart = shortString.substring(i);
+    for (let i = 1; i < domain.length; i++) {
+        const firstPart = domain.substring(0, i);
+        const secondPart = domain.substring(i);
 
         // test for wrong letter
         const wrongLetterRegEx = new RegExp(`${firstPart}.${secondPart.substring(1)}`);
-        if (wrongLetterRegEx.test(longString)) {
-            return longString.replace(wrongLetterRegEx, shortString);
+        if (wrongLetterRegEx.test(entry)) {
+            return entry.replace(wrongLetterRegEx, domain);
         }
 
         // test for extra letter
         const extraLetterRegEx = new RegExp(`${firstPart}.${secondPart}`);
-        if (extraLetterRegEx.test(longString)) {
-            return longString.replace(extraLetterRegEx, shortString);
+        if (extraLetterRegEx.test(entry)) {
+            return entry.replace(extraLetterRegEx, domain);
         }
 
         // test for missing letter
         if (secondPart !== 'mail') {
             const missingLetterRegEx = new RegExp(`${firstPart}{0}${secondPart}`);
-            if (missingLetterRegEx.test(longString)) {
-                return longString.replace(missingLetterRegEx, shortString);
+            if (missingLetterRegEx.test(entry)) {
+                return entry.replace(missingLetterRegEx, domain);
             }
         }
 
         // test for switched letters
         const switchedLetters = [
-            shortString.substring(0, i - 1),
-            shortString.charAt(i),
-            shortString.charAt(i - 1),
-            shortString.substring(i + 1),
+            domain.substring(0, i - 1),
+            domain.charAt(i),
+            domain.charAt(i - 1),
+            domain.substring(i + 1),
         ].join('');
 
-        if (longString.includes(switchedLetters)) {
-            return longString.replace(switchedLetters, shortString);
+        if (entry.includes(switchedLetters)) {
+            return entry.replace(switchedLetters, domain);
         }
     }
 
@@ -116,7 +116,7 @@ function checkForCloseMatch(longString, shortString) {
 }
 
 function checkForDomainTypo(userEmail) {
-    const domains = ['googlemail', 'hotmail', 'outlook', 'yahoo', 'icloud', 'mail', 'web'];
+    const domains = ['googlemail', 'hotmail', 'outlook', 'yahoo', 'icloud', 'mail'];
     const [leftPart, rightPart] = userEmail.split('@');
 
     for (let i = 0; i < domains.length; i++) {
