@@ -55,11 +55,6 @@ hamburger.addEventListener('click', function() {
   hamburger.classList.toggle('is-active');
 });
 
-// Close Burger Menu when Link clicked
-$href.on('click', function () {
-  hamburger.classList.toggle('is-active');
-});
-
 // Get current Year in Imprint
 $('.currentYear').html(new Date().getFullYear());
 
