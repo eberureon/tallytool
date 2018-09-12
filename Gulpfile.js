@@ -17,4 +17,3 @@ gulp.task('sass', function() {
 gulp.task('watch', ['sass'], function() {
   gulp.watch(scssFiles, ['sass']);
 });
-
