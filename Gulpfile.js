@@ -3,8 +3,8 @@ const rename = require('gulp-rename');
 const minify = require('gulp-clean-css');
 const sass = require('gulp-sass');
 
-const scssFiles = 'libs/scss/**/*.scss';
-const cssDest   = 'libs/css';
+const scssFiles = 'assets/scss/**/*.scss';
+const cssDest   = 'assets/css';
 
 gulp.task('sass', function() {
   gulp.src(scssFiles)
