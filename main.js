@@ -6,9 +6,10 @@ let win;
 
 function createWindow () {
     win = new BrowserWindow({
-        width: 850,
-        height: 800,
+        title: 'Abrechnungstool Milbertshofen Handball',
         icon: path.join(__dirname + '/favicon.ico'),
+        height: 800,
+        width: 850,
         resizable: false
     });
 
@@ -25,7 +26,7 @@ function createWindow () {
     // win.webContents.openDevTools()
 }
 
-app.on('ready', createWindow);5
+app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
