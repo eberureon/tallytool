@@ -7,3 +7,6 @@
 
 node_modules
 libs/css
+
+#Application
+build
