@@ -32,20 +32,46 @@ function deleteFromLS() {
   location.reload();
 }
 
+// Show current date in input field
+document.querySelector("#date").valueAsDate = new Date();
+
 // add row to table
+function addRow(date, day, event, factor, salary, sum) {
+    let row = document.createElement("tr");
+
+    let tableData = [];
+    for(let i = 0; i < 6; i++) {
+        tableData[i] = document.createElement("td");
+    }
+
+    tableData[0].innerHTML = date;
+    tableData[1].innerHTML = day;
+    tableData[2].innerHTML = event;
+    tableData[3].innerHTML = factor;
+    tableData[4].innerHTML = salary;
+    tableData[5].innerHTML = sum;
+
+    for(let i = 0; i < tableData.length; i++) {
+        row.appendChild(tableData[i]);
+    }
+
+    table.children[0].appendChild(row);
+}
+
 function submit() {
+  let selected_day = new Date(document.getElementById("date").value);
+  let weekdays = [ 'So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa' ];
 
   function formatDate() {
-    let date_today = new Date(document.getElementById("date").value);
-    let day   = date_today.getDate();
-    let month = date_today.getMonth() + 1;
-    let year  = date_today.getFullYear();
+    let day   = selected_day.getDate();
+    let month = selected_day.getMonth() + 1;
+    let year  = selected_day.getFullYear();
 
     return [day, month, year].join('.');
   }
 
   let date_formatted = formatDate();
-  let day_given      = document.getElementById("day").value;
+  let day_of_date    = weekdays[selected_day.getDay()];
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
@@ -53,34 +79,9 @@ function submit() {
 
   localStorage.setItem('sum', sum += salary);
 
-  addRow(date_formatted, day_given, event, factor, salary, sum);
-  saveToLS(date_formatted, day_given, event, factor, salary, sum);
+  addRow(date_formatted, day_of_date, event, factor, salary, sum);
+  saveToLS(date_formatted, day_of_date, event, factor, salary, sum);
 }
-
-function addRow(date, day, event, factor, salary, sum) {
-  let row = document.createElement("tr");
-
-  let tableData = [];
-  for(let i = 0; i < 6; i++) {
-    tableData[i] = document.createElement("td");
-  }
-
-  tableData[0].innerHTML = date;
-  tableData[1].innerHTML = day;
-  tableData[2].innerHTML = event;
-  tableData[3].innerHTML = factor;
-  tableData[4].innerHTML = salary;
-  tableData[5].innerHTML = sum;
-
-  for(let i = 0; i < tableData.length; i++) {
-    row.appendChild(tableData[i]);
-  }
-
-  table.children[0].appendChild(row);
-}
-
-// Show current date in input field
-document.querySelector("#date").valueAsDate = new Date();
 
 // Convert table to excel file
 function saveExcel() {
