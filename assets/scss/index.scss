@@ -208,11 +208,11 @@ html, body{
 .employer {
   padding-left: 0;
 
-  .employerText {
-    margin-left: 8rem;
+  .employerContent {
+    padding-left: 5rem;
 
     p {
-      margin: 0 0 3px;
+      margin: 0 0 3px 8rem;
     }
 
     a {
@@ -346,7 +346,6 @@ footer {
 @media screen and (min-width: 766px) {
   .aboutMePicture {
     float: left;
-    padding-left: 0;
     vertical-align: top;
   }
 
@@ -357,23 +356,6 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
-  }
-
-  .employer {
-    height: 0;
-
-    .employerText {
-      margin-top: 2.3rem;
-    }
-  }
-
-  .experienceTitle {
-    text-align: initial;
-  }
-
-  .skills {
-    padding-top: 0;
-    padding-left: 60vw;
   }
 
   .contactForm {
@@ -403,6 +385,10 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+  .aboutMePicture {
+    padding-left: 5rem;
+  }
+
   .profilePicture {
     height: 164px;
     width: 164px;
@@ -410,6 +396,20 @@ footer {
 
   .aboutMeInformation {
     padding: 4rem;
+  }
+
+  .employer {
+    height: 0;
+
+    .experienceTitle {
+      text-align: initial;
+      padding-left: 10rem;
+    }
+  }
+
+  .skills {
+    padding-top: 0;
+    padding-left: 60vw;
   }
 
   .contactMessage, .contactInput {
