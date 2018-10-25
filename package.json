@@ -9,6 +9,6 @@
   "devDependencies": {},
   "scripts": {
     "watch:scss": "sass --watch assets/scss/index.scss:style/css/index.css",
-    "build:scss": "sass assets/scss/index.scss:style/css/index.min.css --style compressed"
+    "build:scss": "sass assets/scss/index.scss style/css/index.min.css --style compressed"
   }
 }

@@ -6,3 +6,5 @@
 .DS_Store
 
 style/css
+
+yarn-error.log
