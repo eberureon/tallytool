@@ -209,6 +209,9 @@ html, body{
   padding-left: 0;
 
   .employerContent {
+    margin: auto;
+    width: 300px;
+
     p {
       margin: 0 0 3px 8rem;
     }
@@ -356,12 +359,6 @@ footer {
     padding: 2rem;
   }
 
-  .employer {
-    .employerContent {
-      padding-left: 5rem;
-    }
-  }
-
   .contactForm {
     text-align: center;
   }
@@ -404,6 +401,12 @@ footer {
 
   .employer {
     height: 0;
+
+    .employerContent {
+      padding-left: 5rem;
+      margin: initial;
+      width: initial;
+    }
 
     .experienceTitle {
       text-align: initial;
