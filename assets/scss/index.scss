@@ -209,8 +209,6 @@ html, body{
   padding-left: 0;
 
   .employerContent {
-    padding-left: 5rem;
-
     p {
       margin: 0 0 3px 8rem;
     }
@@ -356,6 +354,12 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
+  }
+
+  .employer {
+    .employerContent {
+      padding-left: 5rem;
+    }
   }
 
   .contactForm {
