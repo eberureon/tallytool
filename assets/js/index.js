@@ -2,16 +2,17 @@ let table = document.getElementById("table");
 getFromLS();
 
 // set Items in localStorage
-function saveToLS(date, day, event, factor, salary, sum) {
+function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
   let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
   let new_items = {
-    'date'  : date,
-    'day'   : day,
-    'event' : event,
-    'factor': factor,
-    'salary': salary,
-    'sum'   : parseInt(sum)
+    'date'          : date,
+    'day'           : day,
+    'event'         : event,
+    'factor'        : factor,
+    'salary'        : salary,
+    'sum'           : parseInt(sum),
+    'deleteButton'  : deleteButton
   };
 
   old_items.push(new_items);
@@ -23,11 +24,15 @@ function getFromLS() {
   let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
 
   for(let i = 0; i < items.length; i++) {
-    addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum);
+    addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum, items[i].deleteButton);
   }
 }
 
-function deleteFromLS() {
+function deleteItemFromLS() {
+
+}
+
+function clearLS() {
   localStorage.clear();
   location.reload();
 }
@@ -36,11 +41,11 @@ function deleteFromLS() {
 document.querySelector("#date").valueAsDate = new Date();
 
 // add row to table
-function addRow(date, day, event, factor, salary, sum) {
+function addRow(date, day, event, factor, salary, sum, deleteButton) {
     let row = document.createElement("tr");
 
     let tableData = [];
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 7; i++) {
         tableData[i] = document.createElement("td");
     }
 
@@ -50,6 +55,7 @@ function addRow(date, day, event, factor, salary, sum) {
     tableData[3].innerHTML = factor;
     tableData[4].innerHTML = salary;
     tableData[5].innerHTML = sum;
+    tableData[6].innerHTML = deleteButton;
 
     for(let i = 0; i < tableData.length; i++) {
         row.appendChild(tableData[i]);
@@ -76,11 +82,12 @@ function submit() {
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
   let sum            = parseInt(localStorage.getItem('sum')) || [];
+  let deleteButton   = document.innerHTML = '<button class="button" type="button">Eintrag l&ouml;schen</button>';
 
   localStorage.setItem('sum', sum += salary);
 
-  addRow(date_formatted, day_of_date, event, factor, salary, sum);
-  saveToLS(date_formatted, day_of_date, event, factor, salary, sum);
+  addRow(date_formatted, day_of_date, event, factor, salary, sum, deleteButton);
+  saveToLS(date_formatted, day_of_date, event, factor, salary, sum, deleteButton);
 }
 
 // Convert table to excel file
