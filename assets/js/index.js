@@ -28,8 +28,9 @@ function getFromLS() {
   }
 }
 
-function deleteItemFromLS() {
-
+function deleteItemFromLS(o) {
+  let p=o.parentNode.parentNode;
+  p.parentNode.removeChild(p);
 }
 
 function clearLS() {
@@ -82,7 +83,7 @@ function submit() {
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
   let sum            = parseInt(localStorage.getItem('sum')) || [];
-  let deleteButton   = document.innerHTML = '<button class="button" type="button">Eintrag l&ouml;schen</button>';
+  let deleteButton   = document.innerHTML = '<button class="button" type="button" onclick="deleteItemFromLS(this)">Eintrag l&ouml;schen</button>';
 
   localStorage.setItem('sum', sum += salary);
 
