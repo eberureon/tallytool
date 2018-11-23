@@ -3,8 +3,8 @@ getFromLS();
 
 // set Items in localStorage
 function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
-  let old_items = JSON.parse(localStorage.getItem('itemsArray')) || [];
-
+  let old_items = JSON.parse(localStorage.getItem('dateEntry')) || [];
+ 
   let new_items = {
     'date'          : date,
     'day'           : day,
@@ -17,20 +17,29 @@ function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
 
   old_items.push(new_items);
 
-  localStorage.setItem('itemsArray', JSON.stringify(old_items));
+  localStorage.setItem('dateEntry', JSON.stringify(old_items));
 }
 
 function getFromLS() {
-  let items = JSON.parse(localStorage.getItem('itemsArray')) || [];
+  let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
 
   for(let i = 0; i < items.length; i++) {
     addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum, items[i].deleteButton);
   }
 }
 
-function deleteItemFromLS(o) {
-  let p=o.parentNode.parentNode;
-  p.parentNode.removeChild(p);
+function deleteItem(elem) {
+  let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
+  let tableRow = elem.parentNode.parentNode;
+
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, "")) {
+      items.splice(i, 1);
+    }
+  }
+
+  localStorage.setItem('dateEntry', JSON.stringify(items));
+  tableRow.parentNode.removeChild(tableRow);
 }
 
 function clearLS() {
@@ -83,7 +92,7 @@ function submit() {
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
   let sum            = parseInt(localStorage.getItem('sum')) || [];
-  let deleteButton   = document.innerHTML = '<button class="button" type="button" onclick="deleteItemFromLS(this)">Eintrag l&ouml;schen</button>';
+  let deleteButton   = document.innerHTML = '<button class="button" type="button" onclick="deleteItem(this)">Eintrag l&ouml;schen</button>';
 
   localStorage.setItem('sum', sum += salary);
 
