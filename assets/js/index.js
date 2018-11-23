@@ -75,10 +75,10 @@ function addRow(date, day, event, factor, salary, sum, deleteButton) {
 }
 
 function submit() {
-  let selected_day = new Date(document.getElementById("date").value);
+  let selected_day = new Date(document.querySelector("#date").value);
   let weekdays = [ 'So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa' ];
 
-  function formatDate() {
+  formatDate = () => {
     let day   = selected_day.getDate();
     let month = selected_day.getMonth() + 1;
     let year  = selected_day.getFullYear();
@@ -105,7 +105,7 @@ function saveExcel() {
   let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
   let wb_binary = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
 
-  function s2ab(s) {
+  let s2ab = (s) => {
     let buf  = new ArrayBuffer(s.length);
     let view = new Uint8Array(buf);
     for(let i = 0; i<s.length; i++) {
@@ -116,3 +116,5 @@ function saveExcel() {
 
   saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long"}) + ".xlsx");
 }
+
+// document.getElementById('delete').onclick(saveExcel());
