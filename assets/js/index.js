@@ -106,6 +106,15 @@ function submit() {
   saveToLS(date_formatted, day_of_date, event, factor, salary, sum, deleteButton);
 }
 
+// Save Youth and Month to Local Storage
+document.getElementById('youth').oninput = () => {
+  localStorage.setItem('youth', JSON.stringify(document.getElementById('youth').innerHTML));
+}
+
+document.getElementById('month').oninput = () => {
+  localStorage.setItem('month', JSON.stringify(document.getElementById('month').innerHTML));
+}
+
 // Convert table to excel file
 function saveExcel() {
   let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
@@ -121,13 +130,4 @@ function saveExcel() {
   }
 
   saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long"}) + ".xlsx");
-}
-
-// Save Youth and Month to Local Storage
-document.getElementById('youth').oninput = () => {
-  localStorage.setItem('youth', JSON.stringify(document.getElementById('youth').innerHTML));
-}
-
-document.getElementById('month').oninput = () => {
-  localStorage.setItem('month', JSON.stringify(document.getElementById('month').innerHTML));
 }
