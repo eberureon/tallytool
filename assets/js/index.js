@@ -1,5 +1,4 @@
 let table = document.getElementById("table");
-getFromLS();
 
 // set Items in localStorage
 function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
@@ -20,7 +19,7 @@ function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
   localStorage.setItem('dateEntry', JSON.stringify(old_items));
 }
 
-function getFromLS() {
+(function getFromLS() {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
   
   for(let i = 0; i < items.length; i++) {
@@ -29,7 +28,7 @@ function getFromLS() {
   
   document.getElementById('youth').innerHTML = JSON.parse(localStorage.getItem('youth'));
   document.getElementById('month').innerHTML = JSON.parse(localStorage.getItem('month'));
-}
+})();
 
 function deleteItem(elem) {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
@@ -85,7 +84,7 @@ function submit() {
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
   let sum            = parseInt(localStorage.getItem('sum')) || [];
-  let deleteButton   = document.innerHTML = '<button class="button" id="deleteItem" type="button">Eintrag l&ouml;schen</button>';
+  let deleteButton   = document.innerHTML = '<button class="button" id="deleteItem" type="button" onclick="deleteItem(this)">Eintrag l&ouml;schen</button>';
 
   localStorage.setItem('sum', sum += salary);
 
@@ -139,7 +138,6 @@ function saveExcel() {
 }
 
 // onClick Handlers
-document.getElementById('deleteItem').addEventListener('click', deleteItem(this));
 document.getElementById('submit').addEventListener('click', submit);
 document.getElementById('download').addEventListener('click', saveExcel);
 document.getElementById('reset').addEventListener('click', clearLS);
