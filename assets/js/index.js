@@ -82,18 +82,9 @@ function addRow(date, day, event, factor, salary, sum, deleteButton) {
 
 function submit() {
   let selected_day = new Date(document.querySelector("#date").value);
-  let weekdays = [ 'So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa' ];
 
-  formatDate = () => {
-    let day   = selected_day.getDate();
-    let month = selected_day.getMonth() + 1;
-    let year  = selected_day.getFullYear();
-
-    return [day, month, year].join('.');
-  }
-
-  let date_formatted = formatDate();
-  let day_of_date    = weekdays[selected_day.getDay()];
+  let date_formatted = selected_day.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
+  let day_of_date    = selected_day.toLocaleDateString('de-de', {weekday: 'short'});
   let event          = document.getElementById("event").value;
   let factor         = parseInt(document.getElementById("factor").value);
   let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
@@ -148,5 +139,5 @@ function saveExcel() {
     return buf;
   }
 
-  saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long"}) + ".xlsx");
+  saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long", year: "numeric"}) + ".xlsx");
 }
