@@ -1,6 +1,6 @@
 {
   "name": "abrechnungstool",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Abrechnungstool Handball Milbertshofen",
   "main": "main.js",
   "scripts": {
