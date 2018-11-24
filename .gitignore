@@ -6,7 +6,7 @@
 .versions
 
 node_modules
-libs/css
+assets/css
 
 #Application
 build
