@@ -117,8 +117,27 @@ document.getElementById('month').oninput = () => {
 
 // Convert table to excel file
 function saveExcel() {
-  let wb = XLSX.utils.table_to_book(document.getElementById("table"), {sheet: "Abrechnung"});
-  let wb_binary = XLSX.write(wb, {bookType: "xlsx", bookSST: true, type: "binary"});
+  let wb = XLSX.utils.table_to_book(
+    document.getElementById("table"),
+  {
+    sheet: "Abrechnung",
+    raw: true,
+    hidden: true
+  });
+
+  let wb_binary = XLSX.write(
+    wb,
+  {
+    bookType: "xlsx",
+    bookSST: true,
+    type: "binary",
+    Props: {
+      Author: "Trainer",
+      LastAuthor: "Trainer",
+      Title: "Abrechnung Mil",
+      Category: "Finanzen"
+    }
+  });
 
   let s2ab = (s) => {
     let buf  = new ArrayBuffer(s.length);
