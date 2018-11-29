@@ -1,4 +1,4 @@
-let table = document.getElementById("table");
+let table = document.getElementById('table');
 
 // set Items in localStorage
 function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
@@ -35,7 +35,12 @@ function deleteItem(elem) {
   let tableRow = elem.parentNode.parentNode;
 
   for (let i = 0; i < items.length; i++) {
-    if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, "")) {
+    if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, '')) {
+      // Calculate new sum
+      let salary = items[i].salary;
+      let newTotalSum = items[items.length - 1].sum - salary;
+      localStorage.setItem('sum', JSON.stringify(newTotalSum));
+      // Remove selected Item from LocalStorage
       items.splice(i, 1);
     }
   }
@@ -53,11 +58,11 @@ function clearLS() {
 }
 
 function addRow(date, day, event, factor, salary, sum, deleteButton) {
-    let row = document.createElement("tr");
+    let row = document.createElement('tr');
 
     let tableData = [];
     for(let i = 0; i < 7; i++) {
-        tableData[i] = document.createElement("td");
+        tableData[i] = document.createElement('td');
     }
 
     tableData[0].innerHTML = date;
@@ -76,13 +81,13 @@ function addRow(date, day, event, factor, salary, sum, deleteButton) {
 }
 
 function submit() {
-  let selected_day = new Date(document.querySelector("#date").value);
+  let selected_day = new Date(document.querySelector('#date').value);
 
   let date_formatted = selected_day.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
   let day_of_date    = selected_day.toLocaleDateString('de-de', {weekday: 'short'});
-  let event          = document.getElementById("event").value;
-  let factor         = parseInt(document.getElementById("factor").value);
-  let salary         = event === "Quali" && factor === 3 ? 20 : event === "Quali" && factor === 4 ? 25 : factor * 5;
+  let event          = document.getElementById('event').value;
+  let factor         = parseInt(document.getElementById('factor').value);
+  let salary         = event === 'Quali' && factor === 3 ? 20 : event === 'Quali' && factor === 4 ? 25 : factor * 5;
   let sum            = parseInt(localStorage.getItem('sum')) || [];
   let deleteButton   = document.innerHTML = '<button class="button" id="deleteItem" type="button" onclick="deleteItem(this)">Eintrag l&ouml;schen</button>';
 
@@ -104,9 +109,9 @@ document.getElementById('month').oninput = () => {
 // Convert table to excel file
 function saveExcel() {
   let wb = XLSX.utils.table_to_book(
-    document.getElementById("table"),
+    document.getElementById('table'),
   {
-    sheet: "Abrechnung",
+    sheet: 'Abrechnung',
     raw: true,
     hidden: true
   });
@@ -114,14 +119,14 @@ function saveExcel() {
   let wb_binary = XLSX.write(
     wb,
   {
-    bookType: "xlsx",
+    bookType: 'xlsx',
     bookSST: true,
-    type: "binary",
+    type: 'binary',
     Props: {
-      Author: "Trainer",
-      LastAuthor: "Trainer",
-      Title: "Abrechnung Mil",
-      Category: "Finanzen"
+      Author: 'Trainer',
+      LastAuthor: 'Trainer',
+      Title: 'Abrechnung Mil',
+      Category: 'Finanzen'
     }
   });
 
@@ -134,7 +139,7 @@ function saveExcel() {
     return buf;
   }
 
-  saveAs(new Blob([s2ab(wb_binary)], { type: "application/octet-stream" }), "Abrechnung Mil " + new Date().toLocaleString("de-de", {month: "long", year: "numeric"}) + ".xlsx");
+  saveAs(new Blob([s2ab(wb_binary)], { type: 'application/octet-stream' }), 'Abrechnung Mil ' + new Date().toLocaleString('de-de', {month: 'long', year: 'numeric'}) + '.xlsx');
 }
 
 // onClick Handlers
@@ -143,4 +148,4 @@ document.getElementById('download').addEventListener('click', saveExcel);
 document.getElementById('reset').addEventListener('click', clearLS);
 
 // Show current date in input field
-document.querySelector("#date").valueAsDate = new Date();
+document.querySelector('#date').valueAsDate = new Date();
