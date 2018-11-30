@@ -1,5 +1,5 @@
 let table = document.getElementById('table');
-let tableSumData = document.querySelectorAll('#tableSum td');
+let tableSumData = document.querySelectorAll('#sum td');
 
 // set Items in localStorage
 function saveToLS(date, day, event, factor, salary, deleteButton) {

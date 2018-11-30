@@ -36,7 +36,7 @@ html, body {
   width: 120px;
 }
 
-.table, .tableSum, th, td {
+.table, .sum, th, td {
   border: 1px solid $white;
   border-collapse: collapse;
   text-align: center;
@@ -50,10 +50,10 @@ html, body {
   width: 100%;
 }
 
-.tableSum {
+.sum {
   cursor: default;
   margin: 20px 0;
-  width: 280px;
+  width: 16.5%;
 }
 
 .table > tbody > tr {
