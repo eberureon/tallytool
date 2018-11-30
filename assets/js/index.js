@@ -1,7 +1,8 @@
 let table = document.getElementById('table');
+let tableSumData = document.querySelectorAll('#tableSum td');
 
 // set Items in localStorage
-function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
+function saveToLS(date, day, event, factor, salary, deleteButton) {
   let old_items = JSON.parse(localStorage.getItem('dateEntry')) || [];
  
   let new_items = {
@@ -10,7 +11,6 @@ function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
     'event'         : event,
     'factor'        : factor,
     'salary'        : salary,
-    'sum'           : parseInt(sum),
     'deleteButton'  : deleteButton
   };
 
@@ -21,11 +21,16 @@ function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
 
 (function getFromLS() {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
-  
+  let sum = JSON.parse(localStorage.getItem('sum')) || null;
+
   for(let i = 0; i < items.length; i++) {
-    addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].sum, items[i].deleteButton);
+    addRow(items[i].date, items[i].day, items[i].event, items[i].factor, items[i].salary, items[i].deleteButton);
   }
-  
+
+  if(sum !== null) {
+    addSum(sum);
+  }
+
   document.getElementById('youth').innerHTML = JSON.parse(localStorage.getItem('youth'));
   document.getElementById('month').innerHTML = JSON.parse(localStorage.getItem('month'));
 })();
@@ -33,18 +38,19 @@ function saveToLS(date, day, event, factor, salary, sum, deleteButton) {
 function deleteItem(elem) {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
   let tableRow = elem.parentNode.parentNode;
-
+  
   for (let i = 0; i < items.length; i++) {
     if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, '')) {
       // Calculate new sum
       let salary = items[i].salary;
-      let newTotalSum = items[items.length - 1].sum - salary;
+      let newTotalSum = JSON.parse(localStorage.getItem('sum')) - salary;
+      tableSumData[0].innerHTML = newTotalSum;
       localStorage.setItem('sum', JSON.stringify(newTotalSum));
       // Remove selected Item from LocalStorage
       items.splice(i, 1);
     }
   }
-
+  
   localStorage.setItem('dateEntry', JSON.stringify(items));
   tableRow.parentNode.removeChild(tableRow);
 }
@@ -57,12 +63,16 @@ function clearLS() {
   location.reload();
 }
 
-function addRow(date, day, event, factor, salary, sum, deleteButton) {
+function addSum(sum) {
+  tableSumData[0].innerHTML = sum;
+}
+
+function addRow(date, day, event, factor, salary, deleteButton) {
     let row = document.createElement('tr');
 
     let tableData = [];
-    for(let i = 0; i < 7; i++) {
-        tableData[i] = document.createElement('td');
+    for(let i = 0; i < 6; i++) {
+      tableData[i] = document.createElement('td');
     }
 
     tableData[0].innerHTML = date;
@@ -70,11 +80,10 @@ function addRow(date, day, event, factor, salary, sum, deleteButton) {
     tableData[2].innerHTML = event;
     tableData[3].innerHTML = factor;
     tableData[4].innerHTML = salary;
-    tableData[5].innerHTML = sum;
-    tableData[6].innerHTML = deleteButton;
+    tableData[5].innerHTML = deleteButton;
 
     for(let i = 0; i < tableData.length; i++) {
-        row.appendChild(tableData[i]);
+      row.appendChild(tableData[i]);
     }
 
     table.children[0].appendChild(row);
@@ -93,8 +102,9 @@ function submit() {
 
   localStorage.setItem('sum', sum += salary);
 
-  addRow(date_formatted, day_of_date, event, factor, salary, sum, deleteButton);
-  saveToLS(date_formatted, day_of_date, event, factor, salary, sum, deleteButton);
+  addRow(date_formatted, day_of_date, event, factor, salary, deleteButton);
+  addSum(sum);
+  saveToLS(date_formatted, day_of_date, event, factor, salary, deleteButton);
 }
 
 // Save Youth and Month to Local Storage
@@ -109,7 +119,7 @@ document.getElementById('month').oninput = () => {
 // Convert table to excel file
 function saveExcel() {
   let wb = XLSX.utils.table_to_book(
-    document.getElementById('table'),
+    document.getElementById('tables'),
   {
     sheet: 'Abrechnung',
     raw: true,
