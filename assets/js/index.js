@@ -122,8 +122,7 @@ function saveExcel() {
     document.getElementById('tables'),
   {
     sheet: 'Abrechnung',
-    raw: true,
-    hidden: true
+    raw: true
   });
 
   let wbBinary = XLSX.write(
