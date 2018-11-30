@@ -3,9 +3,9 @@ let tableSumData = document.querySelectorAll('#sum td');
 
 // set Items in localStorage
 function saveToLS(date, day, event, factor, salary, deleteButton) {
-  let old_items = JSON.parse(localStorage.getItem('dateEntry')) || [];
+  let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
  
-  let new_items = {
+  let newItems = {
     'date'          : date,
     'day'           : day,
     'event'         : event,
@@ -14,9 +14,9 @@ function saveToLS(date, day, event, factor, salary, deleteButton) {
     'deleteButton'  : deleteButton
   };
 
-  old_items.push(new_items);
+  items.push(newItems);
 
-  localStorage.setItem('dateEntry', JSON.stringify(old_items));
+  localStorage.setItem('dateEntry', JSON.stringify(items));
 }
 
 (function getFromLS() {
@@ -43,9 +43,9 @@ function deleteItem(elem) {
     if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, '')) {
       // Calculate new sum
       let salary = items[i].salary;
-      let newTotalSum = JSON.parse(localStorage.getItem('sum')) - salary;
-      tableSumData[0].innerHTML = newTotalSum;
-      localStorage.setItem('sum', JSON.stringify(newTotalSum));
+      let newSum = JSON.parse(localStorage.getItem('sum')) - salary;
+      tableSumData[0].innerHTML = newSum;
+      localStorage.setItem('sum', JSON.stringify(newSum));
       // Remove selected Item from LocalStorage
       items.splice(i, 1);
     }
@@ -90,10 +90,10 @@ function addRow(date, day, event, factor, salary, deleteButton) {
 }
 
 function submit() {
-  let selected_day = new Date(document.querySelector('#date').value);
+  let selectedDay = new Date(document.querySelector('#date').value);
 
-  let date_formatted = selected_day.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
-  let day_of_date    = selected_day.toLocaleDateString('de-de', {weekday: 'short'});
+  let dateFormatted = selectedDay.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
+  let dateWeekday    = selectedDay.toLocaleDateString('de-de', {weekday: 'short'});
   let event          = document.getElementById('event').value;
   let factor         = parseInt(document.getElementById('factor').value);
   let salary         = event === 'Quali' && factor === 3 ? 20 : event === 'Quali' && factor === 4 ? 25 : factor * 5;
@@ -102,9 +102,9 @@ function submit() {
 
   localStorage.setItem('sum', sum += salary);
 
-  addRow(date_formatted, day_of_date, event, factor, salary, deleteButton);
+  addRow(dateFormatted, dateWeekday, event, factor, salary, deleteButton);
   addSum(sum);
-  saveToLS(date_formatted, day_of_date, event, factor, salary, deleteButton);
+  saveToLS(dateFormatted, dateWeekday, event, factor, salary, deleteButton);
 }
 
 // Save Youth and Month to Local Storage
@@ -126,7 +126,7 @@ function saveExcel() {
     hidden: true
   });
 
-  let wb_binary = XLSX.write(
+  let wbBinary = XLSX.write(
     wb,
   {
     bookType: 'xlsx',
@@ -149,7 +149,7 @@ function saveExcel() {
     return buf;
   }
 
-  saveAs(new Blob([s2ab(wb_binary)], { type: 'application/octet-stream' }), 'Abrechnung Mil ' + new Date().toLocaleString('de-de', {month: 'long', year: 'numeric'}) + '.xlsx');
+  saveAs(new Blob([s2ab(wbBinary)], { type: 'application/octet-stream' }), 'Abrechnung Mil ' + new Date().toLocaleString('de-de', {month: 'long', year: 'numeric'}) + '.xlsx');
 }
 
 // onClick Handlers
