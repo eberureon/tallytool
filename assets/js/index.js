@@ -38,7 +38,7 @@ function saveToLS(date, day, event, factor, salary, deleteButton) {
 function deleteItem(elem) {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
   let tableRow = elem.parentNode.parentNode;
-  
+
   for (let i = 0; i < items.length; i++) {
     if (items[i].date === tableRow.children[0].innerHTML.replace(/(<td>|<\/td>)/g, '')) {
       // Calculate new sum
@@ -50,7 +50,7 @@ function deleteItem(elem) {
       items.splice(i, 1);
     }
   }
-  
+
   localStorage.setItem('dateEntry', JSON.stringify(items));
   tableRow.parentNode.removeChild(tableRow);
 }
