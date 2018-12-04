@@ -133,18 +133,17 @@ html, body{
   }
 
   ul {
-    margin: 16px 0;
     list-style-type: none;
   }
 
   li {
-    display: initial;
-    margin: 0 5px;
     letter-spacing: 2px;
+    margin: 0 60px 5px 0;
+    padding-bottom: 15px;
     text-transform: uppercase;
 
-    &:first-child {
-      margin: 0;
+    &:last-child {
+      padding-bottom: 0;
     }
   }
 
@@ -163,8 +162,20 @@ html, body{
 }
 
 // Buger Menu Navbar
-.hamburger {
+.navList {
   display: none;
+}
+
+.hamburger {
+  display: inline-block;
+
+  &.is-active {
+    float: right;
+
+    & ~ .navList {
+      display: inline-block;
+    }
+  }
 }
 
 .title {
@@ -179,13 +190,15 @@ html, body{
 .content {
   background-color: $transparent;
   box-shadow: inset 0 1px 0 0 $transparent, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  min-height: 50vh;
   overflow: hidden;
   padding: 3rem 3rem 5rem;
 }
 
-#experience > .content {
-  padding-bottom: 10rem;
-}
+/* TODO: Check if it can be deleted*/
+// #experience > .content {
+//   padding-bottom: 10rem;
+// }
 
 .aboutMePicture {
   text-align: center;
@@ -308,22 +321,13 @@ footer {
  0% { transform: translateY(-150px) }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 766px) {
   .hamburger {
-    display: inline-block;
-
-    &.is-active {
-      float: right;
-
-      & ~ .mobileNavList {
-        display: inline-block;
-      }
-    }
+    display: none;
   }
 
-  .mobileNavList {
-    display: none;
-    position: relative;
+  .navList {
+    display: inline-block;
     transition: all .3s ease;
 
     ul {
@@ -332,22 +336,15 @@ footer {
     }
 
     li {
-      display: list-item;
-      margin: 0 60px 5px 0;
-      padding-bottom: 15px;
+      display: initial;
+      margin: 0 5px;
 
       &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        padding-bottom: 0;
+        margin: 0;
       }
     }
   }
-}
 
-@media screen and (min-width: 766px) {
   .aboutMePicture {
     float: left;
     vertical-align: top;
