@@ -1,10 +1,15 @@
-/node_modules
+# package directories
+node_modules
+jspm_packages
 
+# dot files
 .idea
 .sass-cache
 .yarnclean
 .DS_Store
 
-style/css
+# Serverless directories
+.serverless
 
+style/css
 yarn-error.log

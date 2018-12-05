@@ -1,4 +1,4 @@
-// Sticky Navigation
+/* Sticky Navigation */
 window.onscroll = function() { stickyNav() };
 
 const $href = $('a[href^="#"]');
@@ -13,8 +13,9 @@ function stickyNav() {
     navbar.classList.remove('sticky');
   }
 }
+/* Sticky Navigation */
 
-// Highlighted Navigation
+/* Highlighted Navigation */
 $(document).ready(function () {
   $(document).on('scroll', onScroll);
   
@@ -49,6 +50,7 @@ function onScroll(){
     }
   });
 }
+/* Highlighted Navigation */
 
 // Burger Menu 'X' animation
 hamburger.addEventListener('click', function() {
@@ -195,4 +197,41 @@ messageEl.addEventListener('click', () => {
     emailEl.focus();
     gatherDataAndCheck();
 });
-/* MAIL VALIDATION END*/
+/* MAIL VALIDATION END */
+
+/* CONTACT FORM */
+(() => {
+  const form = document.querySelector('form');
+  const formResponse = document.querySelector('.contactSubmit');
+
+  form.onsubmit = e => {
+    e.preventDefault();
+
+    const data = {};
+    const formElements = Array.from(form);
+    formElements.map(input => (input.value && input.name !== '' ? data[input.name] = input.value : ''));
+
+    console.log(JSON.stringify(data));
+
+    let xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action, true);
+    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+
+    xhr.send(JSON.stringify(data));
+
+    xhr.onloadend = response => {
+      if(response.target.status === 200) {
+        // Form submission was successful
+        form.reset();
+        formResponse.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #2E7D32;background-color: #E6F4EA;border: 1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
+      } else {
+        // Form submission failed
+        formResponse.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #E21A11;background-color: #ffefef;border: 1px solid #E21A11;">Es ist ein Fehler aufgetreten</p>');
+        console.error(JSON.parse(response.target.response).message);
+      }
+    };
+    setTimeout( function(){ document.querySelector('.formResponse').remove(); }, 5000);
+  }
+})();
+/* CONTACT FORM */

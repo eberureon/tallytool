@@ -300,6 +300,15 @@ html, body{
   }
 }
 
+.formResponse {
+  border-radius: 5px;
+  color: $codGray;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
 footer {
   text-align: center;
   padding-top: 1rem;
@@ -373,6 +382,10 @@ footer {
     width: 50%;
   }
 
+  .formResponse {
+    width: 49%;
+  }
+
   .copyright, .socialMedia, .imprint {
     display: inline-block;
     width: 25%;
@@ -427,5 +440,9 @@ footer {
 
   .contactSubmit {
     width: 35%;
+  }
+
+  .formResponse {
+    width: 34%;
   }
 }

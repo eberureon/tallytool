@@ -4,11 +4,15 @@
   "description": "Leon Ebel Portfolio",
   "main": "index.htm",
   "repository": "https://ebelleon@bitbucket.org/ebelleon/portfolio.git",
-  "author": "<ebel.leon@hotmail.com>",
+  "author": "Leon Ebel <ebel.leon@hotmail.com>",
   "license": "MIT",
   "devDependencies": {},
   "scripts": {
     "watch:scss": "sass --watch assets/scss/index.scss:style/css/index.css",
     "build:scss": "sass assets/scss/index.scss style/css/index.min.css --style compressed"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.368.0",
+    "serverless": "^1.34.1"
   }
 }

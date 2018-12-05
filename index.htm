@@ -132,12 +132,12 @@
       <div class='content'>
         <h1 class='title'>Kontakt Formular</h1>
 
-        <form name='contactForm'>
+        <form name='contactForm' action='https://gpuw2h2wz1.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer' method='post'>
           <div class='contactForm'>
               <input type='text' name='name' title='Ihr Name' class='contactInput' placeholder='Name*' required>
               <input type='email' name='email' title='E-Mail Addresse' class='contactInput' placeholder='E-Mail*' required>
               <button type='button' class='valMessage' tabindex='-1'></button>
-              <textarea class='contactMessage' title='Ihre Nachricht' placeholder='Nachricht*' required></textarea>
+              <textarea name='message' class='contactMessage' title='Ihre Nachricht' placeholder='Nachricht*' required></textarea>
             <div>
               <input type='submit' class='contactSubmit' value='Abschicken'>
             </div>
