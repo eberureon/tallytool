@@ -136,6 +136,7 @@
           <div class='contactForm'>
               <input type='text' name='name' title='Ihr Name' class='contactInput' placeholder='Name*' required>
               <input type='email' name='email' title='E-Mail Addresse' class='contactInput' placeholder='E-Mail*' required>
+              <input type='text' name='honeypot' value='' id='honeypot' style='display: none' tabindex='-1' autocomplete='off'>
               <button type='button' class='valMessage' tabindex='-1'></button>
               <textarea name='message' class='contactMessage' title='Ihre Nachricht' placeholder='Nachricht*' required></textarea>
             <div>
@@ -148,8 +149,8 @@
 
     <footer>
       <div class='socialMedia'>
-        <a href="https://www.linkedin.com/in/ebelleon" title="LinkedIn" target="_blank">
-          <i class="fab fa-linkedin"></i>
+        <a href='https://www.linkedin.com/in/ebelleon' title='LinkedIn' target='_blank'>
+          <i class='fab fa-linkedin'></i>
         </a>
         <a href='https://www.xing.com/profile/Leon_Ebel' title='Xing' target='_blank'>
           <i class='fab fa-xing'></i>
@@ -167,7 +168,7 @@
       </div>
 
       <div class='imprint'>
-        <a href='/impressum' target="_self">Impressum</a> <!-- change to "/impressum" when on production -->
+        <a href='/impressum' target='_self'>Impressum</a> <!-- change to '/impressum' when on production -->
       </div>
     </footer>
   </div>

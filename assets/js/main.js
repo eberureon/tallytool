@@ -202,10 +202,12 @@ messageEl.addEventListener('click', () => {
 /* CONTACT FORM */
 (() => {
   const form = document.querySelector('form');
-  const formResponse = document.querySelector('.contactSubmit');
+  const contactSubmit = document.querySelector('.contactSubmit');
 
   form.onsubmit = e => {
     e.preventDefault();
+
+    if(document.getElementById('honeypot').value) return;
 
     const data = {};
     const formElements = Array.from(form);
@@ -224,10 +226,10 @@ messageEl.addEventListener('click', () => {
       if(response.target.status === 200) {
         // Form submission was successful
         form.reset();
-        formResponse.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #2E7D32;background-color: #E6F4EA;border: 1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
+        contactSubmit.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #2E7D32;background-color: #E6F4EA;border: 1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
       } else {
         // Form submission failed
-        formResponse.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #E21A11;background-color: #ffefef;border: 1px solid #E21A11;">Es ist ein Fehler aufgetreten</p>');
+        contactSubmit.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color: #E21A11;background-color: #ffefef;border: 1px solid #E21A11;">Es ist ein Fehler aufgetreten</p>');
         console.error(JSON.parse(response.target.response).message);
       }
     };
