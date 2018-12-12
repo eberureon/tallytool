@@ -42,7 +42,7 @@
   <meta name='msapplication-wide310x150logo' content='assets/img/favicon/mstile-310x150.png' />
 
   <!-- STYLES -->
-  <link rel='stylesheet' type='text/css' href='style/css/index.css'>
+  <link rel='stylesheet' type='text/css' href='style/css/index.css'> <!-- Change to minified version in production -->
   <link rel='stylesheet' type='text/css' href='libs/fontawesome/css/all.min.css'>
 </head>
 <body>
@@ -54,8 +54,8 @@
           <input class='langDropdownBtn' id='langDropdownBtn' type='checkbox'>
             <ul class='langDropdownList'>
               <li><i class='fa fa-language'></i>Sprache w&auml;hlen</li>
-              <li><a href='en/index'>English</a></li><!-- Change href to ='/en' when on Server -->
-              <li><a href='index'>Deutsch</a></li> <!-- Change href to ='/' when on Server -->
+              <li><a href='en/index'>English</a></li><!-- Change href to ='/en' in production-->
+              <li><a href='index'>Deutsch</a></li> <!-- Change href to ='/' in production -->
             </ul>
           </label>
         </div>
@@ -168,7 +168,7 @@
       </div>
 
       <div class='imprint'>
-        <a href='/impressum' target='_self'>Impressum</a> <!-- change to '/impressum' when on production -->
+        <a href='/impressum' target='_self'>Impressum</a> <!-- change to '/impressum' in production -->
       </div>
     </footer>
   </div>
