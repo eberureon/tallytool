@@ -247,11 +247,33 @@ html, body{
   width: 100px;
 }
 
+.skills {
+  font-size: 13px;
+  padding: 10rem 0 0;
+  overflow: hidden;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.experienceTitle {
+  font-size: $title;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0;
+
+  & ~ .experienceTitle {
+    margin-top: 8rem;
+  }
+}
+
 .experiencePicture {
   display: inline-block;
   margin: 5px;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
 }
 
 .HTMLPicture {
@@ -282,24 +304,6 @@ html, body{
 .nodejsPicture {
   background: url('../../assets/img/skills/Node.js_logo.svg') no-repeat center;
   background-size: 100%;
-}
-
-.skills {
-  font-size: 13px;
-  padding: 10rem 0 0;
-  overflow: hidden;
-
-  ul {
-    list-style-type: none;
-  }
-}
-
-.experienceTitle {
-  font-size: $title;
-  font-weight: 300;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 0;
 }
 
 .contactInput {
