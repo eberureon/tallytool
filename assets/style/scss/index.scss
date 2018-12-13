@@ -249,8 +249,9 @@ html, body{
 
 .skills {
   font-size: 13px;
-  padding: 10rem 0 0;
   overflow: hidden;
+  padding: 10rem 0 0;
+  text-align: justify;
 
   ul {
     list-style-type: none;
@@ -271,7 +272,7 @@ html, body{
 
 .experiencePicture {
   display: inline-block;
-  margin: 5px;
+  margin: 5px 5px 30px;
   height: 80px;
   width: 80px;
 }
@@ -441,6 +442,10 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
+  }
+
+  .experiencePicture {
+    margin-right: 15px;
   }
 
   .contactForm {
