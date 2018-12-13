@@ -10,6 +10,7 @@ jspm_packages
 
 # Serverless directories
 .serverless
+secrets.json
 
-style/css
+assets/style/css
 yarn-error.log
