@@ -237,7 +237,7 @@ html, body{
 }
 
 .JSPicture {
-  background: url('../../img/js_logo_oS.svg') no-repeat center transparent;
+  background: url('../../img/js_logo_oS.svg') no-repeat 50% 55% transparent;
   border: 2px solid $codGray;
   border-left-style: dashed;
   border-right-style: dashed;
@@ -277,33 +277,68 @@ html, body{
 }
 
 .HTMLPicture {
-  background: url('../../img/skills/HTML5_logo.svg') no-repeat center;
+  background: url('../../img/skills/HTML5.svg') no-repeat center;
+  -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
 }
 
 .CSSPicture {
-  background: url('../../img/skills/CSS_logo.svg') no-repeat center;
+  background: url('../../img/skills/CSS.svg') no-repeat center;
+  -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
 }
 
-.LESSPicture {
-  background: url('../../img/skills/LESS_logo.svg') no-repeat center;
-  background-size: 100%;
-}
-
-.SASSPicture {
-  background: url('../../img/skills/SASS_logo.svg') no-repeat center;
-  background-size: 90%;
-}
-
 .JavaScriptPicture {
-  background: url('../../img/skills/JavaScript_logo.svg') no-repeat center;
+  background: url('../../img/skills/JavaScript.svg') no-repeat center;
+  -webkit-background-size: 80%;
   background-size: 80%;
 }
 
 .nodejsPicture {
-  background: url('../../img/skills/Node.js_logo.svg') no-repeat center;
+  background: url('../../img/skills/Node.js.svg') no-repeat center;
+  -webkit-background-size: 100%;
   background-size: 100%;
+}
+
+.LESSPicture {
+  background: url('../../img/skills/LESS.svg') no-repeat center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+.SASSPicture {
+  background: url('../../img/skills/SASS.svg') no-repeat center;
+  -webkit-background-size: 85%;
+  background-size: 85%;
+}
+
+.scrumPicture {
+  background: url('../../img/skills/Scrum.svg') no-repeat center;
+  -webkit-background-size: 162%;
+  background-size: 162%;
+}
+.agilePicture {
+  background: url('../../img/skills/Agile.svg') no-repeat 50% 30%;
+  -webkit-background-size: 200%;
+  background-size: 200%;
+}
+
+.MySQLPicture {
+  background: url('../../img/skills/MySQL.svg') no-repeat center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+.jQueryPicutre {
+  background: url('../../img/skills/jQuery.svg') no-repeat center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.linuxPicture {
+  background: url('../../img/skills/Tux.svg') no-repeat center;
+  -webkit-background-size: 80% 80%;
+  background-size: 80% 80%;
 }
 
 .contactInput {
