@@ -2,11 +2,46 @@
 
 const aws = require('aws-sdk');
 const ses = new aws.SES();
+const myMail = process.env.EMAIL;
 
-function sendEmail(formData, callback) {
-  const emailParams = {
+
+function generateResponse(code, payload) {
+  return {
+    statusCode: code,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://ebelleon.de',
+      'Access-Control-Allow-Headers': 'x-requested-with',
+      'Access-Control-Allow-Credentials': true
+    },
+    body: JSON.stringify(payload)
+  }
+}
+
+function generateError(code, err) {
+  console.log(err);
+  return {
+    statusCode: code,
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://ebelleon.de',
+      'Access-Control-Allow-Headers': 'x-requested-with',
+      'Access-Control-Allow-Credentials': true
+    },
+    body: JSON.stringify(err.message)
+  }
+}
+
+function generateEmailParams(body) {
+  const { email, name, message } = JSON.parse(body);
+  console.log(email, name, message);
+  if(!(email && name && message)) {
+    throw new Error('Missing paremeters! Make sure to add parameters \'email\', \'name\', \'content\'.')
+  }
+
+  return {
     Source: 'kontakt@ebelleon.de',
-    ReplyToAddresses: [formData.email],
+    ReplyToAddresses: [email],
     Destination: {
       ToAddresses: ['kontakt@ebelleon.de']
     },
@@ -14,7 +49,7 @@ function sendEmail(formData, callback) {
       Body: {
         Text: {
           Charset: 'UTF-8',
-          Data: `${formData.message}\n\nName: ${formData.name}\nE-Mail: ${formData.email}`
+          Data: `Name: ${name}\nE-Mail: ${email}\n\n${message}`
         }
       },
       Subject: {
@@ -23,25 +58,14 @@ function sendEmail(formData, callback) {
       }
     }
   };
-
-  ses.sendEmail(emailParams, callback);
 }
 
-module.exports.staticSiteMailer = (event, context, callback) => {
-  const formData = JSON.parse(event.body);
-
-  sendEmail(formData, (err, data) => {
-    const response = {
-      statusCode: err ? 500 : 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://ebelleon.de',
-      },
-      body: JSON.stringify({
-        message: err ? err.message : data
-      })
-    };
-
-    callback(null, response);
-  });
+module.exports.staticSiteMailer = async (event) => {
+  try {
+    const emailParams = generateEmailParams(event.body);
+    const data = await ses.sendEmail(emailParams).promise();
+    return generateResponse(200, data);
+  } catch(err) {
+    return generateError(500, err);
+  }
 };

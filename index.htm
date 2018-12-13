@@ -42,7 +42,7 @@
   <meta name='msapplication-wide310x150logo' content='assets/img/favicon/mstile-310x150.png' />
 
   <!-- STYLES -->
-  <link rel='stylesheet' type='text/css' href='style/css/index.css'> <!-- Change to minified version in production -->
+  <link rel='stylesheet' type='text/css' href='assets/style/css/index.css'> <!-- Change to minified version in production -->
   <link rel='stylesheet' type='text/css' href='libs/fontawesome/css/all.min.css'>
 </head>
 <body>
@@ -115,12 +115,12 @@
         <div class='skills'>
           <div>
             <!-- Untergliederung in Primäre und Sekundäre Skills -->
-            <h2 class='experienceTitle'>Programmier Kenntnisse&#58;</h2>
+            <h2 class='experienceTitle'>Programmier Kenntnisse&#58;</h2> <!-- evtl. Primäre Kenntnisse -->
               <span class='experiencePicture HTMLPicture' title='HTML'></span>
               <span class='experiencePicture CSSPicture' title='CSS'></span>
               <span class='experiencePicture JavaScriptPicture' title='JavaScript'></span>
               <span class='experiencePicture nodejsPicture' title='Node.js'></span>
-            <h2 class='experienceTitle'>Andere Fähigkeiten&#58;</h2>
+            <h2 class='experienceTitle'>Andere Fähigkeiten&#58;</h2> <!-- evtl. Sekundäre Kenntnisse -->
               <span class='experiencePicture LESSPicture' title='LESS'></span>
               <span class='experiencePicture SASSPicture' title='SASS'></span>
               <span>Scrum</span>
@@ -137,7 +137,7 @@
       <div class='content'>
         <h1 class='title'>Kontakt Formular</h1>
 
-        <form name='contactForm' action='https://gpuw2h2wz1.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer' method='post'>
+        <form name='contactForm'>
           <div class='contactForm'>
               <input type='text' name='name' title='Ihr Name' class='contactInput' placeholder='Name*' required>
               <input type='email' name='email' title='E-Mail Addresse' class='contactInput' placeholder='E-Mail*' required>
