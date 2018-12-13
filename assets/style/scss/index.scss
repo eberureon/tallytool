@@ -193,11 +193,6 @@ html, body{
   padding: 3rem 3rem 5rem;
 }
 
-/* TODO: Check if it can be deleted*/
-// #experience > .content {
-//   padding-bottom: 10rem;
-// }
-
 .aboutMePicture {
   text-align: center;
   padding: 2rem 2rem 5rem;
@@ -333,6 +328,7 @@ html, body{
   background: url('../../img/skills/MySQL.svg') no-repeat center;
   -webkit-background-size: 100%;
   background-size: 100%;
+  margin-right: 5px !important;
 }
 
 .jQueryPicutre {
