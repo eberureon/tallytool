@@ -272,9 +272,14 @@ html, body{
 
 .experiencePicture {
   display: inline-block;
-  margin: 5px 5px 30px;
+  margin: 5px 5px 50px;
   height: 80px;
   width: 80px;
+}
+
+.experienceLabel {
+  margin-top: 100px;
+  text-align: center;
 }
 
 .HTMLPicture {
@@ -315,8 +320,8 @@ html, body{
 
 .scrumPicture {
   background: url('../../img/skills/Scrum.svg') no-repeat center;
-  -webkit-background-size: 162%;
-  background-size: 162%;
+  -webkit-background-size: 160%;
+  background-size: 160%;
 }
 .agilePicture {
   background: url('../../img/skills/Agile.svg') no-repeat 50% 30%;
@@ -331,13 +336,13 @@ html, body{
 }
 
 .jQueryPicutre {
-  background: url('../../img/skills/jQuery.svg') no-repeat center;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
+  background: url('../../img/skills/jQuery.svg') no-repeat 50% 70%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
 }
 
 .linuxPicture {
-  background: url('../../img/skills/Tux.svg') no-repeat center;
+  background: url('../../img/skills/Tux.svg') no-repeat 50% 100%;
   -webkit-background-size: 80% 80%;
   background-size: 80% 80%;
 }
