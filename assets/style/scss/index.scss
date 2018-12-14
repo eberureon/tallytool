@@ -246,7 +246,6 @@ html, body{
   font-size: 13px;
   overflow: hidden;
   padding: 10rem 0 0;
-  text-align: justify;
 
   ul {
     list-style-type: none;
@@ -267,7 +266,7 @@ html, body{
 
 .experiencePicture {
   display: inline-block;
-  margin: 5px 5px 50px;
+  margin: 5px 20px 50px;
   height: 80px;
   width: 80px;
 }
@@ -301,6 +300,12 @@ html, body{
   background-size: 100%;
 }
 
+.gitPicture {
+  background: url('../../img/skills/git.svg') no-repeat center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
 .LESSPicture {
   background: url('../../img/skills/LESS.svg') no-repeat center;
   -webkit-background-size: 100%;
@@ -328,7 +333,6 @@ html, body{
   background: url('../../img/skills/MySQL.svg') no-repeat center;
   -webkit-background-size: 100%;
   background-size: 100%;
-  margin-right: 5px !important;
 }
 
 .jQueryPicutre {
@@ -443,10 +447,6 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
-  }
-
-  .experiencePicture {
-    margin-right: 15px;
   }
 
   .contactForm {
