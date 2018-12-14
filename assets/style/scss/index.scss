@@ -195,7 +195,7 @@ html, body{
 
 .aboutMePicture {
   text-align: center;
-  padding: 2rem 2rem 5rem;
+  padding: 0 1.66rem 5rem;
 }
 
 .profilePicture {
@@ -266,7 +266,7 @@ html, body{
 
 .experiencePicture {
   display: inline-block;
-  margin: 5px 20px 50px;
+  margin: 5px 16px 50px;
   height: 80px;
   width: 80px;
 }
@@ -437,6 +437,7 @@ footer {
 
   .aboutMePicture {
     float: left;
+    padding-top: 3rem;
     vertical-align: top;
   }
 
@@ -447,6 +448,14 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
+  }
+
+  .skills {
+    text-align: center;
+  }
+
+  .experiencePicture {
+    margin-right: 25px;
   }
 
   .contactForm {
@@ -511,6 +520,7 @@ footer {
   .skills {
     padding-top: 0;
     padding-left: 60vw;
+    text-align: initial;
   }
 
   .contactMessage, .contactInput {
