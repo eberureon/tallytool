@@ -28,23 +28,25 @@ $(document).ready(function () {
       $(this).removeClass('active');
     });
       $(this).addClass('active');
-    
+
+    // TODO: scroll on click is not correct all the time
     let target  = this.hash;
         $target = $(target);
     $('html, body').stop().animate({
-      'scrollTop': $target.offset().top+2
+      'scrollTop': $target.position().top+2
     }, 700, function () {
       $(document).on('scroll', onScroll);
     });
+    hamburger.classList.toggle('is-active');
   });
 });
 
 function onScroll(){
-  var scrollPos = $(document).scrollTop();
+  let scrollPos = $(document).scrollTop();
   $('.navbar a').each(function () {
-    var currLink = $(this);
-    var refElement = $(currLink.attr('href'));
-    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+    let currLink = $(this);
+    let refElement = $(currLink.attr('href'));
+    if (refElement.position().top <= scrollPos + 80) {
       $('.navbar ul a').removeClass('active');
       currLink.addClass('active');
     }
