@@ -246,6 +246,7 @@ html, body{
   font-size: 13px;
   overflow: hidden;
   padding: 10rem 0 0;
+  text-align: center;
 
   ul {
     list-style-type: none;
@@ -260,7 +261,7 @@ html, body{
   margin-top: 0;
 
   & ~ .experienceTitle {
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 }
 
@@ -448,10 +449,6 @@ footer {
 
   .aboutMeInformation {
     padding: 2rem;
-  }
-
-  .skills {
-    text-align: center;
   }
 
   .experiencePicture {
