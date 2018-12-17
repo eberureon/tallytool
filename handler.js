@@ -2,8 +2,6 @@
 
 const aws = require('aws-sdk');
 const ses = new aws.SES();
-const myMail = process.env.EMAIL;
-
 
 function generateResponse(code, payload) {
   return {
@@ -34,9 +32,8 @@ function generateError(code, err) {
 
 function generateEmailParams(body) {
   const { email, name, message } = JSON.parse(body);
-  console.log(email, name, message);
   if(!(email && name && message)) {
-    throw new Error('Missing paremeters! Make sure to add parameters \'email\', \'name\', \'content\'.')
+    throw new Error('Gehen Sie sicher dass Sie folgende Parameter ausgefüllt haben \'email\', \'name\', \'content\'.')
   }
 
   return {

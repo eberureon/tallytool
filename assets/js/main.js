@@ -237,6 +237,7 @@ messageEl.addEventListener('click', () => {
 
   form.onsubmit = e => {
     e.preventDefault();
+
     if(document.getElementById('honeypot').value) return;
     contactSubmit.disabled = true;
 
