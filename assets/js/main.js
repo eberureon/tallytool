@@ -4,7 +4,7 @@ window.onscroll = function() { stickyNav() };
 const $href = $('a[href^="#"]');
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
-const sticky = navbar.offsetTop + 150;
+const sticky = navbar.offsetTop + 100;
 
 function stickyNav() {
   if (window.scrollY >= sticky) {
@@ -18,7 +18,7 @@ function stickyNav() {
 /* Highlighted Navigation */
 $(document).ready(function () {
   $(document).on('scroll', onScroll);
-  
+
   //smoothscroll
   $href.on('click', function (e) {
     e.preventDefault();
@@ -29,15 +29,14 @@ $(document).ready(function () {
     });
       $(this).addClass('active');
 
-    // TODO: scroll on click is not correct all the time
     let target  = this.hash;
-        $target = $(target);
+      $target = $(target);
     $('html, body').stop().animate({
-      'scrollTop': $target.position().top+2
+      'scrollTop': $target.position().top-40
     }, 700, function () {
       $(document).on('scroll', onScroll);
     });
-    hamburger.classList.toggle('is-active');
+    hamburger.classList.remove('is-active');
   });
 });
 
@@ -230,7 +229,7 @@ messageEl.addEventListener('click', () => {
   }
 
   function error (err) {
-    contactSubmit.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;">Es ist ein Fehler aufgetreten</p>');
+    contactSubmit.insertAdjacentHTML('afterend' ,'<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>');
     setTimeout( function(){ document.querySelector('.formResponse').remove(); }, 5000);
     console.error(JSON.parse(response.target.response).message);
   }
