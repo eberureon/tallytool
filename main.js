@@ -6,7 +6,7 @@ let win;
 
 function createWindow () {
     win = new BrowserWindow({
-        title: 'Abrechnungstool Milbertshofen Handball',
+        title: 'Abrechnungstool Handball',
         icon: path.join(__dirname + '/favicon.ico'),
         height: 800,
         width: 850,
