@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 250">
     <defs>
-        <style>.bg-color{fill:#404040;}</style>
+        <style>.bg-color{fill:#404040;fill-opacity:1;fill-rule:nonzero;stroke:none;}</style>
     </defs>
     <title>Scrum</title>
     <path class="bg-color" d="M91.89,105.17a3.68,3.68,0,1,1,4.17,3.11,3.68,3.68,0,0,1-4.17-3.11"/>
