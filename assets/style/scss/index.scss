@@ -209,6 +209,7 @@ html, body{
 
 .aboutMeInformation {
   text-align: justify;
+  display: table;
 }
 
 .employer {
@@ -267,9 +268,9 @@ html, body{
 
 .experiencePicture {
   display: inline-block;
-  margin: 5px 16px 50px;
-  height: 80px;
-  width: 80px;
+  margin: 10px 17px 50px;
+  height: 90px;
+  width: 90px;
 }
 
 .experienceLabel {
@@ -291,8 +292,8 @@ html, body{
 
 .JavaScriptPicture {
   background: url('../../img/skills/JavaScript.svg') no-repeat center;
-  -webkit-background-size: 80%;
-  background-size: 80%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
 }
 
 .nodejsPicture {
@@ -320,14 +321,16 @@ html, body{
 }
 
 .scrumPicture {
-  background: url('../../img/skills/Scrum.svg') no-repeat center;
-  -webkit-background-size: 160%;
-  background-size: 160%;
+  background: url('../../img/skills/scrum.svg') no-repeat center;
+  -webkit-background-size: 155%;
+  background-size: 155%;
+  width: 110px;
 }
+
 .agilePicture {
-  background: url('../../img/skills/Agile.svg') no-repeat 50% 30%;
-  -webkit-background-size: 200%;
-  background-size: 200%;
+  background: url('../../img/skills/Agile.svg') no-repeat center;
+  -webkit-background-size: 250%;
+  background-size: 250%;
 }
 
 .MySQLPicture {
@@ -343,7 +346,7 @@ html, body{
 }
 
 .linuxPicture {
-  background: url('../../img/skills/Tux.svg') no-repeat 50% 100%;
+  background: url('../../img/skills/Tux.svg') no-repeat center;
   -webkit-background-size: 80% 80%;
   background-size: 80% 80%;
 }
@@ -438,7 +441,7 @@ footer {
 
   .aboutMePicture {
     float: left;
-    padding-top: 3rem;
+    padding-top: 5rem;
     vertical-align: top;
   }
 
@@ -448,11 +451,7 @@ footer {
   }
 
   .aboutMeInformation {
-    padding: 2rem;
-  }
-
-  .experiencePicture {
-    margin-right: 25px;
+    padding: 1.66rem;
   }
 
   .contactForm {
@@ -496,7 +495,7 @@ footer {
   }
 
   .aboutMeInformation {
-    padding: 4rem;
+    padding: 7rem 1rem;
   }
 
   .employer {
