@@ -29,13 +29,21 @@ $(document).ready(function () {
     });
       $(this).addClass('active');
 
+    let navbarHeight = document.querySelector('.navbar').clientHeight;
     let target  = this.hash;
-      $target = $(target);
-    $('html, body').stop().animate({
-      'scrollTop': $target.position().top-40
-    }, 700, function () {
-      $(document).on('scroll', onScroll);
-    });
+    if (document.querySelector('.navbar.sticky') === null) {
+      $('html, body').stop().animate({
+          'scrollTop': $(target).offset().top-navbarHeight
+      }, 700, function () {
+        $(document).on('scroll', onScroll);
+      });
+    } else {
+      $('html, body').stop().animate({
+        'scrollTop': $(target).offset().top+2
+      }, 700, function () {
+        $(document).on('scroll', onScroll);
+      });
+    }
     hamburger.classList.remove('is-active');
   });
 });
