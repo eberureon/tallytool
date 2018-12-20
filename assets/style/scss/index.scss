@@ -29,7 +29,7 @@
   }
 }
 
-html, body{
+html, body {
   padding: 0;
   margin: 0;
 }
@@ -40,7 +40,7 @@ html, body{
 }
 
 .homeContent {
-  background: url(../../img/background.jpg) no-repeat center center transparent;
+  background: url('../../img/background.jpg') no-repeat center transparent;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -195,7 +195,7 @@ html, body{
 
 .aboutMeContent {
   text-align: center;
-  padding: 0 1.66rem 5rem;
+  padding: 0 1.66rem 3rem;
 }
 
 .aboutMePicture {
@@ -204,8 +204,8 @@ html, body{
   border-right-style: dashed;
   border-radius: 100%;
   margin: 2.25rem;
-  height: 120px;
-  width: 120px;
+  height: 150px;
+  width: 150px;
 }
 
 .aboutMeInformation {
@@ -273,8 +273,8 @@ html, body{
 .experiencePicture {
   display: inline-block;
   margin: 10px 17px 50px;
-  height: 90px;
-  width: 90px;
+  height: 85px;
+  width: 85px;
 }
 
 .experienceLabel {
@@ -445,11 +445,6 @@ footer {
 
   .aboutMeContent {
     padding-top: 3rem;
-  }
-
-  .aboutMePicture {
-    height: 150px;
-    width: 150px;
   }
 
   .aboutMeInformation {
