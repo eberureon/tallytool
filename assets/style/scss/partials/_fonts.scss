@@ -10,7 +10,7 @@
   src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'),
       url('../../fonts/roboto-slab-v7-latin-100.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../../fonts/roboto-slab-v7-latin-100.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-      url('../../fonts/roboto-slab-v7-latin-100.ttf') format('ttf'); /* Safari, Android, iOS */
+      url('../../fonts/roboto-slab-v7-latin-100.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* roboto-slab-300 - latin */
 @font-face {
@@ -20,7 +20,17 @@
   src: local('Roboto Slab Light'), local('RobotoSlab-Light'),
       url('../../fonts/roboto-slab-v7-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../../fonts/roboto-slab-v7-latin-300.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-      url('../../fonts/roboto-slab-v7-latin-300.ttf') format('ttf'); /* Safari, Android, iOS */
+      url('../../fonts/roboto-slab-v7-latin-300.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+  url('../../fonts/roboto-slab-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../../fonts/roboto-slab-v7-latin-regular.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  url('../../fonts/roboto-slab-v7-latin-regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* roboto-slab-700 - latin */
 @font-face {
@@ -30,5 +40,5 @@
   src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
       url('../../fonts/roboto-slab-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
       url('../../fonts/roboto-slab-v7-latin-700.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-      url('../../fonts/roboto-slab-v7-latin-700.ttf') format('ttf'); /* Safari, Android, iOS */
+      url('../../fonts/roboto-slab-v7-latin-700.ttf') format('truetype'); /* Safari, Android, iOS */
 }

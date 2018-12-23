@@ -1,10 +1,11 @@
-@mixin inputField {
+%inputField {
   border-color: transparent;
-  border-radius: 5px;
+  border-radius: 0.3em;
   font-family: inherit;
   font-size: inherit;
-  padding: 10px;
-  margin: 1.154rem 0;
+  font-weight: inherit;
+  padding: 0.6em;
+  margin: 1.154em 0;
   width: 100%;
 
   &:focus {

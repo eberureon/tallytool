@@ -4,13 +4,15 @@
 @import 'vendor/burger_menu/hamburgers';
 
 html, body {
+  font-size: 17px;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .wrapper {
   color: $codGray;
-  font: 400 17px $font;
+  font: 300 1em $font;
 }
 
 .homeContent {
@@ -25,7 +27,7 @@ html, body {
 }
 
 .homeTitle {
-  font-size: 60px;
+  font-size: 4.12em;
   font-weight: $light;
   margin: 0;
 }
@@ -41,7 +43,7 @@ html, body {
   border: 1px solid $alabaster;
   border-radius: 3px;
   float: right;
-  margin: 0.77rem;
+  margin: 0.77em;
   text-align: center;
 
   label {
@@ -71,14 +73,14 @@ html, body {
     color: $alabaster;
     font-weight: $thin;
     line-height: 40px;
-    padding: 0 15px;
+    padding: 0 0.88235em;
   }
 }
 
 .langDropdownBtn {
   float: left;
   opacity: 0;
-  margin: -0.77rem;
+  margin: -1em;
 
   &:checked ~ .langDropdownList {
     height: 122px;
@@ -105,23 +107,6 @@ html, body {
   ul {
     list-style-type: none;
   }
-
-  li {
-    letter-spacing: 2px;
-    margin: 0 4.62rem 0.385rem 0;
-    padding-bottom: 15px;
-    text-transform: uppercase;
-
-    &:last-child {
-      padding-bottom: 0;
-    }
-  }
-
-  a {
-    color: $alabaster;
-    padding: 1px 4px 2px 6px;
-    text-decoration: none;
-  }
 }
 
 .sticky {
@@ -135,13 +120,30 @@ html, body {
 .navList {
   display: none;
 
+  li {
+    letter-spacing: 2px;
+    margin: 0 5em 0.4em 0;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: $alabaster;
+    padding: 1px 4px 2px 6px;
+    text-decoration: none;
+  }
+
   @include tablet {
     display: inline-block;
     transition: all .3s ease;
 
     li {
       display: initial;
-      margin: 0 0.39rem;
+      margin: 0 0.4em;
 
       &:first-child {
         margin: 0;
@@ -166,7 +168,7 @@ html, body {
 
 .title {
   color: $codGray;
-  font-size: 35px;
+  font-size: $title;
   font-weight: $bold;
   margin-bottom: 1.66em;
   text-align: center;
@@ -178,15 +180,15 @@ html, body {
   box-shadow: inset 0 1px 0 0 $transparent, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
   min-height: 50vh;
   overflow: hidden;
-  padding: 3rem 3rem 5rem;
+  padding: 3em 3em 5em;
 }
 
 .aboutMeContent {
   text-align: center;
-  padding: 0 1.66rem 3rem;
+  padding: 0 1.66em 3em;
 
   @include tablet {
-    padding-top: 3rem;
+    padding-top: 3em;
   }
 
   @include desktop {
@@ -200,13 +202,13 @@ html, body {
   border-left-style: dashed;
   border-right-style: dashed;
   border-radius: 50%;
-  margin: 2.25rem;
+  margin: 2.25em;
   height: 150px;
   width: 150px;
 
   @include desktop {
     float: left;
-    margin-left: 15rem;
+    margin-left: 10em;
     height: 164px;
     width: 164px;
   }
@@ -214,20 +216,22 @@ html, body {
 
 .aboutMeInformation {
   text-align: justify;
-  display: table;
-  margin: 0;
-  padding: 4rem 1.66rem;
   word-break: break-all;
+  margin-top: 4em;
 
   @include tablet {
     word-break: initial;
   }
 
   @include desktop {
-    padding: 1.66rem; // evtl. 2.88rem 1.66rem
-    margin-right: 20rem;
-    margin-left: 2.25rem;
+    margin: 0 10em 0 2em;
   }
+}
+
+.aboutMeParagraph {
+  line-height: 2;
+  margin: 0;
+  padding: 0.77em 1.66em;
 }
 
 .employer {
@@ -238,7 +242,7 @@ html, body {
 
     .employerTitle {
       text-align: initial;
-      padding-left: 10rem;
+      padding-left: 5em;
     }
   }
 
@@ -247,9 +251,9 @@ html, body {
     width: 300px;
 
     p {
-      margin: 0 0 0.23rem 9.3rem;
+      margin: 0 0 0.23em 8em;
       &:nth-child(2) {
-        padding-top: 1rem;
+        padding-top: 0.7em;
       }
     }
 
@@ -258,8 +262,7 @@ html, body {
     }
 
     @include desktop {
-      padding-left: 5rem;
-      margin: initial;
+      margin: 3.6em 0 3.6em 5em;
       width: initial;
     }
   }
@@ -278,9 +281,8 @@ html, body {
 }
 
 .skills {
-  font-size: 13px;
   overflow: hidden;
-  padding: 10rem 0 0;
+  padding: 10em 0 0;
   text-align: center;
 
   ul {
@@ -295,26 +297,29 @@ html, body {
 }
 
 .employerTitle, .skillsTitle {
-  font-size: $title;
-  font-weight: $light;
+  font-size: $subtitle;
+  font-weight: $regular;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0;
 
   & ~ .skillsTitle {
-    margin-top: 10rem;
+    margin-top: 6.35em;
   }
 }
 
 .skillsPicture {
   display: inline-block;
-  margin: 10px 17px 50px;
+  margin: 0.6em 1em 3em;
   height: 85px;
   width: 85px;
 }
 
 .skillsLabel {
-  margin-top: 100px;
+  font-size: 0.8em;
+  font-weight: $regular;
+  letter-spacing: 0.5px;
+  margin-top: 7.5em;
   text-align: center;
 }
 
@@ -333,10 +338,11 @@ html, body {
 
 .contactForm {
   text-align: center;
+  margin: 0;
 }
 
 .contactInput {
-  @include inputField;
+  @extend %inputField;
 
   @include tablet {
     width: 75%;
@@ -353,7 +359,7 @@ html, body {
   cursor: pointer;
   color: $trackAndField;
   font-family: inherit;
-  margin-left: 1.154rem;
+  margin-left: 1.5em;
   text-align: left;
   text-decoration: underline;
 
@@ -367,7 +373,7 @@ html, body {
 }
 
 .contactMessage {
-  @include inputField;
+  @extend %inputField;
   height: 370px;
 
   @include tablet {
@@ -380,7 +386,7 @@ html, body {
 }
 
 .contactSubmit {
-  @include inputField;
+  @extend %inputField;
   background-color: transparent;
   border: 1px solid $codGray;
   color: $codGray;
@@ -400,6 +406,8 @@ html, body {
 
   @include desktop {
     width: 35%;
+    margin-right: 15%;
+    margin-left: 15%;
   }
 }
 
@@ -422,16 +430,14 @@ html, body {
 
 footer {
   text-align: center;
-  padding-top: 1rem;
+  padding: 1em 0;
 }
 
 .copyright,  .socialMedia, .imprint {
-  padding-bottom: 1rem;
-
   a {
     color: $codGray;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 0 0.77em;
   }
 
   @include tablet {
@@ -439,7 +445,7 @@ footer {
     width: 25%;
 
     a {
-      padding: 0 0.39rem;
+      padding: 0 0.385em;
     }
   }
 }
