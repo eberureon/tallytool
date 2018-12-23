@@ -1,0 +1,24 @@
+@mixin inputField {
+  border-color: transparent;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px;
+  margin: 1.154rem 0;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid rgba(82,168,236,0.8);
+    outline: none;
+    -webkit-box-shadow: inset 0 1px 1px $transparent, 0 0 8px $blueJeans;
+    -moz-box-shadow: inset 0 1px 1px $transparent, 0 0 8px $blueJeans;
+    box-shadow: inset 0 1px 1px $transparent, 0 0 8px $blueJeans;
+  }
+
+  &:focus:invalid {
+    border-color: $trackAndField;
+    -webkit-box-shadow: 0 0 6px $paleVioletRed;
+    -moz-box-shadow: 0 0 6px $paleVioletRed;
+    box-shadow: 0 0 6px $paleVioletRed;
+  }
+}

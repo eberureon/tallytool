@@ -1,0 +1,445 @@
+@import 'partials/base';
+@import 'partials/fonts';
+@import 'partials/fontawesome-custom';
+@import 'vendor/burger_menu/hamburgers';
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  color: $codGray;
+  font: 400 17px $font;
+}
+
+.homeContent {
+  @include pic($bg-img: url('../../img/background.jpg'), $bg-size: cover);
+  height: 110vh;
+  position: relative;
+}
+
+.homeText {
+  color: $alabaster;
+  padding: 50vh 10vw 0;
+}
+
+.homeTitle {
+  font-size: 60px;
+  font-weight: $regular;
+  margin: 0;
+}
+
+.homeDesc {
+  font-size: $title;
+  font-weight: $light;
+  margin: 0;
+}
+
+
+.langDropdown {
+  border: 1px solid $alabaster;
+  border-radius: 3px;
+  float: right;
+  margin: 0.77rem;
+  text-align: center;
+
+  label {
+    margin: 0;
+  }
+}
+
+.langDropdownList {
+  cursor: pointer;
+  height: 40px;
+  list-style-type: none;
+  overflow: hidden;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: $alabaster;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  li {
+    color: $alabaster;
+    font-weight: $light;
+    line-height: 40px;
+    padding: 0 15px;
+  }
+}
+
+.langDropdownBtn {
+  float: left;
+  opacity: 0;
+  margin: -0.77rem;
+
+  &:checked ~ .langDropdownList {
+    height: 122px;
+  }
+
+  &:not(:checked) ~ .langDropdownList {
+    height: 40px;
+  }
+}
+
+.navbar {
+  background-color: $flagstone;
+  border-bottom: 2px solid $alabaster;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
+
+  .active, a:hover {
+    background-color: $alabaster;
+    border-radius: 2px;
+    color: $wildDove;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    letter-spacing: 2px;
+    margin: 0 4.62rem 0.385rem 0;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: $alabaster;
+    padding: 1px 4px 2px 6px;
+    text-decoration: none;
+  }
+}
+
+.sticky {
+  animation: slideDown .5s;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+// Buger Menu Navbar
+.navList {
+  display: none;
+
+  @include tablet {
+    display: inline-block;
+    transition: all .3s ease;
+
+    li {
+      display: initial;
+      margin: 0 0.39rem;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.hamburger {
+  &.is-active {
+    float: right;
+
+    & ~ .navList {
+      display: inline-block;
+    }
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.title {
+  color: $codGray;
+  font-size: 35px;
+  font-weight: $bold;
+  margin-bottom: 1.66em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.content {
+  background-color: $transparent;
+  box-shadow: inset 0 1px 0 0 $transparent, inset 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  min-height: 50vh;
+  overflow: hidden;
+  padding: 3rem 3rem 5rem;
+}
+
+.aboutMeContent {
+  text-align: center;
+  padding: 0 1.66rem 3rem;
+
+  @include tablet {
+    padding-top: 3rem;
+  }
+
+  @include desktop {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.aboutMePicture {
+  border: 2px solid $codGray;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-radius: 50%;
+  margin: 2.25rem;
+  height: 150px;
+  width: 150px;
+
+  @include desktop {
+    float: left;
+    margin-left: 15rem;
+    height: 164px;
+    width: 164px;
+  }
+}
+
+.aboutMeInformation {
+  text-align: justify;
+  display: table;
+  margin: 0;
+  padding: 4rem 1.66rem;
+  word-break: break-all;
+
+  @include tablet {
+    word-break: initial;
+  }
+
+  @include desktop {
+    padding: 1.66rem; // evtl. 2.88rem 1.66rem
+    margin-right: 20rem;
+    margin-left: 2.25rem;
+  }
+}
+
+.employer {
+  padding-left: 0;
+
+  @include desktop {
+    height: 0;
+
+    .employerTitle {
+      text-align: initial;
+      padding-left: 10rem;
+    }
+  }
+
+  .employerContent {
+    margin: auto;
+    width: 300px;
+
+    p {
+      margin: 0 0 0.23rem 9.3rem;
+      &:nth-child(2) {
+        padding-top: 1rem;
+      }
+    }
+
+    a {
+      color: initial;
+    }
+
+    @include desktop {
+      padding-left: 5rem;
+      margin: initial;
+      width: initial;
+    }
+  }
+}
+
+.JSPicture {
+  @include pic($bg-img: url('../../img/js_logo_oS.svg'));
+  background-position-y: 55%;
+  border: 2px solid $codGray;
+  border-left-style: dashed;
+  border-right-style: dashed;
+  border-radius: 50%;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
+
+.skills {
+  font-size: 13px;
+  overflow: hidden;
+  padding: 10rem 0 0;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+  }
+
+  @include desktop {
+    padding-top: 0;
+    padding-left: 60vw;
+    text-align: initial;
+  }
+}
+
+.employerTitle, .skillsTitle {
+  font-size: $title;
+  font-weight: $regular;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0;
+
+  & ~ .skillsTitle {
+    margin-top: 10rem;
+  }
+}
+
+.skillsPicture {
+  display: inline-block;
+  margin: 10px 17px 50px;
+  height: 85px;
+  width: 85px;
+}
+
+.skillsLabel {
+  margin-top: 100px;
+  text-align: center;
+}
+
+@each $name in $skillsPictures {
+  $i: index($skillsPictures, $name);
+  .#{$name}Picture {
+    @include pic(
+      $bg-img: url('../../img/skills/#{$name}.svg'),
+      $bg-size: nth($skillsBgSize, $i)
+    );
+    @if $name == 'Scrum' {
+      width: 107px;
+    }
+  }
+}
+
+.contactForm {
+  text-align: center;
+}
+
+.contactInput {
+  @include inputField;
+
+  @include tablet {
+    width: 75%;
+  }
+
+  @include desktop {
+    width: 50%;
+  }
+}
+
+.valMessage {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: $trackAndField;
+  font-family: inherit;
+  margin-left: 1.154rem;
+  text-align: left;
+  text-decoration: underline;
+
+  @include tablet {
+    width: 75%;
+  }
+
+  @include desktop {
+    width: 50%;
+  }
+}
+
+.contactMessage {
+  @include inputField;
+  height: 370px;
+
+  @include tablet {
+    width: 75%;
+  }
+
+  @include desktop {
+    width: 50%;
+  }
+}
+
+.contactSubmit {
+  @include inputField;
+  background-color: transparent;
+  border: 1px solid $codGray;
+  color: $codGray;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover:enabled {
+    background-color: $flagstone;
+    border-color: $flagstone;
+    color: $alabaster;
+    cursor: pointer;
+  }
+
+  @include tablet {
+    width: 50%;
+  }
+
+  @include desktop {
+    width: 35%;
+  }
+}
+
+.formResponse {
+  border-radius: 5px;
+  color: $codGray;
+  font-weight: $bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+
+  @include tablet {
+    width: 49%;
+  }
+
+  @include desktop {
+    width: 34%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.copyright,  .socialMedia, .imprint {
+  padding-bottom: 1rem;
+
+  a {
+    color: $codGray;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+
+  @include tablet {
+    display: inline-block;
+    width: 25%;
+
+    a {
+      padding: 0 0.39rem;
+    }
+  }
+}

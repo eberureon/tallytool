@@ -42,7 +42,7 @@
   <meta name='msapplication-wide310x150logo' content='assets/img/favicon/mstile-310x150.png' />
 
   <!-- STYLES -->
-  <link rel='stylesheet' type='text/css' href='assets/style/css/index.css'> <!-- Change to minified version in production -->
+  <link rel='stylesheet' type='text/css' href='assets/style/css/main.css'> <!-- Change to minified version in production -->
   <link rel='stylesheet' type='text/css' href='libs/fontawesome/css/all.min.css'>
 </head>
 <body>
@@ -117,7 +117,7 @@
         </div>
 
         <div class='skills'>
-          <h2 class='skillsTitle'>Primäre Fähigkeiten&#58;</h2> <!-- evtl. Primäre Kenntnisse -->
+          <h2 class='skillsTitle'>Primäre Kenntnisse&#58;</h2>
             <br>
             <div class='skillsPicture HTMLPicture' title='HTML'>
               <h4 class='skillsLabel'>HTML</h4>
@@ -151,10 +151,13 @@
             <div class='skillsPicture MySQLPicture' title='MySQL'>
               <h4 class='skillsLabel'>MySQL</h4>
             </div>
-            <div class='skillsPicture jQueryPicutre' title='jQuery'>
+            <div class='skillsPicture bootstrapPicture' title='Bootstrap'>
+              <h4 class='skillsLabel'>Bootstrap</h4>
+            </div>
+            <div class='skillsPicture jQueryPicture' title='jQuery'>
               <h4 class='skillsLabel'>jQuery</h4>
             </div>
-            <div class='skillsPicture linuxPicture' title='Linux'>
+            <div class='skillsPicture tuxPicture' title='Linux'>
               <h4 class='skillsLabel'>Linux</h4>
             </div>
         </div>
@@ -209,5 +212,14 @@
   <!-- SCRIPTS -->
   <script src='libs/jquery/jquery.min.js'></script>
   <script src='assets/js/main.js'></script>
+  <script>
+    /* DETECT IE */
+      if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+        alert('Internet Explorer 11 und älter werden von mir nicht mehr unterstützt.\n\n' +
+            'Bitte verwenden Sie einen anderen Brower um dem Inhalt dieser Seite richtig und in vollem Umfang anzeigen zu können.\n\n\n' +
+            'Internet Explorer 11 and older is no longer supported on this Webpage.\n\n' +
+            'Please use another Browser to see the content correctly displayed.');
+      }
+  </script>
 </body>
 </html>

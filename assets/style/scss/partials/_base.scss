@@ -1,0 +1,9 @@
+@import '../modules/colors';
+@import '../modules/typography';
+@import '../modules/media-queries';
+@import '../modules/input-field';
+@import '../modules/picture';
+
+@keyframes slideDown {
+  0% { transform: translateY(-150px) }
+}
