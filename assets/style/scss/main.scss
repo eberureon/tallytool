@@ -26,13 +26,13 @@ html, body {
 
 .homeTitle {
   font-size: 60px;
-  font-weight: $regular;
+  font-weight: $light;
   margin: 0;
 }
 
 .homeDesc {
   font-size: $title;
-  font-weight: $light;
+  font-weight: $thin;
   margin: 0;
 }
 
@@ -69,7 +69,7 @@ html, body {
 
   li {
     color: $alabaster;
-    font-weight: $light;
+    font-weight: $thin;
     line-height: 40px;
     padding: 0 15px;
   }
@@ -296,7 +296,7 @@ html, body {
 
 .employerTitle, .skillsTitle {
   font-size: $title;
-  font-weight: $regular;
+  font-weight: $light;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0;
