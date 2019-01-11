@@ -12,4 +12,5 @@ jspm_packages
 .serverless
 secrets.json
 
+assets/style/css
 yarn-error.log
