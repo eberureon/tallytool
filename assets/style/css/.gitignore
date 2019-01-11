@@ -1,0 +1,6 @@
+# This empty folder is needed because otherwise the build:scss process can't generate the css file
+#
+# Ignore everything in this directory
+*
+# Except gitignore
+!.gitignore

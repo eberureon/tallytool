@@ -8,8 +8,8 @@
   "license": "MIT",
   "devDependencies": {},
   "scripts": {
-    "watch:scss": "sass --watch assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed",
-    "build:scss": "sass assets/style/scss/main.scss assets/style/css/main.min.css --style compressed"
+    "watch:scss": "sass --watch assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed --sourcemap=none",
+    "build:scss": "sass assets/style/scss/main.scss assets/style/css/main.min.css --style compressed --sourcemap=none"
   },
   "dependencies": {
     "aws-sdk": "^2.368.0",
