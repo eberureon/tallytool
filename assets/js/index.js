@@ -1,10 +1,10 @@
 let table = document.getElementById('table');
 let tableSumData = document.querySelectorAll('#sum td');
 
-// set Items in localStorage
+// initialize Items in localStorage and save new Items to localStorage
 function saveToLS(date, day, event, factor, salary, deleteButton) {
   let items = JSON.parse(localStorage.getItem('dateEntry')) || [];
- 
+
   let newItems = {
     'date'          : date,
     'day'           : day,
@@ -92,7 +92,7 @@ function addRow(date, day, event, factor, salary, deleteButton) {
 function submit() {
   let selectedDay = new Date(document.querySelector('#date').value);
 
-  let dateFormatted = selectedDay.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
+  let dateFormatted  = selectedDay.toLocaleDateString('de-de', {day: '2-digit', month: '2-digit', year: 'numeric'});
   let dateWeekday    = selectedDay.toLocaleDateString('de-de', {weekday: 'short'});
   let event          = document.getElementById('event').value;
   let factor         = parseInt(document.getElementById('factor').value);
