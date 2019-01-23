@@ -6,14 +6,17 @@ const sass = require('gulp-sass');
 const scssFiles = 'assets/scss/**/*.scss';
 const cssDest   = 'assets/css';
 
-gulp.task('sass', function() {
-  gulp.src(scssFiles)
+function sassBuild() {
+  return gulp.src(scssFiles)
     .pipe(sass().on('error', sass.logError))
-    .pipe(minify())
     .pipe(rename({suffix: '.min'}))
+    .pipe(minify())
     .pipe(gulp.dest(cssDest))
-});
+}
 
-gulp.task('watch', ['sass'], function() {
-  gulp.watch(scssFiles, ['sass']);
-});
+function watch() {
+  return gulp.watch(scssFiles, sassBuild);
+}
+
+gulp.task('sass', gulp.series(sassBuild));
+gulp.task('watch', gulp.series(watch));
