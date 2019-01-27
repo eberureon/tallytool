@@ -13,7 +13,6 @@ function stickyNav() {
     navbar.classList.remove('sticky');
   }
 }
-
 /* Sticky Navigation */
 
 /* Highlighted Navigation */
@@ -28,7 +27,7 @@ $(document).ready(function () {
     $('a').each(function () {
       $(this).removeClass('active');
     });
-    $(this).addClass('active');
+      $(this).addClass('active');
 
     let navbarHeight = navbar.clientHeight;
     let target = this.hash;

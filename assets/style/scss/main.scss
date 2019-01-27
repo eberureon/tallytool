@@ -250,6 +250,7 @@ html, body {
 
     p {
       margin: 0 0 0.23em 8em;
+
       &:nth-child(2) {
         padding-top: 0.7em;
       }
@@ -420,7 +421,7 @@ footer {
   padding: 1em 0;
 }
 
-.copyright,  .socialMedia, .imprint {
+.copyright, .socialMedia, .imprint {
   padding: 0.32em 0;
 
   a {
