@@ -13,6 +13,7 @@ function stickyNav() {
     navbar.classList.remove('sticky');
   }
 }
+
 /* Sticky Navigation */
 
 /* Highlighted Navigation */
