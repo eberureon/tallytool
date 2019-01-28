@@ -6,13 +6,13 @@
   "repository": "https://ebelleon@bitbucket.org/ebelleon/portfolio.git",
   "author": "Leon Ebel <ebel.leon@hotmail.com>",
   "license": "MIT",
-  "devDependencies": {},
+  "devDependencies": {
+    "aws-sdk": "^2.395.0",
+    "serverless": "^1.36.3"
+  },
   "scripts": {
     "watch:scss": "sass --watch assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed",
     "build:scss": "sass --update assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed --sourcemap=none"
   },
-  "dependencies": {
-    "aws-sdk": "^2.368.0",
-    "serverless": "^1.34.1"
-  }
+  "dependencies": {}
 }
