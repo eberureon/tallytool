@@ -4,14 +4,13 @@
 @import 'vendor/burger_menu/hamburgers';
 
 html, body {
-  font-size: 17px;
   padding: 0;
   margin: 0;
 }
 
 .wrapper {
   color: $codGray;
-  font: 300 1em $font;
+  font: 300 1.0625em $font;
 }
 
 .homeContent {
@@ -26,7 +25,7 @@ html, body {
 }
 
 .homeTitle {
-  font-size: 4.12em;
+  font-size: 4em;
   font-weight: $light;
   margin: 0;
 }
@@ -94,7 +93,7 @@ html, body {
   background-color: $flagstone;
   border-bottom: 2px solid $alabaster;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1em;
   width: 100%;
 
   .active, a:hover {

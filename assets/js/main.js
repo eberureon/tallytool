@@ -30,16 +30,16 @@ $(document).ready(function () {
       $(this).addClass('active');
 
     let navbarHeight = navbar.clientHeight;
-    let target = this.hash;
+    let target = $(this.hash);
     if (document.querySelector('.navbar.sticky') === null) {
       $('html, body').stop().animate({
-        'scrollTop': $(target).offset().top - navbarHeight
+        'scrollTop': target.offset().top - navbarHeight
       }, 700, function () {
         $(document).on('scroll', onScroll);
       });
     } else {
       $('html, body').stop().animate({
-        'scrollTop': $(target).offset().top + 2
+        'scrollTop': target.offset().top + 2
       }, 700, function () {
         $(document).on('scroll', onScroll);
       });
@@ -49,13 +49,13 @@ $(document).ready(function () {
 });
 
 function onScroll() {
-  let scrollPos = $(document).scrollTop();
+  let $scrollPos = $(document).scrollTop();
   $('.navbar a').each(function () {
-    let currLink = $(this);
-    let hrefElement = $(currLink.attr('href'));
-    if (hrefElement.position().top <= scrollPos + 80) {
+    let $currLink = $(this);
+    let $hrefElement = $($currLink.attr('href'));
+    if ($hrefElement.position().top <= $scrollPos + 80) {
       $('.navbar a').removeClass('active');
-      currLink.addClass('active');
+      $currLink.addClass('active');
     }
   });
 }
