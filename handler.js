@@ -31,8 +31,8 @@ function generateError(code, err) {
 }
 
 function generateEmailParams(body) {
-  const { email, name, message } = JSON.parse(body);
-  if(!(email && name && message)) {
+  const {email, name, message} = JSON.parse(body);
+  if (!(email && name && message)) {
     throw new Error('Gehen Sie sicher dass Sie folgende Parameter ausgefüllt haben \'email\', \'name\', \'content\'.')
   }
 
@@ -62,7 +62,7 @@ module.exports.staticSiteMailer = async (event) => {
     const emailParams = generateEmailParams(event.body);
     const data = await ses.sendEmail(emailParams).promise();
     return generateResponse(200, data);
-  } catch(err) {
+  } catch (err) {
     return generateError(500, err);
   }
 };
