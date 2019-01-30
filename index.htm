@@ -116,7 +116,7 @@
       <div class='employer'>
         <h2 class='employerTitle'>Arbeitgeber&#58;</h2>
 
-        <div class="employerContent">
+        <div class='employerContent'>
           <a href='https://www.jochen-schweizer.de' target='_blank'>
             <span class='JSPicture' title='Jochen Schweizer'></span>
           </a>
@@ -129,29 +129,52 @@
       <div class='skills'>
         <h2 class='skillsTitle'>Primäre Kenntnisse&#58;</h2>
         <br>
-        <div class='skillsPicture HTMLPicture' title='HTML'>
-          <h4 class='skillsLabel'>HTML</h4>
-        </div>
-        <div class='skillsPicture CSSPicture' title='CSS'>
-          <h4 class='skillsLabel'>CSS</h4>
-        </div>
-        <div class='skillsPicture JavaScriptPicture' title='JavaScript'>
-          <h4 class='skillsLabel'>JavaScript</h4>
-        </div>
-        <div class='skillsPicture nodejsPicture' title='Node.js'>
-          <h4 class='skillsLabel'>Node.js</h4>
-        </div>
-        <div class='skillsPicture gitPicture' title='Git'>
-          <h4 class='skillsLabel'>Git</h4>
+
+        <div class='skillsContent'>
+          <div class='skillsPicture HTMLPicture' title='HTML'>
+            <h4 class='skillsLabel'>HTML</h4>
+          </div>
+
+          <label for='CSSDropdownBtn'>
+            <input class='CSSDropdownBtn' id='CSSDropdownBtn' type='checkbox'>
+            <div class='skillsPicture CSSPicture' title='CSS'>
+              <h4 class='skillsLabel'>CSS <i class='fas fa-angle-down'></i></h4>
+            </div>
+            <div class='CSSDropdownContent'>
+              <div class='skillsPicture LESSPicture' title='LESS'>
+                <h4 class='skillsLabel'>LESS</h4>
+              </div>
+              <div class='skillsPicture SASSPicture' title='SASS'>
+                <h4 class='skillsLabel'>SASS</h4>
+              </div>
+              <div class='skillsPicture bootstrapPicture' title='Bootstrap'>
+                <h4 class='skillsLabel'>Bootstrap</h4>
+              </div>
+            </div>
+          </label>
+
+
+          <label for='JavaScriptDropdownBtn'>
+            <input class='JavaScriptDropdownBtn' id='JavaScriptDropdownBtn' type='checkbox'>
+            <div class='skillsPicture JavaScriptPicture' title='JavaScript'>
+              <h4 class='skillsLabel'>JavaScript <i class='fas fa-angle-down'></i></h4>
+            </div>
+            <div class='JavaScriptDropdownContent'>
+              <div class='skillsPicture nodejsPicture' title='Node.js'>
+                <h4 class='skillsLabel'>Node.js</h4>
+              </div>
+              <div class='skillsPicture jQueryPicture' title='jQuery'>
+                <h4 class='skillsLabel'>jQuery</h4>
+              </div>
+            </div>
+          </label>
+
+          <div class='skillsPicture gitPicture' title='Git'>
+            <h4 class='skillsLabel'>Git</h4>
+          </div>
         </div>
 
         <h2 class='skillsTitle'>Weitere Kenntnisse&#58;</h2> <!-- evtl. Sekundäre Kenntnisse -->
-        <div class='skillsPicture LESSPicture' title='LESS'>
-          <h4 class='skillsLabel'>LESS</h4>
-        </div>
-        <div class='skillsPicture SASSPicture' title='SASS'>
-          <h4 class='skillsLabel'>SASS</h4>
-        </div>
         <div class='skillsPicture scrumPicture' title='Scrum'>
           <h4 class='skillsLabel'>Scrum</h4>
         </div>
@@ -160,12 +183,6 @@
         </div>
         <div class='skillsPicture MySQLPicture' title='MySQL'>
           <h4 class='skillsLabel'>MySQL</h4>
-        </div>
-        <div class='skillsPicture bootstrapPicture' title='Bootstrap'>
-          <h4 class='skillsLabel'>Bootstrap</h4>
-        </div>
-        <div class='skillsPicture jQueryPicture' title='jQuery'>
-          <h4 class='skillsLabel'>jQuery</h4>
         </div>
         <div class='skillsPicture tuxPicture' title='Linux'>
           <h4 class='skillsLabel'>Linux</h4>

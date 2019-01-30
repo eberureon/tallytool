@@ -3,6 +3,96 @@
 @import 'partials/fontawesome-custom';
 @import 'vendor/burger_menu/hamburgers';
 
+/* Change Position when finished */
+.CSSDropdownContent {
+  background-color: $transparent;
+  list-style-type: none;
+  overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+.CSSDropdownBtn {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  margin-left: 1.5em;
+
+  &:checked ~ .CSSDropdownContent {
+    max-height: 500px;
+  }
+
+  &:checked + div > h4 > i {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  &:not(:checked) ~ .CSSDropdownContent {
+    max-height: 0;
+  }
+
+  &:not(:checked) + div > h4 > i {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+.JavaScriptDropdownContent {
+  background-color: $transparent;
+  list-style-type: none;
+  overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+
+.JavaScriptDropdownBtn {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  margin-left: 1.5em;
+
+  &:checked ~ .JavaScriptDropdownContent {
+    max-height: 500px;
+  }
+
+  &:checked + div > h4 > i {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  &:not(:checked) ~ .JavaScriptDropdownContent {
+    max-height: 0;
+  }
+
+  &:not(:checked) + div > h4 > i {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+/* Change Position when finished */
+
 html, body {
   padding: 0;
   margin: 0;
@@ -51,7 +141,7 @@ html, body {
 
 .langDropdownList {
   cursor: pointer;
-  height: 40px;
+  height: 40px; // remove in master due to redundancy
   list-style-type: none;
   overflow: hidden;
   -webkit-transition: all .3s ease;
@@ -306,10 +396,11 @@ html, body {
 }
 
 .skillsPicture {
+  cursor: pointer; // add cursor in SkillsPictures
   display: inline-block;
   margin: 0.6em 1em 3em;
   height: 85px;
-  width: 85px;
+  width: 100px;
 }
 
 .skillsLabel {
