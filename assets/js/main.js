@@ -1,7 +1,7 @@
 /* Sticky Navigation */
 window.onscroll = function () { stickyNav() };
 
-const $href = $('a[href^="#"]');
+const $href = $('.navbar a[href^="#"]');
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
 const sticky = navbar.offsetTop + 100;
@@ -24,7 +24,7 @@ $(document).ready(function () {
     e.preventDefault();
     $(document).off('scroll');
 
-    $('a').each(function () {
+    $('.navbar a').each(function () {
       $(this).removeClass('active');
     });
       $(this).addClass('active');
@@ -59,7 +59,6 @@ function onScroll() {
     }
   });
 }
-
 /* Highlighted Navigation */
 
 // Burger Menu 'X' animation
