@@ -25,15 +25,23 @@ html, body {
 }
 
 .homeTitle {
-  font-size: 4em;
+  font-size: 3.2em;
   font-weight: $light;
   margin: 0;
+
+  @include tablet {
+    font-size: 4em;
+  };
 }
 
 .homeDesc {
-  font-size: $title;
+  font-size: 1.2em;
   font-weight: $thin;
   margin: 0;
+
+  @include tablet {
+    font-size: $headlineDefault;
+  }
 }
 
 
@@ -165,7 +173,7 @@ html, body {
 
 .title {
   color: $codGray;
-  font-size: $title;
+  font-size: $headlineDefault;
   font-weight: $bold;
   margin: 0.83em 1em 1.66em;
   text-align: center;
