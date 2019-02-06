@@ -333,24 +333,15 @@ body {
       width: 115px;
     }
   }
-}
-
-.CSSDropdownContent {
-  background-color: $transparent;
-  @include dropdownDefault;
-}
-
-.CSSDropdownBtn {
-  @include dropdownBtn(CSSDropdownContent);
-}
-
-.JavaScriptDropdownContent {
-  background-color: $transparent;
-  @include dropdownDefault;
-}
-
-.JavaScriptDropdownBtn {
-  @include dropdownBtn(JavaScriptDropdownContent);
+  @if $name == 'CSS' or $name == 'JavaScript' {
+    .#{$name}DropdownBtn {
+      @include dropdownBtn(#{$name}DropdownContent);
+    }
+    .#{$name}DropdownContent {
+      background-color: $transparent;
+      @include dropdownDefault;
+    }
+  }
 }
 
 .contactForm {
