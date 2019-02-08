@@ -84,11 +84,11 @@ body {
   margin: -1em;
 
   &:checked ~ .langDropdownList {
-    height: 122px;
+    max-height: 122px;
   }
 
   &:not(:checked) ~ .langDropdownList {
-    height: 40px;
+    max-height: 40px;
   }
 }
 
