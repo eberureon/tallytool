@@ -2,6 +2,7 @@
 window.onscroll = function () { stickyNav() };
 
 const $href = $('.navbar a[href^="#"]');
+const $dropdownBtn = $('input[id$="DropdownBtn"]');
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
 const sticky = navbar.offsetTop + 100;
@@ -60,6 +61,18 @@ function onScroll() {
   });
 }
 /* Highlighted Navigation */
+
+/* Scroll to Dropdown Content */
+$(document).ready(function () {
+  $dropdownBtn.on('click', function () {
+    if ( /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) && $dropdownBtn.is(":checked") ) {
+      $('html, body').animate({
+        scrollTop: $("div[class$='DropdownContent']").offset().top - navbar.clientHeight
+      }, 700);
+    };
+  });
+});
+/* Scroll to Dropdown Content */
 
 // Burger Menu 'X' animation
 hamburger.addEventListener('click', function () {
