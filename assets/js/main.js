@@ -80,7 +80,7 @@ hamburger.addEventListener('click', function () {
 });
 
 // Get current Year in Imprint
-$('.currentYear').html(new Date().getFullYear());
+document.querySelector('.currentYear').append(new Date().getFullYear());
 
 /* MAIL VALIDATION START */
 function checkForCloseMatch(entry, domain) {
