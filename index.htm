@@ -20,6 +20,24 @@
 
   <title>Leon Ebel - Portfolio</title>
 
+  <script>
+  let Hyphenopoly = {
+    require: {
+        "de": "Silbentrennungsalgorithmus"
+    },
+    paths: {
+      patterndir: "libs/hyphenopoly/patterns/",
+      maindir: "libs/hyphenopoly/"
+    },
+    setup: {
+        selectors: {
+            ".aboutMeInformation": {}
+        }
+    }
+  };
+  </script>
+  <script src='libs/hyphenopoly/Hyphenopoly_Loader.js'></script>
+
   <!-- FAVICON -->
   <link rel='icon' type='image/png' sizes='16x16' href='assets/img/favicon/favicon-16x16.png'/>
   <link rel='icon' type='image/png' sizes='32x32' href='assets/img/favicon/favicon-32x32.png'/>
@@ -83,34 +101,35 @@
   </nav>
 
   <section id='aboutMe'>
-    <div class='content'>
-      <h1 class='title'>Über mich</h1>
-
-      <div class='aboutMeWrapper'>
-        <img class='aboutMePicture' src='assets/img/pic.jpg' alt='My profile picture'>
-        <div class='aboutMeInformation'>
-          <p class='aboutMeParagraph'>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
-          <p class='aboutMeParagraph'>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
-          <p class='aboutMeParagraph'>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          </p>
+    <div class='container'>
+      <div class='content'>
+        <div class='aboutMeWrapper'>
+          <h1 class='title'>Über mich</h1>
+          <img class='aboutMePicture' src='assets/img/pic.jpg' alt='My profile picture'>
+          <div class='aboutMeInformation'>
+            <p class='aboutMeParagraph'>
+              Mein Name ist Leon Ebel, ich bin <b>Softwareentwickler</b> spezialisiert auf <b>Webentwicklung</b>.
+              Dabei arbeite ich sowohl im <b>Frontend</b> als auch <b>Backend</b>, mit Technologien wie PHP, Node.js, oder Perl.
+            </p>
+            <p class='aboutMeParagraph'>
+              Seit 2016 arbeite ich in <b>München</b> als Entwickler bei Jochen Schweizer.
+              Dort habe ich die Ausbildung zum <b>Fachinformatiker für Anwendungsentwicklung</b> absolviert.
+            </p>
+            <p class='aboutMeParagraph'>
+              Mein <b>Interesse für Computer und Software</b> begann schon in meiner Jugend, damals faszinierte es mich wie Computerprogramme funktionieren und wie sie aufgebaut sind.
+              Mittlerweile finde ich es auch spannend neue Technologien und Infrastrukturen kennenzulernen.
+            </p>
+            <p class='aboutMeParagraph'>
+              Wenn ich mal <b>nicht programmiere</b> oder in der <b>Arbeit</b> bin, bin ich meistens beim <b>Sport</b> oder vor dem <b>Fernseher</b> zu finden.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section id='experience'>
-    <div class='content'>
+    <div class='container'>
       <h1 class='title'>Erfahrung</h1>
 
       <div class='employerWrapper'>
@@ -144,8 +163,8 @@
               <h4 class='skillsLabel'>JavaScript <i class='fas fa-angle-up'></i></h4>
             </div>
           </label>
-        <div class='skillsPicture GitPicture' title='Git'>
-          <h4 class='skillsLabel'>Git</h4>
+        <div class='skillsPicture PHPPicture' title='PHP'>
+          <h4 class='skillsLabel'>PHP</h4>
         </div>
         <!-- Dropdown Content -->
         <div class='CSSDropdownContent'>
@@ -178,6 +197,9 @@
           <div class='skillsPicture MySQLPicture' title='MySQL'>
             <h4 class='skillsLabel'>MySQL</h4>
           </div>
+          <div class='skillsPicture GitPicture' title='Git'>
+            <h4 class='skillsLabel'>Git</h4>
+          </div>
           <div class='skillsPicture TuxPicture' title='Linux'>
             <h4 class='skillsLabel'>Linux</h4>
           </div>
@@ -186,7 +208,7 @@
   </section>
 
   <section id='contact'>
-    <div class='content'>
+    <div class='container'>
       <h1 class='title'>Kontakt Formular</h1>
 
       <form name='contactForm' class='contactForm'>
