@@ -347,7 +347,7 @@ body {
   text-align: center;
 
   @include tablet {
-    margin-top: 8.5em;
+    margin-top: 8em;
   }
 }
 
@@ -364,13 +364,6 @@ body {
     @if $name == 'PHP' {
       .skillsLabel {
         margin-top: 7.5em;
-      }
-
-      @include tablet {
-        background-size: 180%;
-        -webkit-background-size: 180%;
-        -moz-background-size: 180%;
-        -o-background-size: 180%;
       }
     }
   }

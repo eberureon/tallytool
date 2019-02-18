@@ -2,38 +2,38 @@ $skillsPictures:
   Agile,
   Bootstrap,
   CSS,
-  Git,
   HTML,
   JavaScript,
   jQuery,
   LESS,
   MySQL,
   Nodejs,
+  Perl,
   PHP,
   SASS,
   Scrum,
   Tux;
 
 $skillsBgSize:
-  100%,      // Agile
-  75%,       // Bootstrap
-  100%,      // CSS
-  90%,       // Git
-  100%,      // HTML
-  105%,      // JavaScript
-  100%,      // jQuery
-  100%,      // LESS
+  100% 100%, // Agile
+  70%  80%,  // Bootstrap
+  100% 100%, // CSS
+  100% 100%, // HTML
+  105% 105%, // JavaScript
+  100% 100%, // jQuery
+  100% 100%, // LESS
   100% 52%,  // MySQL
-  100%,      // Nodejs
-  150%,      // PHP
-  85%,       // SASS
-  155%,      // Scrum
-  90%;       // Tux | Linux
+  100% 100%, // Nodejs
+  100% 100%, // Perl
+  115% 180%, // PHP
+  85%  85%,  // SASS
+  155% 155%, // Scrum
+  90%  90%;  // Tux | Linux
 
-@mixin pic($bg-img: null, $bg-size: null) {
+  @mixin pic($bg-img: null, $bg-size: null) {
   background: $bg-img no-repeat center transparent;
-  background-size: $bg-size;
   -webkit-background-size: $bg-size;
   -moz-background-size: $bg-size;
   -o-background-size: $bg-size;
+  background-size: $bg-size;
 }
