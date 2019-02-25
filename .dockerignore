@@ -1,0 +1,7 @@
+.git
+.idea
+.sass-cache
+.yarnclean
+.DS_Store
+node_modules
+yarn-error.log
