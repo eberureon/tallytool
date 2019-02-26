@@ -3,6 +3,8 @@
 .sass-cache
 .yarnclean
 .DS_Store
+.editorconfig
+.gitignore
 node_modules
 npm-debug.log
 yarn-error.log
