@@ -4,7 +4,7 @@ services:
   portfolio:
     build:
       context: .
-      dockerfile: ./docker_conf/Dockerfile
+      dockerfile: ./docker/Dockerfile
     container_name: portfolio
     restart: always
     ports:
