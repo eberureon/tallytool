@@ -1,16 +1,21 @@
 version: '3'
 
 services:
-  portfolio:
+  web:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
-    container_name: portfolio
+    container_name: nextcloud-web
     restart: always
-    ports:
-      - '8080:80'
     volumes:
-      - files:/var/www/html:ro
+      - data:/var/www/html:ro
+    #environment:
+    #  - VIRTUAL_HOST=ebelleon.de,www.ebelleon.de
+    #  - LETSENCRYPT_HOST=ebelleon.de,www.ebelleon.de
+    #  - LETSENCRYPT_EMAIL=ebel.leon@hotmail.com
+    #networks:
+    #  - default
+    #  - nginx-proxy_default
 
 volumes:
-  files:
+  data:
