@@ -7,10 +7,7 @@ jspm_packages
 .sass-cache
 .yarnclean
 .DS_Store
-
-# Serverless directories
-.serverless
-secrets.json
+.directory
 
 assets/style/css
 yarn-error.log
