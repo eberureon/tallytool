@@ -9,7 +9,7 @@
   "devDependencies": {
     "aws-sdk": "^2.395.0",
     "sass": "^1.17.2",
-    "serverless": "^1.36.3"
+    "serverless": "^1.38.0"
   },
   "scripts": {
     "watch:scss": "sass --watch assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed",
