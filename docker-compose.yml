@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
-    container_name: nextcloud-web
+    container_name: portfolio-web
     restart: always
     volumes:
       - data:/var/www/html:ro
