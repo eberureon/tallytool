@@ -9,13 +9,17 @@ services:
     restart: always
     volumes:
       - data:/var/www/html:ro
-    #environment:
-    #  - VIRTUAL_HOST=ebelleon.de,www.ebelleon.de
-    #  - LETSENCRYPT_HOST=ebelleon.de,www.ebelleon.de
-    #  - LETSENCRYPT_EMAIL=ebel.leon@hotmail.com
-    #networks:
-    #  - default
-    #  - nginx-proxy_default
+    environment:
+      - VIRTUAL_HOST=ebelleon.de,www.ebelleon.de
+      - LETSENCRYPT_HOST=ebelleon.de,www.ebelleon.de
+      - LETSENCRYPT_EMAIL=ebel.leon@hotmail.com
+    networks:
+      - default
+      - nginx-proxy_default
 
 volumes:
   data:
+
+networks:
+  nginx-proxy_default:
+    external: true
