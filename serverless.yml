@@ -3,18 +3,15 @@
 
 service: static-site-mailer
 
-custom:
-  secrets: ${file(secrets.json)}
-
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: ${self:custom.secrets.NODE_ENV}
+  stage: dev
   region: eu-west-1
   enviroment:
-    NODE_ENV: ${self:custom.secrets.NODE_ENV}
-    EMAIL: ${self:custom.secrets.EMAIL}
-    DOMAIN: $self:custom.secrets.DOMAIN}
+    NODE_ENV: dev
+    EMAIL: "kontakt@ebelleon.de"
+    DOMAIN: "https://ebelleon.de"
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -29,6 +26,12 @@ functions:
           method: post
           path: static-site-mailer
           cors: true
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./handler.js
 
 # you can add packaging information here
 #package:

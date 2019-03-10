@@ -17,7 +17,6 @@ function generateResponse(code, payload) {
 }
 
 function generateError(code, err) {
-  console.log(err);
   return {
     statusCode: code,
     headers: {

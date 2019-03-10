@@ -180,7 +180,7 @@ function checkForCommonTypos(userInput) {
 }
 
 function checkForTypo(userInput) {
-  const email = userInput.email.trim().toLowerCase();
+  const email = userInput.email;
 
   return checkForCommonTypos(email)
     || checkForDomainTypo(email)
@@ -222,58 +222,48 @@ messageEl.addEventListener('click', () => {
 
 /* CONTACT FORM */
 const form = document.querySelector('form');
-const url = 'https://gpuw2h2wz1.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
+const url = 'https://ynm902zoa2.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer';
 const contactSubmit = document.querySelector('.contactSubmit');
 
-function post(url, body, callback) {
-  let req = new XMLHttpRequest();
-  req.open('POST', url, true);
-  req.setRequestHeader('Accept', 'application/json; charset=utf-8');
-  req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-  req.addEventListener('load', function () {
-    if (req.status < 400) {
-      callback(null, JSON.parse(req.responseText));
-    } else {
-      callback(new Error('Request failed: ' + req.statusText));
-    }
-  });
-  req.send(JSON.stringify(body));
-}
-
 function success() {
-  contactSubmit.insertAdjacentHTML('afterend', '<p class="formResponse" style="color:#2E7D32;background-color:#E6F4EA;border:1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
-  contactSubmit.disabled = false;
+  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#2E7D32;background-color:#E6F4EA;border:1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
   contactSubmit.blur();
   setTimeout(function () {
     document.querySelector('.formResponse').remove();
+    contactSubmit.disabled = false;
   }, 5000);
   form.reset();
 }
 
 function error(err) {
-  contactSubmit.insertAdjacentHTML('afterend', '<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>');
+  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>');
   setTimeout(function () {
     document.querySelector('.formResponse').remove();
+    contactSubmit.disabled = false;
   }, 5000);
-  console.error(JSON.parse(response.target.response).message);
+  console.error(err);
 }
 
 form.onsubmit = e => {
   e.preventDefault();
 
-  if (document.getElementById('honeypot').value) return;
-  contactSubmit.disabled = true;
+  let req = new XMLHttpRequest();
+  req.open('POST', url, true);
+  req.setRequestHeader('Accept', 'application/json; charset=utf-8');
+  req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
 
   const payload = {
     name: form.name.value,
     email: form.email.value,
     message: form.message.value
   };
-  post(url, payload, function (err, res) {
-    if (err) {
-      return error(err)
-    }
+
+  contactSubmit.disabled = true;
+  if (document.getElementById('honeypot').value || req.status >= 400) {
+    error();
+  } else if (form.name.value && form.email.value && form.message.value) {
     success();
-  })
+    req.send(JSON.stringify(payload));
+  }
 };
 /* CONTACT FORM */
