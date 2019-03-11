@@ -451,13 +451,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  width: 75%;
 
   @include tablet {
-    width: 49%;
+    width: 50%;
   }
 
   @include desktop {
-    width: 34%;
+    width: 25%;
   }
 }
 

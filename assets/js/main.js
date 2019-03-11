@@ -226,7 +226,7 @@ const url = 'https://ynm902zoa2.execute-api.eu-west-1.amazonaws.com/dev/static-s
 const contactSubmit = document.querySelector('.contactSubmit');
 
 function success() {
-  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#2E7D32;background-color:#E6F4EA;border:1px solid #2E7D32;">Danke für Ihre Nachricht</p>');
+  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#2E7D32;background-color:#E6F4EA;border:1px solid #2E7D32;font-size:0.8em">Danke für Ihre Nachricht</p>');
   contactSubmit.blur();
   setTimeout(function () {
     document.querySelector('.formResponse').remove();
@@ -236,7 +236,7 @@ function success() {
 }
 
 function error(err) {
-  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>');
+  contactSubmit.insertAdjacentHTML('beforebegin', '<p class="formResponse" style="color:#E21A11;background-color:#ffefef;border:1px solid #E21A11;font-size:0.8em;">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>');
   setTimeout(function () {
     document.querySelector('.formResponse').remove();
     contactSubmit.disabled = false;
