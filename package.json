@@ -12,7 +12,7 @@
     "serverless": "^1.38.0"
   },
   "scripts": {
-    "watch:scss": "sass --watch assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed",
+    "watch:scss": "sass --watch assets/style/scss/:assets/style/css/ --style compressed",
     "build:scss": "sass --update assets/style/scss/main.scss:assets/style/css/main.min.css --style compressed --no-source-map"
   },
   "dependencies": {}
