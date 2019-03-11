@@ -66,9 +66,10 @@
   <script type="text/javascript">
     var _paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    // require user consent before processing data
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
+    _paq.push(['setCookieDomain', '*.ebelleon.de']);
+    _paq.push(['setDomains', '*.ebelleon.de']);
     (function() {
       var u="//matomo.ebelleon.de/";
       _paq.push(['setTrackerUrl', u+'matomo.php']);
@@ -124,11 +125,11 @@
           <img class='aboutMePicture' src='assets/img/pic.jpg' alt='My profile picture'>
           <div class='aboutMeInformation'>
             <p class='aboutMeParagraph'>
-              Mein Name ist Leon Ebel, ich bin <b>Softwareentwickler</b> spezialisiert auf <b>Webentwicklung</b>.
+              Mein Name ist Leon Ebel, ich bin <b>Softwareentwickler,</b> spezialisiert auf <b>Webentwicklung.</b>
               Dabei arbeite ich sowohl im <b>Frontend</b> als auch <b>Backend</b>, mit Technologien wie PHP, Node.js, oder Docker.
             </p>
             <p class='aboutMeParagraph'>
-              Seit 2016 arbeite ich in <b>München</b> als Entwickler bei Jochen Schweizer.
+              Seit 2016 arbeite ich in <b>München</b> bei Jochen Schweizer.
               Dort habe ich die Ausbildung zum <b>Fachinformatiker für Anwendungsentwicklung</b> absolviert.
             </p>
             <p class='aboutMeParagraph'>
@@ -256,6 +257,9 @@
       </a>
       <a href='https://www.instagram.com/leonebel' title='Instagram' target='_blank'>
         <i class='fab fa-instagram'></i>
+      </a>
+      <a href='en/' title='English' target='_self' style='vertical-align:middle;'>
+        <img src="assets/img/en.png" alt="English">
       </a>
     </div>
 

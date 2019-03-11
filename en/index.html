@@ -66,9 +66,10 @@
   <script type="text/javascript">
     var _paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    // require user consent before processing data
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
+    _paq.push(['setCookieDomain', '*.ebelleon.de']);
+    _paq.push(['setDomains', '*.ebelleon.de']);
     (function() {
       var u="//matomo.ebelleon.de/";
       _paq.push(['setTrackerUrl', u+'matomo.php']);
@@ -124,11 +125,11 @@
           <img class='aboutMePicture' src='../assets/img/pic.jpg' alt='My profile picture'>
           <div class='aboutMeInformation'>
             <p class='aboutMeParagraph'>
-              My name is Leon Ebel, I'm a <b>Softwaredeveloper</b> specialized in <b>Webdevelopment</b>.
+              My name is Leon Ebel, I'm a <b>Softwaredeveloper,</b> specialized in <b>Webdevelopment.</b>
               I'm working both in <b>Frontend</b> and <b>Backend</b>, with Technologies like PHP, Node.js or Docker.
             </p>
             <p class='aboutMeParagraph'>
-              Since 2016 I work in <b>Munich</b> as a Softwaredeveloper at Jochen Schweizer.
+              Since 2016 I work in <b>Munich</b> at Jochen Schweizer.
               There I've completed the apprenticeship as a <b>Softwaredeveloper</b> succesfully in 2019.
             </p>
             <p class='aboutMeParagraph'>
@@ -256,6 +257,9 @@
       </a>
       <a href='https://www.instagram.com/leonebel' title='Instagram' target='_blank'>
         <i class='fab fa-instagram'></i>
+      </a>
+      <a href='/' title='Deutsch' target='_self' style='vertical-align:middle;'>
+        <img src='../assets/img/ger.png' alt='Deutsch'>
       </a>
     </div>
 
