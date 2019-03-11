@@ -1,0 +1,19 @@
+@import 'partials/fonts';
+@import 'partials/colors';
+@import 'partials/typography';
+@import 'modules/cookie-banner';
+
+body {
+  background-color: $transparent;
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding: 1em 3em;
+}
+
+.cookieBanner {
+  @extend %cookieBanner;
+}

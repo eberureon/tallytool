@@ -1,4 +1,6 @@
 @import 'partials/fonts';
+@import 'partials/colors';
+@import 'partials/typography';
 @import 'partials/base';
 @import 'partials/fontawesome-custom';
 @import 'vendor/burger_menu/hamburgers';
@@ -449,13 +451,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  width: 75%;
 
   @include tablet {
-    width: 49%;
+    width: 50%;
   }
 
   @include desktop {
-    width: 34%;
+    width: 25%;
   }
 }
 

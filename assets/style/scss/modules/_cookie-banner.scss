@@ -1,0 +1,13 @@
+%cookieBanner {
+  background-color: $wildDove;
+  padding: .5em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p, a {
+    color: $alabaster;
+    text-align: center;
+    font-weight: $light;
+  }
+}
