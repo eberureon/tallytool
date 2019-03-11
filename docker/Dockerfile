@@ -3,8 +3,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./package.json ./yarn.lock ./
 COPY . ./
-ENTRYPOINT ["yarn", "sass --update --no-source-map ./assets/style/scss/main.scss:./assets/style/css/main.min.css --style compressed"]
-COPY ./assets/style/css ./assets/style/css
+RUN yarn; \
+    node_modules/.bin/sass --update ./assets/style/scss/main.scss:./assets/style/css/main.min.css --style compressed --no-source-map
 
 FROM nginx:1.15-alpine
 COPY --from=build ./app /var/www/html
