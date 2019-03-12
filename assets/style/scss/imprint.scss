@@ -12,6 +12,15 @@ body {
 
 .content {
   padding: 1em 3em;
+
+  a {
+    color: #0645AD;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .cookieBanner {
