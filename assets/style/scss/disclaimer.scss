@@ -1,6 +1,7 @@
 @import 'partials/fonts';
 @import 'partials/colors';
 @import 'partials/typography';
+@import 'modules/media-queries';
 @import 'modules/cookie-banner';
 
 body {
@@ -12,6 +13,7 @@ body {
 
 .content {
   padding: 1em 3em;
+  word-break: break-word;
 
   a {
     color: #0645AD;
@@ -24,5 +26,9 @@ body {
 }
 
 .cookieBanner {
-  @extend %cookieBanner;
+  @include cookieBanner;
+}
+
+.closeContainer {
+  @include closeContainer;
 }

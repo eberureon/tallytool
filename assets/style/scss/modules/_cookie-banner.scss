@@ -1,13 +1,63 @@
-%cookieBanner {
+@mixin cookieBanner {
   background-color: $wildDove;
-  padding: .5em;
   position: fixed;
   bottom: 0;
   width: 100%;
 
-  p, a {
+  p {
     color: $alabaster;
     text-align: center;
+    font-size: 0.8em;
     font-weight: $light;
+    padding: 1.5em 3.2em 1.5em 0.8em;
+    margin: 0;
+
+    @include tablet {
+      font-size: 1em;
+    }
+  }
+
+  a {
+    color: $alabaster;
+    font-weight: $light;
+  }
+}
+
+@mixin closeContainer {
+  cursor: pointer;
+  padding: 13px;
+  height: 20px;
+  width: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .close {
+    display: block;
+    height: 100%;
+    transform: translateY(-1px);
+    width: 100%;
+
+    &:before, &:after {
+      background: $alabaster;
+      border-radius: 2px;
+      content: "";
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+
+    &:before {
+      transform: rotateZ(.75rad);
+    }
+
+    &:after {
+      transform: rotateZ(-.75rad);
+    }
+
+    &:hover {
+      background: $wildDove;
+    }
   }
 }
