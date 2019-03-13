@@ -12,7 +12,7 @@ body {
 }
 
 .content {
-  padding: 1em 3em;
+  padding: 1em 2em;
   word-break: break-word;
 
   a {
@@ -22,6 +22,11 @@ body {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @include desktop {
+    padding-right: 4em;
+    padding-left: 4em;
   }
 }
 
