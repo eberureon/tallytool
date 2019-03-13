@@ -79,7 +79,7 @@ hamburger.addEventListener('click', function () {
   hamburger.classList.toggle('is-active');
 });
 
-// Get current Year in Imprint
+// Get current Year in Footer
 document.querySelector('.currentYear').append(new Date().getFullYear());
 
 /* MAIL VALIDATION START */

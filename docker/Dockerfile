@@ -5,7 +5,7 @@ COPY ./package.json ./yarn.lock ./
 COPY . ./
 RUN yarn; \
     node_modules/.bin/sass --update ./assets/style/scss/main.scss:./assets/style/css/main.min.css --style compressed --no-source-map; \
-    node_modules/.bin/sass --update ./assets/style/scss/imprint.scss:./assets/style/css/imprint.min.css --style compressed --no-source-map
+    node_modules/.bin/sass --update ./assets/style/scss/disclaimer.scss:./assets/style/css/disclaimer.min.css --style compressed --no-source-map
 
 FROM nginx:1.15-alpine
 COPY --from=build ./app /var/www/html
