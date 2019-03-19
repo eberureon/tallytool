@@ -12,8 +12,10 @@ body {
 }
 
 .content {
-  padding: 1em 2em;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
   word-break: break-word;
+  font-weight: $light;
 
   a {
     color: #0645AD;
@@ -24,9 +26,17 @@ body {
     }
   }
 
+  ul {
+    padding-left: 2.35em;
+
+    li {
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+    }
+  }
+
   @include desktop {
-    padding-right: 4em;
-    padding-left: 4em;
+    padding-left: 2em;
   }
 }
 
