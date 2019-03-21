@@ -1,6 +1,8 @@
-let closeContainer = document.querySelector('.closeContainer');
 let cookieBanner = document.querySelector('.cookieBanner');
 
-closeContainer.addEventListener('click', () => {
+localStorage.hasOwnProperty('closedCookieBanner') ? cookieBanner.style.display = 'none' : '';
+
+document.querySelector('.closeContainer').addEventListener('click', () => {
   cookieBanner.style.display = 'none';
+  localStorage.setItem('closedCookieBanner', '1');
 });
