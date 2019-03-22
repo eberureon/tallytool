@@ -43,7 +43,7 @@
       return null;
     }
 
-    if(getCookie('matomo-disabled') === null) {
+    if(!getCookie('matomo-disabled')) {
       var _paq = window._paq || [];
       _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
       _paq.push(["setCookieDomain", "*.ebelleon.de"]);
