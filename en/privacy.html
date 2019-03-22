@@ -33,18 +33,35 @@
 
   <!-- Matomo -->
   <script type='text/javascript'>
-    var _paq = window._paq || [];
-    _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
-    _paq.push(['setCookieDomain', '*.ebelleon.de']);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u='https://matomo.ebelleon.de/';
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+    function getCookie(name) {
+      let cookieName = name + '=';
+      let ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)== ' ') c = c.substring(1,c.length);
+        if (c.indexOf(cookieName) === 0) return c.substring(cookieName.length,c.length);
+      }
+      return null;
+    }
+
+    if(!getCookie('matomo-disabled')) {
+      var _paq = window._paq || [];
+      _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+      _paq.push(['setCookieDomain', '*.ebelleon.de']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function () {
+        var u = 'https://matomo.ebelleon.de/';
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    }
   </script>
   <noscript><p><img src='https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1' style='border:0;' alt='' /></p></noscript>
   <!-- End Matomo Code -->
@@ -333,15 +350,15 @@
     usage data. If you delete your cookies, the Matomo Opt-Out-Cookie will also be deleted.
     The opt-out must be reactivated when you visit our site again.
   </p>
-  <p>
-    <em>
-      <strong>
-        <a style="color:#F00;" href="https://matomo.org/docs/privacy/" rel="nofollow" target="_blank" rel="noopener">
-          [Hier Matomo iframe-Code einf&uuml;gen] (Klick f&uuml;r die Anleitung)
-        </a>
-      </strong>
-    </em>
-  </p>
+
+  <div class='optOut'>
+    <input type='radio' name='matomoPreference' id='enableMatomo' checked />
+    <label for='enableMatomo'>Matomo aktivieren</label>
+  </div>
+  <div class='optOut'>
+    <input type='radio' name='matomoPreference' id='disableMatomo' />
+    <label for='disableMatomo'>Matomo deaktivieren</label>
+  </div>
 
   <h2>5. Plugins and Tools</h2>
 
@@ -368,7 +385,7 @@
     Your location can also be recorded if you have permitted this in your device settings, e.g. on your
     mobile phone. The provider of this page has no influence on this data transfer. Details can be
     found in the OpenStreetMap privacy policy under the following link:
-    <a href='https://wiki.openstreetmap.org/wiki/Privacy_Policy' target='_blank' rel='noopener'>
+    <a href='https://wiki.openstreetmap.org/wiki/Privacy_Policy' target='_blank' rel='noopener nofollow'>
       https://wiki.openstreetmap.org/wiki/Privacy_Policy
     </a>.
   </p>
@@ -402,19 +419,19 @@
   <p>
     For further information on Google reCAPTCHA and Google's privacy policy, please refer
     to the following links:
-    <a href='https://policies.google.com/privacy?hl=en' target='_blank' rel='noopener'>
+    <a href='https://policies.google.com/privacy?hl=en' target='_blank' rel='noopener nofollow'>
       https://policies.google.com/privacy?hl=en
     </a>
     and
-    <a href='https://www.google.com/recaptcha/intro/android.html' target='_blank' rel='noopener'>
+    <a href='https://www.google.com/recaptcha/intro/android.html' target='_blank' rel='noopener nofollow'>
       https://www.google.com/recaptcha/intro/android.html
     </a>.
   </p>
-  <p>Translated with: <a href='https://www.deepl.com' target='_blank' rel='noopener'>deepl.com</a></p>
+  <p>Translated with: <a href='https://www.deepl.com' target='_blank' rel='noopener nofollow'>deepl.com</a></p>
 </div>
 <div class='cookieBanner'>
   <p>
-    This website uses cookies. By continuing to use this website, you consent to the use of <a href='/en/privacy/#cookies'>cookies</a>.
+    This website uses cookies. By continuing to use this website, you consent to the use of my <a href='/en/privacy/#cookies'>Cookies Policy</a>.
   </p>
   <div class='closeContainer'>
     <span class='close'></span>
@@ -423,5 +440,28 @@
 
 <!-- SCRIPTS -->
 <script src='/assets/js/disclaimer.js'></script>
+<script>
+  function setCookie(name, value, days) {
+    let d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    let expires = 'expires='+ d.toUTCString();
+    document.cookie = name + '=' + value + ';' + expires + ';path=/';
+  }
+
+  // Matomo disabled
+  document.getElementById('disableMatomo').addEventListener('click', () => {
+    setCookie('matomo-disabled', '1', 365);
+  });
+
+  // Matomo enabled
+  document.getElementById('enableMatomo').addEventListener('click', () => {
+    setCookie('matomo-disabled', '', -10);
+  });
+
+  if ( getCookie('matomo-disabled') ){
+      document.getElementById('disableMatomo').checked = true;
+      document.getElementById('enableMatomo').checked = false;
+  };
+</script>
 </body>
 </html>
