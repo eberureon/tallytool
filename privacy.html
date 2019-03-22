@@ -33,18 +33,35 @@
 
   <!-- Matomo -->
   <script type='text/javascript'>
-    var _paq = window._paq || [];
-    _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
-    _paq.push(['setCookieDomain', '*.ebelleon.de']);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u='https://matomo.ebelleon.de/';
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+    function getCookie(name) {
+      let cookieName = name + "=";
+      let ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)== ' ') c = c.substring(1,c.length);
+        if (c.indexOf(cookieName) === 0) return c.substring(cookieName.length,c.length);
+      }
+      return null;
+    }
+
+    if(getCookie('matomo-disabled') === null) {
+      var _paq = window._paq || [];
+      _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+      _paq.push(['setCookieDomain', '*.ebelleon.de']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function () {
+        var u = 'https://matomo.ebelleon.de/';
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    }
   </script>
   <noscript><p><img src='https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1' style='border:0;' alt='' /></p></noscript>
   <!-- End Matomo Code -->
@@ -334,17 +351,17 @@
     dass Matomo Nutzungsdaten speichert. Wenn Sie Ihre Cookies löschen, hat dies zur Folge, dass auch das Matomo
     Opt-Out-Cookie gelöscht wird. Das Opt-Out muss bei einem erneuten Besuch unserer Seite wieder aktiviert werden.
   </p>
-  <p>
-    <em>
-      <strong>
-        <a style="color:#F00;" href="https://matomo.org/docs/privacy/" target="_blank" rel="noopener nofollow">
-          [Hier Matomo iframe-Code einf&uuml;gen] (Klick f&uuml;r die Anleitung)
-        </a>
-      </strong>
-    </em>
-  </p>
 
-  <h2>5. Plugins und Tools</h2>
+  <div class='optOut'>
+    <input type='radio' name='matomoPreference' id='enableMatomo' checked />
+    <label for='enableMatomo'>Matomo aktivieren</label>
+  </div>
+  <div class='optOut'>
+    <input type='radio' name='matomoPreference' id='disableMatomo' />
+    <label for='disableMatomo'>Matomo deaktivieren</label>
+  </div>
+
+<h2>5. Plugins und Tools</h2>
 
   <h3>Google Web Fonts</h3>
   <p>
@@ -428,5 +445,23 @@
 
 <!-- SCRIPTS -->
 <script src='/assets/js/disclaimer.js'></script>
+<script>
+  function setCookie(name, value, days) {
+    let d = new Date();
+    d.setTime(d.getTime() + (days*24*60*60*1000));
+    let expires = 'expires='+ d.toUTCString();
+    document.cookie = name + '=' + value + ';' + expires + ';path=/';
+  }
+
+  // Matomo disabled
+  document.getElementById('disableMatomo').addEventListener('click', () => {
+    setCookie('matomo-disabled', '1', 365);
+  });
+
+  // Matomo enabled
+  document.getElementById('enableMatomo').addEventListener('click', () => {
+    setCookie('matomo-disabled', '', -10);
+  });
+</script>
 </body>
 </html>

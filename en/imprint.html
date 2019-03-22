@@ -31,21 +31,38 @@
   <link rel='stylesheet' type='text/css' href='/assets/style/css/disclaimer.min.css'>
 
   <!-- Matomo -->
-  <script type='text/javascript'>
-    var _paq = window._paq || [];
-    _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
-    _paq.push(['setCookieDomain', '*.ebelleon.de']);
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u='https://matomo.ebelleon.de/';
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
+  <script type="text/javascript">
+    function getCookie(name) {
+      let cookieName = name + "=";
+      let ca = document.cookie.split(';');
+      for(var i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)== ' ') c = c.substring(1,c.length);
+        if (c.indexOf(cookieName) === 0) return c.substring(cookieName.length,c.length);
+      }
+      return null;
+    }
+
+    if(getCookie('matomo-disabled') === null) {
+      var _paq = window._paq || [];
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.ebelleon.de"]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function () {
+        var u = "https://matomo.ebelleon.de/";
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    }
   </script>
-  <noscript><p><img src='https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1' style='border:0;' alt='' /></p></noscript>
+  <noscript><p><img src="https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Matomo Code -->
 </head>
 <body>
@@ -104,7 +121,7 @@
     </div>
   </div>
 
-  <!-- SCRIPTS -->
-  <script src='/assets/js/disclaimer.js'></script>
+<!-- SCRIPT -->
+<script src='/assets/js/disclaimer.js'></script>
 </body>
 </html>
