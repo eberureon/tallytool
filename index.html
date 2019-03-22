@@ -22,15 +22,15 @@
   <script>
     let Hyphenopoly = {
       require: {
-        "de": "Silbentrennungsalgorithmus"
+        'de': 'Silbentrennungsalgorithmus'
       },
       paths: {
-        patterndir: "libs/hyphenopoly/patterns/",
-        maindir: "libs/hyphenopoly/"
+        patterndir: 'libs/hyphenopoly/patterns/',
+        maindir: 'libs/hyphenopoly/'
       },
       setup: {
         selectors: {
-          ".aboutMeInformation": {}
+          '.aboutMeInformation': {}
         }
       }
     };
@@ -64,9 +64,9 @@
   <link rel='stylesheet' type='text/css' href='/libs/fontawesome/css/all.min.css'>
 
   <!-- Matomo -->
-  <script type="text/javascript">
+  <script type='text/javascript'>
     function getCookie(name) {
-      let cookieName = name + "=";
+      let cookieName = name + '=';
       let ca = document.cookie.split(';');
       for(var i=0;i < ca.length;i++) {
         let c = ca[i];
@@ -78,12 +78,12 @@
 
     if(!getCookie('matomo-disabled')) {
       var _paq = window._paq || [];
-      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-      _paq.push(["setCookieDomain", "*.ebelleon.de"]);
+      _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+      _paq.push(['setCookieDomain', '*.ebelleon.de']);
       _paq.push(['trackPageView']);
       _paq.push(['enableLinkTracking']);
       (function () {
-        var u = "https://matomo.ebelleon.de/";
+        var u = 'https://matomo.ebelleon.de/';
         _paq.push(['setTrackerUrl', u + 'matomo.php']);
         _paq.push(['setSiteId', '1']);
         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
@@ -95,7 +95,7 @@
       })();
     }
   </script>
-  <noscript><p><img src="https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+  <noscript><p><img src='https://matomo.ebelleon.de/matomo.php?idsite=1&amp;rec=1' style='border:0;' alt='' /></p></noscript>
   <!-- End Matomo Code -->
 </head>
 <body>
@@ -291,9 +291,9 @@
     </div>
   </footer>
 </div>
-<div class="cookieBanner">
+<div class='cookieBanner'>
   <p>
-    Diese Website verwendet Cookies. Durch die weitere Nutzung der Website stimmst du der <a href="/privacy/#cookies">Cookie-Nutzung</a> zu.
+    Diese Website verwendet Cookies. Durch die weitere Nutzung der Website stimmst du der <a href='/privacy/#cookies'>Cookie-Nutzung</a> zu.
   </p>
   <div class='closeContainer'>
     <span class='close'></span>
@@ -306,7 +306,7 @@
 <script src='/assets/js/disclaimer.js'></script>
 <script>
   /* DETECT IE */
-  if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+  if (window.navigator.userAgent.indexOf('MSIE ') > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
     alert('Internet Explorer 11 und älter werden von mir nicht mehr unterstützt.\n\n' +
       'Bitte verwenden Sie einen anderen Brower um dem Inhalt dieser Seite richtig und in vollem Umfang anzeigen zu können.\n\n\n' +
       'Internet Explorer 11 and older is no longer supported on this Webpage.\n\n' +
