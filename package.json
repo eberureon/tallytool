@@ -4,7 +4,7 @@
   "description": "Abrechnungstool Handball",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "gulp sass && electron .",
     "build:win": "electron-packager . Abrechnungstool --platform=win32 --arch=x64 --out=build/win --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar",
     "build:ios": "electron-packager . Abrechnungstool --platform=darwin --arch=x64 --out=build/ios --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar",
     "build:linux": "electron-packager . Abrechnungstool --platform=linux --arch=x64 --out=build/linux --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar"
