@@ -96,9 +96,11 @@ function submit() {
   let dateWeekday    = selectedDay.toLocaleDateString('de-de', {weekday: 'short'});
   let event          = document.getElementById('event').value;
   let factor         = parseInt(document.getElementById('factor').value);
-  let salary         = event === 'Quali' && factor === 3 ? 20 : event === 'Quali' && factor === 4 ? 25 : factor * 5;
-  let sum            = parseInt(localStorage.getItem('sum')) || [];
+  let salary         = event === 'Quali' && factor === 3 ? 20 : event === 'Quali' && factor === 4 ? 25 : event === 'Quali' && factor === 5 ? 30 : factor * 7.5;
+  let sum            = parseFloat(localStorage.getItem('sum')) || [];
   let deleteButton   = document.innerHTML = '<button class="button" id="deleteItem" type="button" onclick="deleteItem(this)">Eintrag l&ouml;schen</button>';
+
+console.log(sum);
 
   localStorage.setItem('sum', sum += salary);
 
