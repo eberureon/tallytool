@@ -100,8 +100,6 @@ function submit() {
   let sum            = parseFloat(localStorage.getItem('sum')) || [];
   let deleteButton   = document.innerHTML = '<button class="button" id="deleteItem" type="button" onclick="deleteItem(this)">Eintrag l&ouml;schen</button>';
 
-console.log(sum);
-
   localStorage.setItem('sum', sum += salary);
 
   addRow(dateFormatted, dateWeekday, event, factor, salary, deleteButton);
