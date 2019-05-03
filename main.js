@@ -7,10 +7,14 @@ let win;
 function createWindow () {
     win = new BrowserWindow({
         title: 'Abrechnungstool Handball',
-        icon: path.join(__dirname + '/favicon.ico'),
+        icon: path.join(__dirname + '/logo.png'),
         height: 800,
         width: 850,
-        resizable: false
+        resizable: false,
+        webPreferences: {
+          nodeIntegration: true,
+          sandbox: false
+        }
     });
 
     win.loadURL(url.format({
@@ -22,8 +26,6 @@ function createWindow () {
     win.on('closed', () => {
         win = null
     });
-
-    // win.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);
