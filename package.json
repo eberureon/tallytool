@@ -1,22 +1,22 @@
 {
   "name": "abrechnungstool",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "Abrechnungstool Handball",
   "main": "main.js",
   "scripts": {
-    "start": "gulp sass && electron .",
+    "start": "gulp sass && electron . ",
     "build:win": "electron-packager . Abrechnungstool --platform=win32 --arch=x64 --out=build/win --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar",
     "build:ios": "electron-packager . Abrechnungstool --platform=darwin --arch=x64 --out=build/ios --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar",
-    "build:linux": "electron-packager . Abrechnungstool --platform=linux --arch=x64 --out=build/linux --overwrite --prune=true --icon=favicon.ico --ignore=.versions --asar"
+    "build:linux": "electron-packager . Abrechnungstool --platform=linux --arch=x64 --out=build/linux --overwrite --prune=true --ignore=.versions --asar"
   },
   "author": "Leon Ebel",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "electron": ">=2.0.8",
+    "electron": "^5.0.0",
     "electron-packager": "^13.1.1",
-    "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
+    "gulp": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2"
   }
