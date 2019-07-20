@@ -10,4 +10,4 @@ COPY . ./
 
 FROM nginx:1.15-alpine
 COPY --from=build ./app /var/www/html
-COPY ./docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
