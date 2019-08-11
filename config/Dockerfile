@@ -1,3 +1,6 @@
+# ------------------------------------------------------------------------- #
+#                               Build image                                 #
+# ------------------------------------------------------------------------- #
 FROM node:10.15.1-alpine AS build
 RUN mkdir /app
 WORKDIR /app
@@ -8,6 +11,11 @@ RUN npm ci; \
     node_modules/.bin/sass --update ./assets/style/scss/disclaimer.scss:./assets/style/css/disclaimer.min.css --style compressed --no-source-map
 COPY . ./
 
-FROM nginx:1.15-alpine
-COPY --from=build ./app /var/www/html
+RUN npm prune --production
+
+# ------------------------------------------------------------------------- #
+#                               Prod image                                   #
+# ------------------------------------------------------------------------- #
+FROM nginx:1.15-alpine AS server
+COPY --from=build /app /
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf

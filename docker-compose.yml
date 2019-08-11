@@ -1,11 +1,11 @@
-version: '3'
+version: '3.6'
 
 services:
   web:
+    container_name: portfolio-web
     build:
       context: .
       dockerfile: ./config/Dockerfile
-    container_name: portfolio-web
     restart: always
     volumes:
       - data:/var/www/html:ro
