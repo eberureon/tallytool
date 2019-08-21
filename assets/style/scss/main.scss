@@ -208,14 +208,14 @@ body {
   border: 2px solid $codGray;
   border-left-style: dashed;
   border-right-style: dashed;
-  border-radius: 50%;
+  border-radius: 25%;
   margin: 2.25em;
   height: 150px;
   width: 150px;
 
   @include desktop {
     float: left;
-    margin: 4em 2.25em 10em 9em;
+    margin: 3em 2.25em 10em 9em;
     height: 164px;
     width: 164px;
   }
