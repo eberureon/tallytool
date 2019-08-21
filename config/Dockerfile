@@ -14,8 +14,8 @@ COPY . ./
 RUN npm prune --production
 
 # ------------------------------------------------------------------------- #
-#                               Prod image                                   #
+#                               Prod image                                  #
 # ------------------------------------------------------------------------- #
 FROM nginx:1.15-alpine AS server
-COPY --from=build /app /
+COPY --from=build /app /var/www/html
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
