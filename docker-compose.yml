@@ -1,8 +1,8 @@
 version: '3.6'
 
 services:
-  web:
-    container_name: portfolio-web
+  portfolio:
+    container_name: portfolio
     build:
       context: .
       dockerfile: ./config/Dockerfile
