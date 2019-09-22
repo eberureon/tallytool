@@ -95,7 +95,7 @@ body {
 }
 
 .navbar {
-  background-color: $flagstone;
+  background-color: $wildDove;
   border-bottom: 2px solid $alabaster;
   display: inline-block;
   font-size: 1em;
@@ -427,8 +427,8 @@ body {
   -moz-appearance: none;
 
   &:hover:enabled {
-    background-color: $flagstone;
-    border-color: $flagstone;
+    background-color: $wildDove;
+    border-color: $wildDove;
     color: $alabaster;
     cursor: pointer;
   }

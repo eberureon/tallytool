@@ -3,7 +3,7 @@
   <meta charset='UTF-8'>
   <meta name='author' content='Leon Ebel'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
   <meta name='description' content='Portfolio of Leon Ebel - Front-/ Backend Developer based in Munich, Germany.'>
   <meta name='keywords' content='Leon Ebel, Leon, Ebel, developer, development, entwickler, web developer, web development, Portfolio, portfolio, München, Munich, Germany, Deutschland'>
   <meta name='language' content='DE'>
@@ -104,7 +104,7 @@
     <div class='homeContent'>
       <div class='langDropdown'>
         <label for='langDropdownToggle'>
-          <input class='langDropdownToggle' id='langDropdownToggle' type='checkbox'>
+          <input class='langDropdownToggle' name='langDropdownToggle' id='langDropdownToggle' type='checkbox'>
           <ul class='langDropdownList'>
             <li><i class='fa fa-language'></i>Sprache w&auml;hlen</li>
             <li><a href='/en/'>English</a></li>
@@ -254,29 +254,29 @@
         <input type='text' name='name' title='Ihr Name' class='contactInput' placeholder='Name*' required>
         <input type='email' name='email' title='Ihre E-Mail Addresse' class='contactInput' placeholder='E-Mail*' required>
         <input type='text' name='honeypot' value='' id='honeypot' style='display: none' tabindex='-1' autocomplete='off'>
-        <button type='button' class='valMessage' tabindex='-1'></button>
+        <button type='button' id='valMessage' class='valMessage' tabindex='-1'></button>
         <textarea name='message' class='contactMessage' title='Ihre Nachricht' placeholder='Nachricht*' required></textarea>
         <br>
-        <input type='submit' class='contactSubmit' value='Abschicken'>
+        <input type='submit' class='contactSubmit' name='submit' value='Abschicken'>
       </form>
     </div>
   </section>
 
   <footer>
     <div class='socialMedia'>
-      <a href='https://www.linkedin.com/in/ebelleon' title='LinkedIn' target='_blank' rel='noopener nofollow'>
+      <a href='https://www.linkedin.com/in/ebelleon' title='LinkedIn' aria-label='Personal LinkedIn' target='_blank' rel='noopener nofollow'>
         <i class='fab fa-linkedin'></i>
       </a>
-      <a href='https://www.xing.com/profile/Leon_Ebel' title='Xing' target='_blank' rel='noopener nofollow'>
+      <a href='https://www.xing.com/profile/Leon_Ebel' title='Xing' aria-label='Personal Xing' target='_blank' rel='noopener nofollow'>
         <i class='fab fa-xing'></i>
       </a>
-      <a href='https://www.github.com/ebelleon' title='Github' target='_blank' rel='noopener nofollow'>
+      <a href='https://www.github.com/ebelleon' title='Github' aria-label='Personal Github' target='_blank' rel='noopener nofollow'>
         <i class='fab fa-github'></i>
       </a>
-      <a href='https://www.instagram.com/leonebel' title='Instagram' target='_blank' rel='noopener nofollow'>
+      <a href='https://www.instagram.com/leonebel' title='Instagram' aria-label='Personal Instagram' target='_blank' rel='noopener nofollow'>
         <i class='fab fa-instagram'></i>
       </a>
-      <a href='/en/' title='English' target='_self' style='vertical-align:middle;'>
+      <a href='/en/' title='English' aria-label='View Website in English' target='_self' style='vertical-align:middle;'>
         <img src='/assets/img/en.png' alt='English'>
       </a>
     </div>
