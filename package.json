@@ -7,9 +7,9 @@
   "author": "Leon Ebel <ebel.leon@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk": "^2.395.0",
-    "sass": "^1.17.2",
-    "serverless": "^1.38.0"
+    "aws-sdk": "^2.533.0",
+    "sass": "^1.22.12",
+    "serverless": "^1.52.2"
   },
   "scripts": {
     "watch:scss": "sass --watch assets/style/scss/:assets/style/css/ --style compressed",
