@@ -4,7 +4,7 @@
 FROM node:10.15.1-alpine AS build
 RUN mkdir /app
 WORKDIR /app
-COPY ./package.json ./package-lock.json ./
+COPY ./package*.json ./
 COPY ./assets/style/scss ./assets/style/scss
 RUN npm ci; \
     node_modules/.bin/sass --update ./assets/style/scss/main.scss:./assets/style/css/main.min.css --style=compressed --no-source-map; \
