@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------- #
 #                               Build image                                 #
 # ------------------------------------------------------------------------- #
-FROM node:10.15.1-alpine AS build
+FROM node:12.10-alpine AS build
 RUN mkdir /app
 WORKDIR /app
 COPY ./package*.json ./
@@ -16,6 +16,6 @@ RUN npm prune --production
 # ------------------------------------------------------------------------- #
 #                               Prod image                                  #
 # ------------------------------------------------------------------------- #
-FROM nginx:1.15-alpine AS server
+FROM nginx:1.17.3-alpine AS server
 COPY --from=build /app /var/www/html
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
