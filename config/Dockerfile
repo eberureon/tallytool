@@ -17,5 +17,6 @@ RUN npm prune --production
 #                               Prod image                                  #
 # ------------------------------------------------------------------------- #
 FROM nginx:1.17.3-alpine AS server
+RUN apk --no-cache add curl
 COPY --from=build /app /var/www/html
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf

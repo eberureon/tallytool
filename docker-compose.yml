@@ -9,6 +9,10 @@ services:
     restart: always
     volumes:
       - data:/var/www/html:ro
+    healthcheck:
+      test: curl -f http://localhost || exit 1
+      interval: 5m
+      timeout: 3s
     environment:
       - VIRTUAL_HOST=ebelleon.de,www.ebelleon.de
       - LETSENCRYPT_HOST=ebelleon.de,www.ebelleon.de
