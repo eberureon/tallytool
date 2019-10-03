@@ -1,3 +1,5 @@
 User-Agent: *
 Disallow: /imprint/
 Disallow: /privacy/
+Disallow: /en/imprint/
+Disallow: /en/privacy/
